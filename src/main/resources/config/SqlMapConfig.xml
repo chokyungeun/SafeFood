@@ -9,10 +9,12 @@
 		  -->
 		<typeAlias type="com.safe.vo.Food"   		alias="food"/>
 		<typeAlias type="com.safe.vo.Member"   		alias="member"/>
+		<typeAlias type="com.safe.vo.Board"   		alias="board"/>
 	</typeAliases>
 	<mappers>
 	 <mapper resource="config/FoodMapper.xml" />
 	 <mapper resource="config/MemberMapper.xml" />
+	 <mapper resource="config/BoardMapper.xml" />
 	</mappers>
 </configuration>
 
