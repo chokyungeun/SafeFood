@@ -7,12 +7,11 @@
 		     사용할  VO 클래스에 대한 별칭 설정 
 		  Java AIP에 대한 별칭 설정 정보 : org.apache.ibits.type.TypeAliasRegistry 
 		  -->
-		<typeAlias type="com.ssafy.pms.dto.Phone"   		alias="phone"/>
-		<typeAlias type="com.ssafy.pms.dto.Company"   		alias="company"/>
-		<typeAlias type="com.ssafy.pms.dto.UserInfo"   		alias="userinfo"/>
+		<typeAlias type="com.safe.Food"   		alias="food"/>
+		<typeAlias type="com.safe.Member"   		alias="member"/>
 	</typeAliases>
 	<mappers>
-	 <mapper resource="spring/phone_query.xml" />
+	 <mapper resource="spring/SafefoodMapper.xml" />
 	</mappers>
 </configuration>
 
