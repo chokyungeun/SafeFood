@@ -1,12 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR" import="java.util.ArrayList, com.ssafy.vo.Food"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.util.ArrayList, com.safe.vo.Food"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="EUC-KR">
-<link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap" rel="stylesheet">
+<html lang="en">
+<link
+	href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap"
+	rel="stylesheet">
 
 <head>
-<title>¿ø¼®_ÀÎ°æ_SafeFood &mdash;</title>
+<title>ì›ì„_ì¸ê²½_SafeFood &mdash;</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -71,26 +73,29 @@
 
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#" style="font-family:'Sunflower', sans-serif;">Safefood</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+	<a class="navbar-brand" href="#"
+		style="font-family: 'Sunflower', sans-serif;">Safefood</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarColor02" aria-controls="navbarColor02"
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-  <div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav mr-auto">
-    </ul>
-      <%@ include file="logincheck.jsp"%>
-  </div>
+	<div class="collapse navbar-collapse" id="navbarColor02">
+		<ul class="navbar-nav mr-auto">
+		</ul>
+		<%@ include file="logincheck.jsp"%>
+	</div>
 </nav>
 
 <body data-spy="scroll" data-target=".site-navbar-target"
 	data-offset="300">
 
-<%
-				ArrayList<Food> list = (ArrayList<Food>)request.getAttribute("list");
-				int cnt = 3;
-				String msg = (String)request.getAttribute("msg");
-%>
+	<%
+		ArrayList<Food> list = (ArrayList<Food>) request.getAttribute("list");
+		int cnt = 3;
+		String msg = (String) request.getAttribute("msg");
+	%>
 
 
 	<div class="site-wrap">
@@ -110,7 +115,7 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-12 text-center">
-						<a href="main.food" class="site-logo"> <img src="img/¸ŞÀÎ.PNG"
+						<a href="main.food" class="site-logo"> <img src="img/ë©”ì¸.PNG"
 							alt="Image" class="img-fluid">
 						</a>
 					</div>
@@ -133,11 +138,16 @@
 								role="navigation">
 								<ul
 									class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
-									<li><a href="main.food" class="btn btn-outline-success" style="font-family:'Sunflower', sans-serif;">&nbsp È¨ È­¸é</a></li>
-					                <li><a href="#" class="btn btn-outline-success" style="font-family:'Sunflower', sans-serif;">°øÁö»çÇ×</a></li>
-					                <li><a href="list.food" class="btn btn-outline-success" style="font-family:'Sunflower', sans-serif;">»óÇ°Á¤º¸</a></li>
-					                <li><a href="chart.food" class="btn btn-outline-success" style="font-family:'Sunflower', sans-serif;">º£½ºÆ®½ÄÇ°</a></li>
-					                <li><a href="#" class="btn btn-outline-success" style="font-family:'Sunflower', sans-serif;">¼·ÃëÁ¤º¸</a></li>
+									<li><a href="main.food" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">&nbsp í™ˆ í™”ë©´</a></li>
+									<li><a href="#" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">ê³µì§€ì‚¬í•­</a></li>
+									<li><a href="list.food" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">ìƒí’ˆì •ë³´</a></li>
+									<li><a href="chart.food" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">ë² ìŠ¤íŠ¸ì‹í’ˆ</a></li>
+									<li><a href="#" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">ì„­ì·¨ì •ë³´</a></li>
 								</ul>
 							</nav>
 
@@ -179,51 +189,64 @@
 									</ul>
 									<form method="post" action="chart.food"
 										class="form-inline my-2 my-lg-0">
-										<select name="condition" class="custom-select" style="font-family:'Sunflower', sans-serif;">
-											<option value="popular">ÀÎ±â¼ø</option>
-											<option value="best">±ÇÀå½ÄÇ°</option>
-											<option value="bad">ºñ±ÇÀå½ÄÇ°</option>
-										</select> <span></span> 
-								 		&nbsp;<button class="btn btn-secondary my-2 my-sm-0" type="submit">°Ë»ö</button> 
+										<select name="condition" class="custom-select"
+											style="font-family: 'Sunflower', sans-serif;">
+											<option value="popular">ì¸ê¸°ìˆœ</option>
+											<option value="best">ê¶Œì¥ì‹í’ˆ</option>
+											<option value="bad">ë¹„ê¶Œì¥ì‹í’ˆ</option>
+										</select> <span></span> &nbsp;
+										<button class="btn btn-secondary my-2 my-sm-0" type="submit">ê²€ìƒ‰</button>
 									</form>
-									&nbsp;
-									<a href = "random.food" button class="btn btn-secondary my-2 my-sm-0">·£´ı½ÄÇ°</a> 
+									&nbsp; <a href="random.food" button
+										class="btn btn-secondary my-2 my-sm-0">ëœë¤ì‹í’ˆ</a>
 								</div>
 							</nav>
 						</p>
 					</div>
 				</div>
-				
 
-					<div class="contents" style="margin-bottom: 10px;">
-				<%for(int i=0;i<list.size();i++){ 
-					if(cnt>=3){
-					cnt=0;%>
-					
-						<div class="row">
-						
-					<%} %>
-							<div class="col-sm-4">
-								<div class="wine_v_1 text-center pb-4">
-									<a href="read.food?code=<%=list.get(i).getCode() %>" class="thumbnail d-block mb-4"><img
-										src="/safefood/<%=list.get(i).getImg() %>" alt="Image" class="img-fluid"></a>
-									<div>
-										<h3 class="heading mb-1">
-											<a href="#"><%=list.get(i).getName() %></a>
-										</h3>
-									</div>
-									<div class="drpt"><%=list.get(i).getMaterial() %></div>
-									<a href="#" class="btn btn-outline-primary">Ãß°¡</a>
+
+				<div class="contents" style="margin-bottom: 10px;">
+					<%
+						for (int i = 0; i < list.size(); i++) {
+							if (cnt >= 3) {
+								cnt = 0;
+					%>
+
+					<div class="row">
+
+						<%
+							}
+						%>
+						<div class="col-sm-4">
+							<div class="wine_v_1 text-center pb-4">
+								<a href="read.food?code=<%=list.get(i).getCode()%>"
+									class="thumbnail d-block mb-4"><img
+									src="/safefood/<%=list.get(i).getImg()%>" alt="Image"
+									class="img-fluid"></a>
+								<div>
+									<h3 class="heading mb-1">
+										<a href="#"><%=list.get(i).getName()%></a>
+									</h3>
 								</div>
+								<div class="drpt"><%=list.get(i).getMaterial()%></div>
+								<a href="#" class="btn btn-outline-primary">ì¶”ê°€</a>
 							</div>
-							
-				<%cnt++;
-				if(cnt>=3){%>
+						</div>
+
+						<%
+							cnt++;
+								if (cnt >= 3) {
+						%>
 					</div>
-				<% }%>
-				
-			<% } %>
-			</div>
+					<%
+						}
+					%>
+
+					<%
+						}
+					%>
+				</div>
 
 
 				<div class="footer">
@@ -239,7 +262,7 @@
 											document.write(new Date()
 													.getFullYear());
 										</script>
-										This site is made with </i> by <a href="#" target="_blank">¿ø¼®_ÀÎ°æ</a>
+										This site is made with </i> by <a href="#" target="_blank">ì›ì„_ì¸ê²½</a>
 										<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 									</p>
 
@@ -257,7 +280,8 @@
 
 
 				<!-- loader -->
-				<div id="loader" class="show fullscreen" style="font-family:'Sunflower', sans-serif;">
+				<div id="loader" class="show fullscreen"
+					style="font-family: 'Sunflower', sans-serif;">
 					<svg class="circular" width="48px" height="48px">
 						<circle class="path-bg" cx="24" cy="24" r="22" fill="none"
 							stroke-width="4" stroke="#eeeeee" />
