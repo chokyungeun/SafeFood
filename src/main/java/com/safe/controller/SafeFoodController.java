@@ -68,7 +68,6 @@ public class SafeFoodController {
 	public String chart(Model model, String condition) {
 		List<Food> list = fservice.searchAll();
 		Algo a = new Algo();
-		System.out.println(condition);
 		if(condition.equals("popular") ) {
 			list = a.chartFoods(list);
 			model.addAttribute("msg", "인기순");
