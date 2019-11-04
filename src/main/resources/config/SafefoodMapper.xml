@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sql.pms">
+	<resultMap id="PhoneResult"  type="Phone">
+     <result property="num" column="num"/>
+     <result property="model" column="model"/>
+     <result property="price" column="price"/>
+     <result property="vcode" column="vcode"/>
+     <association property="company" column="company">
+     	<result property="vcode" column="vcode"/>
+     	<result property="vendor" column="vendor"/>
+     </association>
+   </resultMap>
+	
+   
+	<insert id="insert" parameterType="phone">
+		insert into
+		phones (num, model,
+		price, vcode)
+		values( #{num},#{model},#{price},#{vcode} )
+	</insert>
+
+	<!-- join -->
+	<select id="selectAll" resultMap="PhoneResult">
+		select * from phones p, company c where p.vcode = c.vcode
+	</select>
+
+	<select id="selectOne" parameterType="java.lang.String"
+		resultType="phone">
+		select * from phones where num = #{num}
+	</select>
+
+	<delete id="delete" parameterType="list">
+		delete from phones where num in
+		<foreach collection="list" item="item" index="index" close=")" open="(" separator=",">
+			#{item}
+		</foreach>
+	</delete>
+
+	<select id="selectUser" parameterType="userinfo"
+		resultType="userinfo">
+		select * from userinfo where id = #{id}
+	</select>
+
+	<!-- model, price -->
+	<update id="update" parameterType="phone">
+		update phones set price = #{price} where num = #{num}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
