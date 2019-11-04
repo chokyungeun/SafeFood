@@ -5,7 +5,7 @@
 <center>
 		<h1>Spring MVC 게시판</h1>	
 		<img src="img/f1.jpg">
-		<form method="post" action="search.do">
+		<form method="post" action="listsearch.food">
 			<select name="search">
 				<option value="name">글쓴이</option>
 				<option value="title">제목</option>
@@ -26,7 +26,7 @@
 		   <td align=center bgcolor=pink>&nbsp;<font size=2>${row.num }</td>
 	       
 	      <td align=center bgcolor=pink>&nbsp;<font size=2>
-	       <a href="read.do?num=${row.num }">${row.title }</a></td>
+	       <a href="listread.food?num=${row.num }">${row.title }</a></td>
 	       
 	      <td align=center bgcolor=pink>&nbsp;<font size=2>${row.name }</td>
 	       
@@ -38,5 +38,5 @@
 	    </c:forEach>
 </table>
 <br></br>
-<a href=insert.do>새글쓰기</a>
+<a href=listinsert.food>새글쓰기</a>
 </body></html>
