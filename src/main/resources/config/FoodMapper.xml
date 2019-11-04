@@ -26,7 +26,7 @@
 						name like concat('%', #{word}, '%')
 					</when>
 					<when test="key == 'maker'">
-						address like concat('%', #{word}, '%')
+						maker like concat('%', #{word}, '%')
 					</when>
 				</choose>
 			</if>
