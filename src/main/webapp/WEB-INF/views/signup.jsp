@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -107,30 +107,26 @@ button:hover {
 					</h1>
 					<hr>
 
-					<label for="id" style="font-family: 'Sunflower', sans-serif;"><b>아이디</b></label>
-					<input type="text" placeholder="Enter id" name="id" required>
-					<label for="pass"><b>비밀번호</b></label> <input type="password"
-						placeholder="Enter Password" name="pw" required> <label
-						for="name"><b>이 름</b></label> <input type="text"
-						placeholder="Enter Name" name="name" required> <label
-						for="phone"><b>전화 번호</b></label> <input type="text"
-						placeholder="Phone Number" name="phone" required> <label
-						for="allergy"><h4>알러지 정보</h4></label>
+					<label for="id" style="font-family: 'Sunflower', sans-serif;"><b>아이디</b></label> <input type="text" placeholder="Enter id" name="id" required>
+					<label for="pass"><b>비밀번호</b></label> <input type="password" placeholder="Enter Password" name="pw" required> 
+					<label for="name"><b>이 름</b></label> <input type="text" placeholder="Enter Name" name="name" required> 
+					<label for="phone"><b>전화 번호</b></label> <input type="text" placeholder="Phone Number" name="phone" required> 
+					<label for="allergy"><h4>알러지 정보</h4></label>
 
 					<div class="form-group">
 						<div class="col-sm-2 control-label">
 							<label id="allergy"></label>
 						</div>
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='bean' />대두
+							<input type='checkbox' name='allergy' value='대두' />대두
 						</div>
 						&nbsp;
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='shrimp' />새우
+							<input type='checkbox' name='allergy' value='땅콩' />땅콩
 						</div>
 						&nbsp;
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='cucomber' />오이
+							<input type='checkbox' name='allergy' value='우유' />우유
 						</div>
 					</div>
 
@@ -139,15 +135,15 @@ button:hover {
 							<label id="allergy"> </label>
 						</div>
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='peach' />복숭아
+							<input type='checkbox' name='allergy' value='게' />게
 						</div>
 						&nbsp;
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='peanut' />땅콩
+							<input type='checkbox' name='allergy' value='새우' />새우
 						</div>
 						&nbsp;
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='salmon' />연어
+							<input type='checkbox' name='allergy' value='참치' />참치
 						</div>
 					</div>
 
@@ -156,15 +152,15 @@ button:hover {
 							<label id="allergy"> </label>
 						</div>
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='milk' />우유
+							<input type='checkbox' name='allergy' value='연어' />연어
 						</div>
 						&nbsp;
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='beef' />소고기
+							<input type='checkbox' name='allergy' value='쑥' />쑥
 						</div>
 						&nbsp;
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='egg' />계란
+							<input type='checkbox' name='allergy' value='소고기' />소고기
 						</div>
 					</div>
 
@@ -173,17 +169,26 @@ button:hover {
 							<label id="allergy"> </label>
 						</div>
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='crap' />게
+							<input type='checkbox' name='allergy' value='닭고기' />닭고기
 						</div>
 						&nbsp;
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='ssuk' />쑥
+							<input type='checkbox' name='allergy' value='돼지고기' />돼지고기
 						</div>
 						&nbsp;
 						<div class="col-sm-2">
-							<input type='checkbox' name='allergy' value='tuna' />참치
+							<input type='checkbox' name='allergy' value='복숭아' />복숭아
 						</div>
 					</div>
+					<div class="form-group">
+						<div class="col-sm-2 control-label">
+							<label id="allergy"> </label>
+						</div>
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='민들레' />민들레
+						</div>
+					</div>
+					
 					<br> <br>
 
 

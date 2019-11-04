@@ -126,8 +126,8 @@ button:hover {
 				<p>아래 사항들을 적어주세요.</p>
 				<hr>
 				<div class="container2">
-					<label for="id"><b>아이디</b></label> <input type="text"
-						placeholder="ID" name="id" required> <label for="psw"><b>비밀번호</b></label>
+					<label for="id"><b>아이디</b></label> 
+					<input type="text" placeholder="ID" name="id" required> <label for="psw"><b>비밀번호</b></label>
 					<input type="password" placeholder="Password" name="pass" required>
 
 					<!-- 
@@ -141,18 +141,12 @@ button:hover {
     -->
 
 					<div class="clearfix">
-						<button type="submit" class="signupbtn">
-							로그인</a>
-						</button>
-						<button type="button" class="cancelbtn"
-							onclick="location.href='main.food'">취소</button>
+						<button type="submit" class="signupbtn"> 로그인</a> </button>
+						<button type="button" class="cancelbtn" onclick="location.href='main.food'">취소</button>
 					</div>
 
 					<div>
-						<button type="button" class="signupbtn2"
-							onclick="location.href='insertForm.food' ">
-							회원가입</a>
-						</button>
+						<button type="button" class="signupbtn2" onclick="location.href='insertForm.food' "> 회원가입</a> 	</button>
 					</div>
 
 

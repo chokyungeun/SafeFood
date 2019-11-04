@@ -187,18 +187,15 @@
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 									</ul>
-									<form method="post" action="chart.food"
-										class="form-inline my-2 my-lg-0">
-										<select name="condition" class="custom-select"
-											style="font-family: 'Sunflower', sans-serif;">
+									<form method="post" action="chart.food" class="form-inline my-2 my-lg-0">
+										<select name="condition" class="custom-select" style="font-family: 'Sunflower', sans-serif;">
 											<option value="popular">인기순</option>
 											<option value="best">권장식품</option>
 											<option value="bad">비권장식품</option>
 										</select> <span></span> &nbsp;
 										<button class="btn btn-secondary my-2 my-sm-0" type="submit">검색</button>
 									</form>
-									&nbsp; <a href="random.food" button
-										class="btn btn-secondary my-2 my-sm-0">랜덤식품</a>
+									&nbsp; <a href="random.food" button	class="btn btn-secondary my-2 my-sm-0">랜덤식품</a>
 								</div>
 							</nav>
 						</p>
@@ -220,10 +217,8 @@
 						%>
 						<div class="col-sm-4">
 							<div class="wine_v_1 text-center pb-4">
-								<a href="read.food?code=<%=list.get(i).getCode()%>"
-									class="thumbnail d-block mb-4"><img
-									src="/safefood/resources/<%=list.get(i).getImg()%>" alt="Image"
-									class="img-fluid"></a>
+								<a href="read.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4">
+								<img src="/safefood/resources/<%=list.get(i).getImg()%>" alt="Image" class="img-fluid"></a>
 								<div>
 									<h3 class="heading mb-1">
 										<a href="#"><%=list.get(i).getName()%></a>
@@ -283,10 +278,8 @@
 				<div id="loader" class="show fullscreen"
 					style="font-family: 'Sunflower', sans-serif;">
 					<svg class="circular" width="48px" height="48px">
-						<circle class="path-bg" cx="24" cy="24" r="22" fill="none"
-							stroke-width="4" stroke="#eeeeee" />
-						<circle class="path" cx="24" cy="24" r="22" fill="none"
-							stroke-width="4" stroke-miterlimit="10" stroke="#ff5e15" /></svg>
+						<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+						<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#ff5e15" /></svg>
 				</div>
 
 				<script src="js/jquery-3.3.1.min.js"></script>

@@ -81,13 +81,10 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-12 text-center">
-						<a href="main.food" class="site-logo"> <img src="resources/img/메인.PNG"
-							alt="Image" class="img-fluid">
-						</a>
+						<a href="main.food" class="site-logo"> <img src="resources/img/메인.PNG" 	alt="Image" class="img-fluid"> </a>
 					</div>
-					<a href="#"
-						class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
-						class="icon-menu h3"></span></a>
+					<a href="#" class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black">\
+					<span class="icon-menu h3"></span></a>
 				</div>
 			</div>
 
@@ -95,27 +92,19 @@
 
 
 			<div
-				class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block"
-				role="banner">
+				class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block" role="banner">
 
 				<div class="container">
 					<div class="d-flex align-items-center">
 
 						<div class="mx-auto">
-							<nav class="site-navigation position-relative text-left"
-								role="navigation">
-								<ul
-									class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
-									<li><a href="main.food" class="btn btn-outline-success"
-										style="font-family: 'Sunflower', sans-serif;">&nbsp 홈 화면</a></li>
-									<li><a href="#" class="btn btn-outline-success"
-										style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
-									<li><a href="list.food" class="btn btn-outline-success"
-										style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
-									<li><a href="chart.food" class="btn btn-outline-success"
-										style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
-									<li><a href="#" class="btn btn-outline-success"
-										style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
+							<nav class="site-navigation position-relative text-left" role="navigation">
+								<ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
+									<li><a href="main.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">&nbsp 홈 화면</a></li>
+									<li><a href="#" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
+									<li><a href="list.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
+									<li><a href="chart.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
+									<li><a href="#" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
 								</ul>
 							</nav>
 
@@ -134,11 +123,8 @@
 
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-					<a class="navbar-brand" href="#"
-						style="font-family: 'Sunflower', sans-serif;">식품검색</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse"
-						data-target="#navbarColor02" aria-controls="navbarColor02"
-						aria-expanded="false" aria-label="Toggle navigation">
+					<a class="navbar-brand" href="#" style="font-family: 'Sunflower', sans-serif;">식품검색</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
@@ -153,14 +139,11 @@
 						</ul>
 						<form method="post" action="search.food"
 							class="form-inline my-2 my-lg-0">
-							<select name="condition" class="custom-select"
-								style="font-family: 'Sunflower', sans-serif;">
+							<select name="condition" class="custom-select" style="font-family: 'Sunflower', sans-serif;">
 								<option value="name">이름</option>
 								<option value="maker">제조사</option>
-							</select> <span></span> <input class="form-control mr-sm-2" type="text"
-								placeholder="" name="word">
-							<button class="btn btn-secondary my-2 my-sm-0" type="submit"
-								style="font-family: 'Sunflower', sans-serif;">검색</button>
+							</select> <span></span> <input class="form-control mr-sm-2" type="text" placeholder="" name="word">
+							<button class="btn btn-secondary my-2 my-sm-0" type="submit" style="font-family: 'Sunflower', sans-serif;">검색</button>
 						</form>
 					</div>
 				</nav>
@@ -177,10 +160,8 @@
 					<div class="col-lg-4 mb-5 col-md-6">
 
 						<div class="wine_v_1 text-center pb-4">
-							<a href="read.food?code=<%=list.get(i).getCode()%>"
-								class="thumbnail d-block mb-4"><img
-								src="/safefood/resources/<%=list.get(i).getImg()%>" alt="Image"
-								class="img-fluid"></a>
+							<a href="read.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4">
+							<img src="/safefood/resources/<%=list.get(i).getImg()%>" alt="Image" class="img-fluid"></a>
 							<div>
 								<h3 class="heading mb-1">
 									<a href="#"><%=list.get(i).getName()%></a>
@@ -241,13 +222,10 @@
 
 
 		<!-- loader -->
-		<div id="loader" class="show fullscreen"
-			style="font-family: 'Sunflower', sans-serif;">
+		<div id="loader" class="show fullscreen" style="font-family: 'Sunflower', sans-serif;">
 			<svg class="circular" width="48px" height="48px">
-  		<circle class="path-bg" cx="24" cy="24" r="22" fill="none"
-					stroke-width="4" stroke="#eeeeee" />
-  		<circle class="path" cx="24" cy="24" r="22" fill="none"
-					stroke-width="4" stroke-miterlimit="10" stroke="#ff5e15" />
+  		<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+  		<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#ff5e15" />
   	</svg>
 		</div>
 

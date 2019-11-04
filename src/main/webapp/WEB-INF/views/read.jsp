@@ -120,16 +120,11 @@
 								role="navigation">
 								<ul
 									class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
-									<li><a href="main.food" class="btn btn-outline-success"
-										style="font-family: 'Sunflower', sans-serif;">&nbsp 홈 화면</a></li>
-									<li><a href="#" class="btn btn-outline-success"
-										style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
-									<li><a href="list.food" class="btn btn-outline-success"
-										style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
-									<li><a href="chart.food" class="btn btn-outline-success"
-										style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
-									<li><a href="#" class="btn btn-outline-success"
-										style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
+									<li><a href="main.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">&nbsp 홈 화면</a></li>
+									<li><a href="#" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
+									<li><a href="list.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
+									<li><a href="chart.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
+									<li><a href="#" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
 								</ul>
 								</ul>
 							</nav>
@@ -226,13 +221,10 @@
 									<button class="btn btn-outline-primary js-btn-minus"
 										type="button">&minus;</button>
 								</div>
-								<input type="text" class="form-control text-center border mr-0"
-									value="1" placeholder=""
-									aria-label="Example text with button addon"
-									aria-describedby="button-addon1">
+								<input type="text" class="form-control text-center border mr-0" value="1" placeholder="" 
+								aria-label="Example text with button addon" aria-describedby="button-addon1">
 								<div class="input-group-append">
-									<button class="btn btn-outline-primary js-btn-plus"
-										type="button">&plus;</button>
+									<button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
 								</div>
 							</div>
 
@@ -241,22 +233,15 @@
 							<a href="#" class="btn btn-outline-primary">추가하기</a>
 
 							<!-- Button trigger modal -->
-							<button type="button" class="btn btn-outline-primary"
-								data-toggle="modal" data-target="#exampleModal">성분표 보기
-							</button>
+							<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">성분표 보기 </button>
 
 							<!-- Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1"
-							role="dialog" aria-labelledby="exampleModalLabel"
-							aria-hidden="true">
+						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel"
-											style="font-family: 'Sunflower', sans-serif;">${b.name }
-											성분표</h5>
-										<button type="button" class="close" data-dismiss="modal"
-											aria-label="Close">
+										<h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Sunflower', sans-serif;">${b.name } 성분표</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
@@ -264,15 +249,11 @@
 										<div id="donutchart" style="width: 900px; height: 300px;"></div>
 									</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary"
-											data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 									</div>
 								</div>
 							</div>
 						</div>
-
-
-
 
 						</p>
 					</div>
@@ -308,10 +289,8 @@
 		<!-- loader -->
 		<div id="loader" class="show fullscreen">
 			<svg class="circular" width="48px" height="48px">
-				<circle class="path-bg" cx="24" cy="24" r="22" fill="none"
-					stroke-width="4" stroke="#eeeeee" />
-				<circle class="path" cx="24" cy="24" r="22" fill="none"
-					stroke-width="4" stroke-miterlimit="10" stroke="#ff5e15" /></svg>
+				<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+				<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#ff5e15" /></svg>
 		</div>
 
 		<script src="js/jquery-3.3.1.min.js"></script>

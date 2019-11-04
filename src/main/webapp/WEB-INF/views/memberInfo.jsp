@@ -109,85 +109,92 @@ button:hover {
 					<p>개인 정보를 수정 해주세요.</p>
 					<hr>
 
-					<label for="id"><b>사용자 ID</b></label> <input type="text"
-						placeholder="${m.id }" name="id" required disabled="disabled" value="${m.id }">
+					<label for="id"><b>사용자 ID</b></label> <input type="text" placeholder="${m.id }" name="id" required disabled="disabled" value="${m.id }">
 
-					<label for="pass"><b>비밀 번호</b></label> <input type="password"
-						placeholder="${m.pw }" name="pw" value="${m.pw }"> <label for="name"><b>이
-							름</b></label> <input type="text" placeholder="${m.name }" name="name"
-						required disabled="disabled" value="${m.name }"> <label for="phone"><b>전화
-							번호</b></label> <input type="text" placeholder="${m.phone }" name="phone" value="${m.phone }">
-					<label for="allergy" style="font-family: 'Sunflower', sans-serif;"><b>내
-							알러지</b></label> <input type="text" placeholder="${m.allergy }" required
-						disabled="disabled" value="${m.allergy }"> <label for="allergy"><b>알러지
-							정보</b></label><br> <br> <span>
+					<label for="pass"><b>비밀 번호</b></label> <input type="password" placeholder="${m.pw }" name="pw" value="${m.pw }"> 
+					<label for="name"><b>이 름</b></label> <input type="text" placeholder="${m.name }" name="name" required disabled="disabled" value="${m.name }"> 
+					<label for="phone"><b>전화 번호</b></label> <input type="text" placeholder="${m.phone }" name="phone" value="${m.phone }">
+					<label for="allergy" style="font-family: 'Sunflower', sans-serif;"><b>내 알러지</b></label> 
+					<input type="text" placeholder="${m.allergy }" required disabled="disabled" value="${m.allergy }"> <label for="allergy"><b>알러지 정보</b></label><br> <br> <span>
+							
+							
 						<div class="form-group">
-							<div class="col-sm-2 control-label">
-								<label id="allergy"></label>
-							</div>
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='bean' />대두
-							</div>
-							&nbsp;
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='shrimp' />새우
-							</div>
-							&nbsp;
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='cucomber' />오이
-							</div>
+						<div class="col-sm-2 control-label">
+							<label id="allergy"></label>
 						</div>
-
-						<div class="form-group">
-							<div class="col-sm-2 control-label">
-								<label id="allergy"> </label>
-							</div>
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='peach' />복숭아
-							</div>
-							&nbsp;
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='peanut' />땅콩
-							</div>
-							&nbsp;
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='salmon' />연어
-							</div>
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='대두' />대두
 						</div>
-
-						<div class="form-group">
-							<div class="col-sm-2 control-label">
-								<label id="allergy"> </label>
-							</div>
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='milk' />우유
-							</div>
-							&nbsp;
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='beef' />소고기
-							</div>
-							&nbsp;
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='egg' />계란
-							</div>
+						&nbsp;
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='땅콩' />땅콩
 						</div>
+						&nbsp;
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='우유' />우유
+						</div>
+					</div>
 
-						<div class="form-group">
-							<div class="col-sm-2 control-label">
-								<label id="allergy"> </label>
-							</div>
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='crap' />게
-							</div>
-							&nbsp;
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='ssuk' />쑥
-							</div>
-							&nbsp;
-							<div class="col-sm-2">
-								<input type='checkbox' name='allergy' value='tuna' />참치
-							</div>
-						</div> <br> <br>
+					<div class="form-group">
+						<div class="col-sm-2 control-label">
+							<label id="allergy"> </label>
+						</div>
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='게' />게
+						</div>
+						&nbsp;
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='새우' />새우
+						</div>
+						&nbsp;
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='참치' />참치
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-2 control-label">
+							<label id="allergy"> </label>
+						</div>
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='연어' />연어
+						</div>
+						&nbsp;
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='쑥' />쑥
+						</div>
+						&nbsp;
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='소고기' />소고기
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-2 control-label">
+							<label id="allergy"> </label>
+						</div>
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='닭고기' />닭고기
+						</div>
+						&nbsp;
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='돼지고기' />돼지고기
+						</div>
+						&nbsp;
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='복숭아' />복숭아
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2 control-label">
+							<label id="allergy"> </label>
+						</div>
+						<div class="col-sm-2">
+							<input type='checkbox' name='allergy' value='민들레' />민들레
+						</div>
+					</div>
+						
+						<br> <br>
 						<div class="clearfix">
 							<button type="submit" class="signupbtn"
 								style="font-family: 'Sunflower', sans-serif;">수정완료</button>
