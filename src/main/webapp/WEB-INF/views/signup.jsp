@@ -103,14 +103,14 @@ button:hover {
 				<div class="container2">
 					<h1>
 						회원가입 <img width="50px" height="50px"
-							src="img/animat-pencil-color.gif">
+							src="resources/img/animat-pencil-color.gif">
 					</h1>
 					<hr>
 
 					<label for="id" style="font-family: 'Sunflower', sans-serif;"><b>아이디</b></label>
 					<input type="text" placeholder="Enter id" name="id" required>
 					<label for="pass"><b>비밀번호</b></label> <input type="password"
-						placeholder="Enter Password" name="pass" required> <label
+						placeholder="Enter Password" name="pw" required> <label
 						for="name"><b>이 름</b></label> <input type="text"
 						placeholder="Enter Name" name="name" required> <label
 						for="phone"><b>전화 번호</b></label> <input type="text"

@@ -33,8 +33,9 @@ public class MemberController {
 	}
 	
 	@PostMapping("/loginProcess.food")
-	public String loginProcess(String id, String pass) {
+	public String loginProcess(HttpSession session,String id, String pass) {
 		if(mservice.checkMember(id,pass)) {
+			session.setAttribute("id", id);
 			return "redirect:/main.food";
 		}
 		else {
@@ -44,7 +45,7 @@ public class MemberController {
 	
 	@GetMapping("/login.food")
 	public String login(String id, String pass) {
-		return "logincheck";
+		return "login";
 	}
 	
 	@GetMapping(value="/logout.food")
@@ -58,7 +59,7 @@ public class MemberController {
 		return "signup";
 	}
 	
-	@PostMapping("/signup.food")
+	@GetMapping("/signup.food")
 	public String signup(Member m) {
 		mservice.insert(m);
 		return "redirect:/main.food";
@@ -73,14 +74,23 @@ public class MemberController {
 	}
 	
 	@PostMapping("/update.food")
-	public String update(Member m) {
+	public String update(Member m,HttpSession session) {
+		Member m2 = mservice.selectOne((String)session.getAttribute("id"));
+		m.setId(m2.getId());
+		m.setName(m2.getName());
+		if(m.getAllergy() == null)
+			m.setAllergy(m2.getAllergy());
+		System.out.println(m);
 		mservice.update(m);
+		
 		return "redirect:/main.food";
 	}
 	
 	@GetMapping("/updateProcess.food")
-	public String updateProcess() {
-		return "memberinfo";
+	public String updateProcess(Model model, HttpSession session) {
+		Member m = mservice.selectOne((String)session.getAttribute("id"));
+		model.addAttribute("m", m);
+		return "memberInfo";
 	}
 
 	

@@ -104,22 +104,22 @@ button:hover {
 				<div class="container2">
 					<h1>
 						마이 페이지<img width="50px" height="50px"
-							src="img/animat-customize-color.gif">
+							src="resources/img/animat-customize-color.gif">
 					</h1>
 					<p>개인 정보를 수정 해주세요.</p>
 					<hr>
 
 					<label for="id"><b>사용자 ID</b></label> <input type="text"
-						placeholder="${m.id }" name="id" required disabled="disabled">
+						placeholder="${m.id }" name="id" required disabled="disabled" value="${m.id }">
 
 					<label for="pass"><b>비밀 번호</b></label> <input type="password"
-						placeholder="${m.pw }" name="pw"> <label for="name"><b>이
+						placeholder="${m.pw }" name="pw" value="${m.pw }"> <label for="name"><b>이
 							름</b></label> <input type="text" placeholder="${m.name }" name="name"
-						required disabled="disabled"> <label for="phone"><b>전화
-							번호</b></label> <input type="text" placeholder="${m.phone }" name="phone">
+						required disabled="disabled" value="${m.name }"> <label for="phone"><b>전화
+							번호</b></label> <input type="text" placeholder="${m.phone }" name="phone" value="${m.phone }">
 					<label for="allergy" style="font-family: 'Sunflower', sans-serif;"><b>내
 							알러지</b></label> <input type="text" placeholder="${m.allergy }" required
-						disabled="disabled"> <label for="allergy"><b>알러지
+						disabled="disabled" value="${m.allergy }"> <label for="allergy"><b>알러지
 							정보</b></label><br> <br> <span>
 						<div class="form-group">
 							<div class="col-sm-2 control-label">

@@ -45,6 +45,10 @@ public class Member {
 		this.allergy = allergy;
 	}
 	public Member() {}
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", pw=" + pw + ", name=" + name + ", phone=" + phone + ", allergy=" + allergy + "]";
+	}
 	
 	
 	
