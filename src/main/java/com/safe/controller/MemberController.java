@@ -7,13 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.safe.dao.IMember;
 import com.safe.dao.MemberDAO;
+import com.safe.service.MemberService;
 import com.safe.vo.Member;
 
 public class MemberController {
-	IMember bean;
-	SafeFoodController sc = new SafeFoodController();
+	@Autowired
+	MemberService mservice;
 
 	public MemberController() {
 		bean = new MemberDAO();
