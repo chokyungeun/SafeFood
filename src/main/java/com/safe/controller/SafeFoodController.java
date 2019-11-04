@@ -27,7 +27,9 @@ public class SafeFoodController {
 	}
 
 	@GetMapping("/main.food")
-	public String main() {
+	public String main(Model model) {
+		List<Food> list = fservice.searchAll();
+		model.addAttribute("list", list);
 		return "main";
 	}
 	
