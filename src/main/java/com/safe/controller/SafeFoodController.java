@@ -44,7 +44,7 @@ public class SafeFoodController {
 	public String detail(Model model, int code) {
 		fservice.countUp(code);
 		Food f = fservice.selectOne(code);
-		model.addAttribute("f", f);
+		model.addAttribute("b", f);
 
 		return "read";
 	}

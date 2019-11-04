@@ -34,7 +34,7 @@
 	</select>
 
 	<update id="countUp" parameterType="java.lang.Integer" >
-		update food set count =count+1 where code= #{x}
+		update food set count =count+1 where code= #{code}
 	</update>
 	
 </mapper>

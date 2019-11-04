@@ -16,11 +16,11 @@ public class FoodDaoImpl implements FoodDao {
 	SqlSession session;
 
 	public List<Food> searchAll() {
-		return session.selectList("Food.searchAll");
+		return session.selectList("food.searchAll");
 	}
 
 	public Food selectOne(int code) {
-		return session.selectOne("Food.selectOne",code);
+		return session.selectOne("food.selectOne",code);
 	}
 
 	public ArrayList<Food> searchBest() {
@@ -41,9 +41,7 @@ public class FoodDaoImpl implements FoodDao {
 	}
 	
 	public int countUp(int code) {
-		session.commit();
-		return session.update("Food.countUp",code);
-
+		return session.update("food.countUp",code);
 	}
 	
 

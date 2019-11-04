@@ -27,20 +27,20 @@ public class MemberDAO implements IMember {
 	}
 	
 	public Member selectOne(String id) {
-	return session.selectOne("Member.selectOne",id);
+	return session.selectOne("member.selectOne",id);
 	}
 	
 	public void insert(Member b) {
-		session.insert("Member.insert",b);
+		session.insert("member.insert",b);
 		session.commit();
 	}
 	public void update(Member b) {
-		session.update("Member.update",b);
+		session.update("member.update",b);
 		session.commit();
 		}
 	
 	public void delete(String id) {
-		session.delete("Member.delete", id);
+		session.delete("member.delete", id);
 		session.commit();
 		}
 }

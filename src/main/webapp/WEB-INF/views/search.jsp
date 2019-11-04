@@ -108,7 +108,7 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-12 text-center">
-						<a href="main.food" class="site-logo"> <img src="img/메인.PNG"
+						<a href="main.food" class="site-logo"> <img src="resources/img/메인.PNG"
 							alt="Image" class="img-fluid">
 						</a>
 					</div>
@@ -218,7 +218,7 @@
 							<div class="wine_v_1 text-center pb-4">
 								<a href="read.food?code=<%=list.get(i).getCode()%>"
 									class="thumbnail d-block mb-4"><img
-									src="/safefood/<%=list.get(i).getImg()%>" alt="Image"
+									src="/safefood/resources/<%=list.get(i).getImg()%>" alt="Image"
 									class="img-fluid"></a>
 								<div>
 									<h3 class="heading mb-1">

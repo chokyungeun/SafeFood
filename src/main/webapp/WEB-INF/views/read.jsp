@@ -95,7 +95,7 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-12 text-center">
-						<a href="main.food" class="site-logo"> <img src="img/메인.PNG"
+						<a href="main.food" class="site-logo"> <img src="resources/img/메인.PNG"
 							alt="Image" class="img-fluid">
 						</a>
 					</div>
@@ -149,7 +149,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-5">
-						<img src="${b.img }" alt="Image" class="img-fluid"> <br>
+						<img src="resources/${b.img }" alt="Image" class="img-fluid"> <br>
 						<table class="table" style="font-family: 'Sunflower', sans-serif;">
 							<tr>
 								<th>이름</th>
