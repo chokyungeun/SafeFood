@@ -1,0 +1,4 @@
+id,pw,name,phone,allergy
+abc,12345,����,010-1212-4444,"bean,peach,salmon,beef,crap,"
+scott,1234,����,010-3333-5555,NULL
+tommy,12345,ws,010-1212-4444,"peach,milk"
