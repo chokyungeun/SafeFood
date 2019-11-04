@@ -3,13 +3,17 @@ package com.safe.dao;
 import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.safe.vo.Member;
 
+@Repository("mdao")
 public class MemberDAO implements IMember {
+	@Autowired
+	SqlSession session;
 	
 	public boolean checkMember(String id, String pass) {
-		SqlSession session = MyBatisUtil.getSqlSession();
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("id", id);//검색조건
 		map.put("pw", pass);//검색어	
@@ -22,28 +26,21 @@ public class MemberDAO implements IMember {
 			return false;
 	}
 	
-public Member selectOne(String id) {
-	SqlSession session = MyBatisUtil.getSqlSession();
+	public Member selectOne(String id) {
 	return session.selectOne("Member.selectOne",id);
 	}
-
-
 	
 	public void insert(Member b) {
-		SqlSession session = MyBatisUtil.getSqlSession();
 		session.insert("Member.insert",b);
 		session.commit();
 	}
 	public void update(Member b) {
-		SqlSession session = MyBatisUtil.getSqlSession();
 		session.update("Member.update",b);
 		session.commit();
 		}
 	
 	public void delete(String id) {
-		SqlSession session = MyBatisUtil.getSqlSession();
 		session.delete("Member.delete", id);
 		session.commit();
 		}
-	
 }
