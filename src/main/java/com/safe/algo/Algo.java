@@ -8,7 +8,7 @@ import java.util.Random;
 import com.safe.vo.Food;
 
 public class Algo {
-
+//dsfsdf
 	public List<Food> goodFood(List<Food> list) {
 
 		Collections.sort(list, new Comparator<Food>() {
