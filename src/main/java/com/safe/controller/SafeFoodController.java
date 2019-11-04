@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.safe.service.FoodService;
-import com.safe.service.MemberService;
 import com.safe.vo.Food;
 
 @Controller
@@ -27,6 +26,11 @@ public class SafeFoodController {
 		return mav;
 	}
 
+	@GetMapping("/main.food")
+	public String main() {
+		return "main";
+	}
+	
 	@GetMapping("/search.food")
 	public String searchAll(Model model) {
 		List<Food> list = fservice.searchAll();

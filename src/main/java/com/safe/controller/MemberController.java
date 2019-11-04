@@ -8,147 +8,80 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.safe.dao.IMember;
 import com.safe.dao.MemberDAO;
 import com.safe.service.MemberService;
 import com.safe.vo.Member;
 
+@Controller
 public class MemberController {
 	@Autowired
 	MemberService mservice;
 
-	public MemberController() {
-		bean = new MemberDAO();
-	}
-
-	public void loginProcess(HttpServletRequest req, HttpServletResponse res) {
-		String id = req.getParameter("id");
-		String pass = req.getParameter("pass");
-		try {
-		HttpSession session = req.getSession();
-		
-		if(bean.checkMember(id,pass)) {
-			session.setAttribute("id", id);
-			String cpage = (String)session.getAttribute("cpage");
-			res.sendRedirect(cpage);
-			/*RequestDispatcher dispatcher = req.getRequestDispatcher(cpage);
-			dispatcher.forward(req, res);*/
-		}
-		else {
-			req.setAttribute("msg", "ID/PW를 입력하세요.");
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/view/login.jsp");
-			dispatcher.forward(req, res);
-		}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
-	public void login(HttpServletRequest req, HttpServletResponse res) { 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/login.jsp");
-		try {
-			dispatcher.forward(req, res);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} 
-		
-	}
-
-	public void logout(HttpServletRequest req, HttpServletResponse res) {
-		HttpSession session = req.getSession();
-		session.setAttribute("id", null);
-
-		try {
-			res.sendRedirect("main.food");
-		} catch (IOException e) {
-		e.printStackTrace();
-	}
-	}
-	public void insertForm(HttpServletRequest req, HttpServletResponse res) {
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/signup.jsp");
-		try {
-			dispatcher.forward(req, res);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void insert(HttpServletRequest req, HttpServletResponse res) {
-		String id = req.getParameter("id");
-		String pass = req.getParameter("pass");
-		String name = req.getParameter("name");
-		String phone = req.getParameter("phone");
-		String[] allergies = req.getParameterValues("allergy");
-		String allergy = "";
-
-		for(int i=0;i<allergies.length;i++) {
-			if(i==allergies.length-1)
-				allergy += allergies[i];
-			else
-				allergy += allergies[i]+",";
-		}
-		
-		Member m = new Member(id,pass,name, phone, allergy);
-		bean.insert(m);
-		
-		try {
-			res.sendRedirect("main.food");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}		
-	}
-
-	public void update(HttpServletRequest req, HttpServletResponse res) {
-		HttpSession session = req.getSession();
-		String id = (String) session.getAttribute("id");
-		Member m = bean.selectOne(id);
-		String pass = req.getParameter("pass");
-		if(pass == "")
-			pass = m.getPw();
-		String name = m.getName();
-		String phone = req.getParameter("phone");
-		if(phone == "")
-			phone = m.getPhone();
-		String[] allergies = req.getParameterValues("allergy");
-		String allergy = "";
-		if(allergies != null) {
-			for(int i=0;i<allergies.length;i++) {
-				if(i==allergies.length-1)
-					allergy += allergies[i];
-				else
-					allergy += allergies[i]+",";
-			}
-		}
-		if(allergy == "")
-			allergy = m.getAllergy();
-		
-		Member m2 = new Member(id,pass,name, phone, allergy);
-		bean.update(m2);
-		sc.main(req,res);
+	@ExceptionHandler
+	public ModelAndView handler(Exception e) {
+		ModelAndView mav = new ModelAndView("ErrorHandler");
+		mav.addObject("msg", e.getMessage());
+		return mav;
 	}
 	
-	public void updateForm(HttpServletRequest req, HttpServletResponse res) {
-		HttpSession session = req.getSession();
-		String id = (String) session.getAttribute("id");
-		System.out.println(id);
-		Member m = bean.selectOne(id);
-		req.setAttribute("m", m);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/memberInfo.jsp");
-		try {
-			dispatcher.forward(req, res);
-		} catch (Exception e) {
-			e.printStackTrace();
+	@PostMapping("/loginProcess.food")
+	public String loginProcess(String id, String pass) {
+		if(mservice.checkMember(id,pass)) {
+			return "redirect:/main.food";
+		}
+		else {
+			return "redirect:/login.food";
 		}
 	}
-	public void delete(HttpServletRequest req, HttpServletResponse res) {
-		HttpSession session = req.getSession();
+	
+	@GetMapping("/login.food")
+	public String login(String id, String pass) {
+		return "logincheck";
+	}
+	
+	@GetMapping(value="/logout.food")
+	public String logout(HttpSession session) {
+		session.setAttribute("id", null);
+		return "redirect:/main.food";
+	}
+	
+	@GetMapping("/insertForm.food")
+	public String insertForm() {
+		return "signup";
+	}
+	
+	@PostMapping("/signup.food")
+	public String signup(Member m) {
+		mservice.insert(m);
+		return "redirect:/main.food";
+	}
+	
+	@GetMapping("/delete.food")
+	public String delete(HttpSession session) {
 		String id = (String) session.getAttribute("id");
-		Member m = bean.selectOne(id);
-		bean.delete(id);
-		session.setAttribute("id", null);	
-		sc.main(req,res);
+		session.setAttribute("id", null);
+		mservice.delete(id);
+		return "redirect:/main.food";
+	}
+	
+	@PostMapping("/update.food")
+	public String update(Member m) {
+		mservice.update(m);
+		return "redirect:/main.food";
+	}
+	
+	@GetMapping("/updateProcess.food")
+	public String updateProcess() {
+		return "memberinfo";
 	}
 
+	
 }

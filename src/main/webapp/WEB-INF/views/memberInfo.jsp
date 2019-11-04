@@ -100,7 +100,7 @@ button:hover {
 	<center>
 		<div class="container">
 
-			<form action="update.food?id=${m.id }" style="border: 1px solid #ccc">
+			<form action="update.food" method="post" style="border: 1px solid #ccc">
 				<div class="container2">
 					<h1>
 						마이 페이지<img width="50px" height="50px"
@@ -113,7 +113,7 @@ button:hover {
 						placeholder="${m.id }" name="id" required disabled="disabled">
 
 					<label for="pass"><b>비밀 번호</b></label> <input type="password"
-						placeholder="${m.pw }" name="pass"> <label for="name"><b>이
+						placeholder="${m.pw }" name="pw"> <label for="name"><b>이
 							름</b></label> <input type="text" placeholder="${m.name }" name="name"
 						required disabled="disabled"> <label for="phone"><b>전화
 							번호</b></label> <input type="text" placeholder="${m.phone }" name="phone">
