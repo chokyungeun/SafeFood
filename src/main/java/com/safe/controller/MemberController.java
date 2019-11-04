@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.safe.dao.IMember;
-import com.safe.dao.MemberDAO;
 import com.safe.service.MemberService;
 import com.safe.vo.Member;
 
