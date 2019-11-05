@@ -13,12 +13,12 @@
                       <table class="table table-striped">
             <tr>
                 <td>작성자</td>
-                <td><input type=input name='name' size=42  value="${cc.name }" readonly="readonly"></td>
+                <td><input type=input name='name' size=42 value="${id }" readonly="readonly"></td>
                
             </tr>
             <tr>
                 <td>제목</td>
-                <td colspan="3"><input type=input name='title' size=42 ></td>
+                <td colspan="3"><input type=input name='title' size=42></td>
             </tr>
 
             <tr>
@@ -28,8 +28,7 @@
              
             <tr>  
                 <td colspan="4"  class="text-center">
-                    <input type="hidden" name="num"  value="${cc.num }">
-                    <input type="submit" value="글수정" class="btn btn-warning">
+                    <input type="submit" value="글작성" class="btn btn-warning">
                     <input type="button"  class="btn btn-primary" onclick="location.href='boardlist.food'" value="전체글보기">
                 </td>
             </tr>
