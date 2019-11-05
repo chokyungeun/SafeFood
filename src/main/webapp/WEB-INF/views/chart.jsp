@@ -8,7 +8,7 @@
 	rel="stylesheet">
 
 <head>
-<title>원석_인경_SafeFood &mdash;</title>
+<title>SafeFood &mdash;</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -74,7 +74,7 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<a class="navbar-brand" href="#"
-		style="font-family: 'Sunflower', sans-serif;">Safefood</a>
+		style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarColor02" aria-controls="navbarColor02"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -115,11 +115,10 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-12 text-center">
-						<a href="main.food" class="site-logo"> <img src="resources/img/메인.PNG"
-							alt="Image" class="img-fluid">
+						<a href="main.food" class="site-logo"> <img src="resources/img/logo2.png" width="500px"	height="100px"  alt="Image" class="img-fluid">
 						</a>
 					</div>
-					<a href="#"
+					<a href="main.food"
 						class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
 						class="icon-menu h3"></span></a>
 				</div>
@@ -156,7 +155,7 @@
 
 		<div class="site-section mt-5">
 			<div class="container">
-				<h2 class="d-block">${msg }</h2>
+				<h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">${msg }</h2>
 
 				<div class="row mb-5">
 					<div class="col-12 section-title text-center mb-5">
@@ -182,9 +181,9 @@
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 									</ul>
-									<form method="post" action="chart.food" class="form-inline my-2 my-lg-0">
-										<select name="condition" class="custom-select" style="font-family: 'Sunflower', sans-serif;">
-											<option value="popular">인기순</option>
+									<form method="post" action="chart.food" class="form-inline my-2 my-lg-0" >
+										<select name="condition" class="custom-select">
+											<option value="popular" >인기순</option>
 											<option value="best">권장식품</option>
 											<option value="bad">비권장식품</option>
 										</select> <span></span> &nbsp;
@@ -212,15 +211,15 @@
 						%>
 						<div class="col-sm-4">
 							<div class="wine_v_1 text-center pb-4">
-								<a href="read.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4">
+								<a href="read.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4" style="font-family: 'Sunflower', sans-serif;">
 								<img src="/safefood/resources/<%=list.get(i).getImg()%>" alt="Image" class="img-fluid"></a>
 								<div>
 									<h3 class="heading mb-1">
-										<a href="#"><%=list.get(i).getName()%></a>
+										<a href="#" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getName()%></a>
 									</h3>
 								</div>
 								<div class="drpt"><%=list.get(i).getMaterial()%></div>
-								<a href="#" class="btn btn-outline-primary">추가</a>
+								<a href="read.food?code=<%=list.get(i).getCode() %>" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif;">추가</a>
 							</div>
 						</div>
 

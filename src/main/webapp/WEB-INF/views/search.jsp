@@ -8,7 +8,7 @@
 	rel="stylesheet">
 
 <head>
-<title>SafeFood &mdash;</title>
+<title>내 알러지를 부탁해 &mdash;</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -73,8 +73,8 @@
 
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="#"
-		style="font-family: 'Sunflower', sans-serif;">Safefood</a>
+	<a class="navbar-brand" href="main.food"
+		style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarColor02" aria-controls="navbarColor02"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -108,11 +108,10 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-12 text-center">
-						<a href="main.food" class="site-logo"> <img src="resources/img/메인.PNG"
-							alt="Image" class="img-fluid">
+						<a href="main.food" class="site-logo"> <img src="resources/img/logo2.png" alt="Image" class="img-fluid" width="500px"	height="100px"  alt="Image" class="img-fluid">
 						</a>
 					</div>
-					<a href="#" class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black">
+					<a href="main.food" class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black">
 						<span class="icon-menu h3"></span></a>
 				</div>
 			</div>
@@ -127,10 +126,10 @@
 							<nav class="site-navigation position-relative text-left" role="navigation">
 								<ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
 									<li><a href="main.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">&nbsp 홈 화면</a></li>
-									<li><a href="#" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
+									<li><a href="boardlist.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
 									<li><a href="list.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
 									<li><a href="chart.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
-									<li><a href="#" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
+									<li><a href="mypage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
 								</ul>
 							</nav>
 
@@ -199,15 +198,15 @@
 						%>
 						<div class="col-sm-4">
 							<div class="wine_v_1 text-center pb-4">
-								<a href="read.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4">
+								<a href="read.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4" style="font-family: 'Sunflower', sans-serif;">
 								<img src="/safefood/resources/<%=list.get(i).getImg()%>" alt="Image" class="img-fluid"></a>
 								<div>
 									<h3 class="heading mb-1">
-										<a href="#"><%=list.get(i).getName()%></a>
+										<a href="#" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getName()%></a>
 									</h3>
 								</div>
-								<div class="drpt"><%=list.get(i).getMaterial()%></div>
-								<a href="read.food?code=<%=list.get(i).getCode()%>" class="btn btn-outline-primary">추가</a>
+								<div class="drpt" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getMaterial()%></div>
+								<a href="read.food?code=<%=list.get(i).getCode()%>" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif;">추가</a>
 							</div>
 						</div>
 

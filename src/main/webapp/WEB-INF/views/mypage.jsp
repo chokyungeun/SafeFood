@@ -9,7 +9,8 @@
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-7 section-title text-center mb-5">
-            <h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">섭취 정보</h2>
+            <h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">섭취 정보<img width="80px" height="80px"
+							src="resources/img/animat-grill-color.gif"></h2>
           </div>
         </div>
         <div class="row mb-5" style="font-family: 'Sunflower', sans-serif;">
@@ -37,7 +38,7 @@
                     </td>
                     <td>${row.count } </td>
                     <td><!--  <img src="resource/img/경고.PNG" alt="Image" class="img-fluid"> --></td>
-                    <td><a href="deletelist.food?id=${row.id }&code=${row.code}" class="btn btn-primary height-auto btn-sm">삭제</a></td>
+                    <td><a href="deletemyfood.food?id=${row.id }&code=${row.code}" class="btn btn-primary height-auto btn-sm">삭제</a></td>
                   </tr>
     			</c:forEach>
                 </tbody>

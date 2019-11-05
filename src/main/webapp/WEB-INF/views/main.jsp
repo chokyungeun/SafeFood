@@ -44,21 +44,21 @@
 					<%
 						for (int i = 0; i < 3; i++) {
 					%>
-					<div class="col-lg-4 mb-5 col-md-6">
+					<div class="col-lg-4 mb-5 col-md-6" >
 
-						<div class="wine_v_1 text-center pb-4">
+						<div class="wine_v_1 text-center pb-4" >
 							<a href="read.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4">
 							<img src="/safefood/resources/<%=list.get(i).getImg()%>" alt="Image" class="img-fluid"></a>
 							<div>
 								<h3 class="heading mb-1">
-									<a href="#"><%=list.get(i).getName()%></a>
+									<a href="#" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getName()%></a>
 								</h3>
 							</div>
 
 
-							<div class="wine-actions">
+							<div class="wine-actions" style="font-family: 'Sunflower', sans-serif;">
 								<h3 class="heading-2">
-									<a href="#"><%=list.get(i).getName()%></a>
+									<a href="#" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getName()%></a>
 								</h3>
 
 								<div class="rating">

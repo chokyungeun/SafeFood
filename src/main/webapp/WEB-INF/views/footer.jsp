@@ -10,7 +10,7 @@
 								<script>
 									document.write(new Date().getFullYear());
 								</script>
-								This site is made with </i> by <a href="#" target="_blank">name_name</a>
+								This site is made with </i> by <a href="#" target="_blank">InKyung&KyungEun</a>
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							</p>
 

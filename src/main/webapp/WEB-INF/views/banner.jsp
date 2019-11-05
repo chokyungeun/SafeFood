@@ -7,7 +7,7 @@
 	rel="stylesheet">
 
 <head>
-<title>SafeFood &mdash;</title>
+<title>내 알러지를 부탁해 &mdash;</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,9 +41,9 @@
 
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="#"
-		style="font-family: 'Sunflower', sans-serif;">Safefood</a>
+<nav class="navbar navbar-expand-lg navbar-#ffeded bg-light">
+	<a class="navbar-brand" href="main.food"
+		style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarColor02" aria-controls="navbarColor02"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -81,7 +81,7 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-12 text-center">
-						<a href="main.food" class="site-logo"> <img src="resources/img/메인.PNG" 	alt="Image" class="img-fluid"> </a>
+						<a href="main.food" class="site-logo"> <img src="resources/img/logo2.png" width="500px"	height="100px"  alt="Image" class="img-fluid"> </a>
 					</div>
 					<a href="#" class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black">\
 					<span class="icon-menu h3"></span></a>

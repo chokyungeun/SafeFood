@@ -84,7 +84,7 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<a class="navbar-brand" href="#"
-		style="font-family: 'Sunflower', sans-serif;">Safefood</a>
+		style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarColor02" aria-controls="navbarColor02"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -117,11 +117,10 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-12 text-center">
-						<a href="main.food" class="site-logo"> <img src="resources/img/메인.PNG"
-							alt="Image" class="img-fluid">
+						<a href="main.food" class="site-logo"> <img src="resources/img/logo2.png" width="500px"	height="100px"  alt="Image" class="img-fluid">
 						</a>
 					</div>
-					<a href="#"
+					<a href="main.food"
 						class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
 						class="icon-menu h3"></span></a>
 				</div>
@@ -161,8 +160,7 @@
 		</div>
 
 
-		<div class="site-section mt-5"
-			style="font-family: 'Sunflower', sans-serif;">
+		<div class="site-section mt-5" style="font-family: 'Sunflower', sans-serif;">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-5">
@@ -191,8 +189,7 @@
 
 					</div>
 					<div class="col-lg-6 ml-auto">
-						<table class="table table-bordered"
-							style="font-family: 'Sunflower', sans-serif;">
+						<table class="table table-bordered" style="font-family: 'Sunflower', sans-serif;">
 							<thead>
 								<tr>
 									<th>영양분</th>
