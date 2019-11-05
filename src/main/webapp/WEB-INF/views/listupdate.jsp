@@ -16,17 +16,17 @@
                       <table class="table table-striped">
             <tr>
                 <td>ID</td>
-                <td><input type=input name='id' size=42 value="${cc.id }" readonly="readonly"></td>
+                <td><input type=input name='id' size=42 value=${cc.id } readonly="readonly"></td>
             </tr>
             
             <tr>
                 <td>작성시간</td>
-                <td><input type=input name='wdate' size=42 value="${cc.wdate }" readonly="readonly"></td>
+                <td><input type=input name='wdate' size=42 value=${cc.wdate } readonly="readonly"></td>
             </tr>
             
             <tr>
                 <td>제목</td>
-                <td colspan="3"><input type=input name='title' value="${cc.title }" size=42></td>
+                <td colspan="3"><input type=input name='title' value=${cc.title } size=42></td>
             </tr>
 
             <tr>
