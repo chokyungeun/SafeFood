@@ -32,7 +32,7 @@
             
            <tr>  
                <td colspan="8"  class="text-center">
-                   <input type="submit"  class="btn btn-warning" onclick="location.href='updatelist.food?num=${cc.num}'" value="글수정">
+                   <input type="submit"  class="btn btn-warning" onclick="location.href='updatelist.food?num=${cc.num}&id=${cc.id }'" value="글수정">
                    <input type="button"  class="btn btn-primary" onclick="location.href='boardlist.food'" value="전체글보기">
                </td>
                <br>
