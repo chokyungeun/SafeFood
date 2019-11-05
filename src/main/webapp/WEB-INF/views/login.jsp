@@ -120,8 +120,7 @@ button:hover {
 			<form action="loginProcess.food" style="border: 1px solid #ccc"
 				method="post">
 				<h1>
-					로그인 페이지<img width="50px" height="50px"
-						src="resources/img/animat-tent-color.gif">
+					로그인 페이지<img width="50px" height="50px" src="resources/img/animat-tent-color.gif">
 				</h1>
 				<p>아래 사항들을 적어주세요.</p>
 				<hr>
