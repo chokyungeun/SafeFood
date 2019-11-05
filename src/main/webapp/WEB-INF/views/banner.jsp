@@ -83,7 +83,7 @@
 					<div class="col-12 text-center">
 						<a href="main.food" class="site-logo"> <img src="resources/img/logo2.png" width="500px"	height="100px"  alt="Image" class="img-fluid"> </a>
 					</div>
-					<a href="#" class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black">\
+					<a href="#" class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black">
 					<span class="icon-menu h3"></span></a>
 				</div>
 			</div>
