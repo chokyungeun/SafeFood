@@ -109,13 +109,13 @@ button:hover {
 					<p>개인 정보를 수정 해주세요.</p>
 					<hr>
 
-					<label for="id"><b>사용자 ID</b></label> <input type="text" placeholder="${m.id }" name="id" required disabled="disabled" value="${m.id }">
+					<label for="id"><b>사용자 ID</b></label> <input type="text" placeholder="${m.id }" name="id" required disabled="disabled" value="${m.id }" style="font-family: 'Sunflower', sans-serif;">
 
 					<label for="pass"><b>비밀 번호</b></label> <input type="password" placeholder="${m.pw }" name="pw" value="${m.pw }"> 
-					<label for="name"><b>이 름</b></label> <input type="text" placeholder="${m.name }" name="name" required disabled="disabled" value="${m.name }"> 
-					<label for="phone"><b>전화 번호</b></label> <input type="text" placeholder="${m.phone }" name="phone" value="${m.phone }">
+					<label for="name"><b>이 름</b></label> <input type="text" placeholder="${m.name }" name="name" required disabled="disabled" value="${m.name }" style="font-family: 'Sunflower', sans-serif;"> 
+					<label for="phone"><b>전화 번호</b></label> <input type="text" placeholder="${m.phone }" name="phone" value="${m.phone }" style="font-family: 'Sunflower', sans-serif;">
 					<label for="allergy" style="font-family: 'Sunflower', sans-serif;"><b>내 알러지</b></label> 
-					<input type="text" placeholder="${m.allergy }" required disabled="disabled" value="${m.allergy }"> <label for="allergy"><b>알러지 정보</b></label><br> <br> <span>
+					<input type="text" placeholder="${m.allergy }" required disabled="disabled" value="${m.allergy }" style="font-family: 'Sunflower', sans-serif;"> <label for="allergy"><b>알러지 정보</b></label><br> <br> <span>
 							
 							
 						<div class="form-group">
