@@ -3,15 +3,29 @@ package com.safe.vo;
 public class MyFood {
 
 	protected String id;
-	protected String code;
+	protected int code;
 	protected String img;
 	protected String name;
-	protected String count;
+	protected int count;
 	protected String allergy;
 	
 	public MyFood() {}
+	
+	
+	
+	public MyFood(String id, int code) {
+		this.id = id;
+		this.code = code;
+	}
+	public MyFood(String id, int code, int count) {
+		this.id = id;
+		this.code = code;
+		this.count = count;
+	}
 
-	public MyFood(String id, String code, String img, String name, String count, String allergy) {
+
+
+	public MyFood(String id, int code, String img, String name, int count, String allergy) {
 		super();
 		this.id = id;
 		this.code = code;
@@ -29,11 +43,11 @@ public class MyFood {
 		this.id = id;
 	}
 
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
@@ -53,11 +67,11 @@ public class MyFood {
 		this.name = name;
 	}
 
-	public String getCount() {
+	public int getCount() {
 		return count;
 	}
 
-	public void setCount(String count) {
+	public void setCount(int count) {
 		this.count = count;
 	}
 

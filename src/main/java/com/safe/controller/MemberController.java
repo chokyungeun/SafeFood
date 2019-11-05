@@ -1,5 +1,7 @@
 package com.safe.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.safe.service.FoodService;
 import com.safe.service.MemberService;
+import com.safe.vo.Food;
 import com.safe.vo.Member;
 import com.safe.vo.MyFood;
 
@@ -18,6 +22,9 @@ import com.safe.vo.MyFood;
 public class MemberController {
 	@Autowired
 	MemberService mservice;
+	
+	@Autowired
+	FoodService fservice;
 
 	@ExceptionHandler
 	public ModelAndView handler(Exception e) {
@@ -79,21 +86,29 @@ public class MemberController {
 		return "redirect:/main.food";
 	}
 
-	@GetMapping("/updateProcess.food")
-	public String updateProcess(Model model, HttpSession session) {
-		Member m = mservice.selectOne((String) session.getAttribute("id"));
-		model.addAttribute("m", m);
-		return "memberInfo";
+	@GetMapping("/mypage.food")
+	public String myPage(Model model, HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		List<MyFood> list = mservice.AllMyfood(id);
+		for(int i=0;i<list.size();i++) {
+			Food f = fservice.selectOne(list.get(i).getCode());
+			list.get(i).setImg(f.getImg());
+			list.get(i).setName(f.getName());
+			list.get(i).setAllergy(f.getAllergy());
+		}
+		model.addAttribute("list", list);
+		return "mypage";
 	}
 	
-	@GetMapping("/updateMyfood.food")
-	public String updateMyfood(String id, String code) {
-		//MyFood mf = mservice.selectMyfood(id,code);
-		
-		
-		
-		return "redirect:/mypage.food";
+	@GetMapping("/addfood.food")
+	public String updateMyfood(Model model,String id, int code, int count) {
+		mservice.updateMyfood(id,code,count);
+		Food f = fservice.selectOne(code);
+		model.addAttribute("b", f);
+		return "read";
 	}
+	
+	
 	
 
 }

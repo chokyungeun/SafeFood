@@ -26,19 +26,26 @@
 		delete from member where id=#{x}
 	</delete>
 	
+	
+	
+	
+	<select id="AllMyfood" parameterType="String" resultType="myfood">
+		select * from myfood where id=#{id} and code=#{code}
+	</select>
+	
 	<select id="selectMyfood" parameterType="myfood" resultType="myfood">
 		select * from myfood where id=#{id} and code=#{code}
 	</select>
 	
-	<insert id="insertfood" parameterType="myfood">
+	<insert id="insertMyfood" parameterType="myfood">
 		insert into myfood(id,code,count) value(#{id},#{code},#{count})
 	</insert>
 	
-	<delete id="deletefood" parameterType="myfood">
+	<delete id="deleteMyfood" parameterType="myfood">
 		delete from myfood where id=#{id} and code=#{code}
 	</delete>
 	
-	<update id="updateFood" parameterType="myfood">
+	<update id="updateMyfood" parameterType="myfood">
 		update myfood set count=#{count} where id=#{id} and code=#{code}
 	</update>
 </mapper>
