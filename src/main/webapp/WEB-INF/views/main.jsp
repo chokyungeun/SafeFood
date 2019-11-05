@@ -46,7 +46,7 @@
 				%>
 				<div class="row" style="font-family: 'Sunflower', sans-serif;">
 					<%
-						for (int i = 0; i < 3; i++) {
+						for (int i = 0; i < list.size(); i++) {
 					%>
 					<div class="col-lg-4 mb-5 col-md-6">
 
