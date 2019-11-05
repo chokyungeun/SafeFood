@@ -27,7 +27,7 @@
 
            <tr>
                <td style="font-weight: bold">글내용</td>
-               <td colspan="8"><textarea  name="content" style="width: 500px; height: 200px"readonly="readonly" >${cc.content }</textarea></td>
+               <td colspan="8"><textarea  name="content" style="width: 100%; height: 200px"readonly="readonly" >${cc.content }</textarea></td>
            </tr>
             
            <tr>  

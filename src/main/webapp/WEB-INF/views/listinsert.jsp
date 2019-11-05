@@ -26,7 +26,7 @@
 
             <tr>
                 <td>글내용</td>
-                <td colspan="3"><textarea name="content" style="width: 500px; height: 200px"></textarea></td>
+                <td colspan="3"><textarea name="content" style="width: 100%; height: 200px"></textarea></td>
             </tr>
              <br><br>
             <tr>  
