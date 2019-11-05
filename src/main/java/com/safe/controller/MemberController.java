@@ -140,7 +140,22 @@ public class MemberController {
 		return "read";
 	}
 	
-	
+	@GetMapping("/findpass.food")
+	public String findpass() {
+		return "findpass";
+	}
+
+	@GetMapping("/findprocess.food")
+	public String findprocess(String id, String phone, HttpSession session) {
+		Member m = mservice.selectOne(id);
+		if(m==null) {
+			session.setAttribute("msg", "해당 아이디가 존재하지 않습니다.");
+		}
+		else {
+			session.setAttribute("msg", "비밀번호는 '" + m.getPw() + "' 입니다.");
+		}
+		return "redirect:/relogin.food";
+	}
 	
 
 }
