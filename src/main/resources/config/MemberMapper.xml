@@ -25,6 +25,18 @@
 	<delete id="delete" parameterType="java.lang.String">
 		delete from member where id=#{x}
 	</delete>
+	
+	<insert id="insertfood" parameterType="myfood">
+		insert into myfood(id,code,count) value(#{id},#{code},#{count})
+	</insert>
+	
+	<delete id="deletefood" parameterType="myfood">
+		delete from myfood where id=#{id} and code=#{code}
+	</delete>
+	
+	<update id="updateFood" parameterType="myfood">
+		update myfood set count=#{count} where id=#{id} and code=#{code}
+	</update>
 </mapper>
 
 
