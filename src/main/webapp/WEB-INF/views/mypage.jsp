@@ -31,14 +31,14 @@
                   <c:forEach var="row" items="${list}">
                   <tr>
                     <td class="product-thumbnail">
-                    <a href="#"><img src="resources/${row.img }" alt="Image" class="img-fluid"></a>
+                    <a href="#"><img src="resources/${row.img }" alt="Image" class="img-fluid" style="font-family: 'Sunflower', sans-serif;"></a>
                     </td>
                     <td class="product-name">
-                      <h2 class="h5 cart-product-title text-black">${row.name }</h2>
+                      <h2 class="h5 cart-product-title text-black" style="font-family: 'Sunflower', sans-serif;">${row.name }</h2>
                     </td>
                     <td>${row.count } </td>
                     <td><!--  <img src="resource/img/경고.PNG" alt="Image" class="img-fluid"> --></td>
-                    <td><a href="deletemyfood.food?id=${row.id }&code=${row.code}" class="btn btn-primary height-auto btn-sm">삭제</a></td>
+                    <td><a href="deletemyfood.food?id=${row.id }&code=${row.code}" class="btn btn-primary height-auto btn-sm" style="font-family: 'Sunflower', sans-serif;">삭제</a></td>
                   </tr>
     			</c:forEach>
                 </tbody>
