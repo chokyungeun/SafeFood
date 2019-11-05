@@ -37,6 +37,7 @@
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <link rel="stylesheet" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
@@ -58,18 +59,28 @@
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
         chart.draw(data, options);
       }
+      
       $(document).ready(function(){
     	  $('#add').click(function(){
-    		 var val = $('#count');
-    		 var code = $('#code	');
-    		  
-    		  
-    		  
+    		 alert("돼");
+    		 
+    		 var count = $('#count').val();
+    		 var code = $('#code').val();
+    		 alert(count +" " + code);
+    		 $.ajax({
+    			url:"safefood/addfood.food",
+    			data:{
+    				code:code,
+    				count:count
+    			},
+    		 	success:function(result, status, xhr){
+    		 		alert("추가되었습니다.");
+    		 	}
+    			
+    		 });
     		  
     	  });
       });
-      
-      
       
       
     </script>
@@ -244,7 +255,7 @@
 
 						</div>
 						<p>
-							<a href="#" id="add" class="btn btn-outline-primary">추가하기</a>
+							<button id="add" class="btn btn-outline-primary">추가하기</button>
 							<input type="hidden" id="code" value="${b.code }"/>
 							
 							<!-- Button trigger modal -->
