@@ -15,12 +15,12 @@
 							src="resources/img/animat-lightbulb-color.gif"></h1>	
 		<br>
 		<form method="post" action="listsearch.food" style="font-family: 'Sunflower', sans-serif;">
-			<select name="search">
+			<select name="search" style="width: 80px; height: 30px;">
 				<option value="id">ID</option>
 				<option value="title">제목</option>
 			</select>
-			<input type="text" name="searchtext"/>
-			<input type="submit" value="검색"/>
+			<input type="text" name="searchtext" style="width: 150px; height: 30px"/>
+			<input type="submit" value="검색" style="width: 100px; height: 30px"/>
 		</form>
 		<br><br>
 

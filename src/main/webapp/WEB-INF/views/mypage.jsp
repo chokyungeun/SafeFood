@@ -1,25 +1,18 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.ArrayList, com.safe.vo.Food"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-family: 'Sunflower', sans-serif;">
 	<%@ include file="banner.jsp"%>
-    
-    
-    
-
-      
-    
 
     <div class="site-section  pb-0">
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-7 section-title text-center mb-5">
-            <h2 class="d-block">섭취 정보</h2>
+            <h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">섭취 정보</h2>
           </div>
         </div>
-        <div class="row mb-5">
+        <div class="row mb-5" style="font-family: 'Sunflower', sans-serif;">
           <form class="col-md-12" method="post">
             <div class="site-blocks-table">
               <table class="table table-bordered">
