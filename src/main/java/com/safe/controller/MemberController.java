@@ -98,12 +98,15 @@ public class MemberController {
 	@GetMapping("/mypage.food")
 	public String myPage(Model model, HttpSession session) {
 		String id = (String) session.getAttribute("id");
+		System.out.println(id);
 		List<MyFood> list = mservice.AllMyfood(id);
+		System.out.println(list.size());
 		for(int i=0;i<list.size();i++) {
 			Food f = fservice.selectOne(list.get(i).getCode());
 			list.get(i).setImg(f.getImg());
 			list.get(i).setName(f.getName());
 			list.get(i).setAllergy(f.getAllergy());
+			System.out.println(f);
 		}
 		model.addAttribute("list", list);
 		return "mypage";

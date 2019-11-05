@@ -62,11 +62,8 @@
       
       $(document).ready(function(){
     	  $('#add').click(function(){
-    		 alert("돼");
-    		 
     		 var count = $('#count').val();
     		 var code = $('#code').val();
-    		 alert(count +" " + code);
     		 $.ajax({
     			url:"safefood/addfood.food",
     			data:{

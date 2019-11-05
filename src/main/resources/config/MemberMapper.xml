@@ -30,7 +30,7 @@
 	
 	
 	<select id="AllMyfood" parameterType="String" resultType="myfood">
-		select * from myfood where id=#{id} and code=#{code}
+		select * from myfood where id=#{id}
 	</select>
 	
 	<select id="selectMyfood" parameterType="myfood" resultType="myfood">
