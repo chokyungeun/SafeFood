@@ -11,6 +11,7 @@
     <div class="col-md-8">
         <h2 class="text-center" style="font-family: 'Sunflower', sans-serif;">게시글 수정</h2><p>&nbsp;</p>
         <form action="updatelist.food" method="post">
+        <input type="hidden" name='num' value="${cc.num }">
             <div class="table table-responsive">
                       <table class="table table-striped">
             <tr>
