@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <link
 	href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap"
 	rel="stylesheet">
-
-
 
 <style>
 body {
@@ -26,10 +23,6 @@ input[type=text], input[type=password] {
 	display: inline-block;
 	border: none;
 	background: #f1f1f1;
-}
-
-container {
-	padding: 50px;
 }
 
 input[type=text]:focus, input[type=password]:focus {
@@ -72,21 +65,18 @@ button:hover {
 	width: 50%;
 }
 
-.signupbtn2 {
-	background-color: blue;
-}
-
 /* Add padding to container elements */
 .container {
+	font-family: 'Sunflower', sans-serif;
 	padding: 16px;
 	width: 50%;
 }
 
 .container2 {
-	font-family: 'Sunflower', sans-serif;
 	padding: 16px;
 	text-align: left;
 }
+
 /* Clear floats */
 .clearfix::after {
 	content: "";
@@ -95,52 +85,37 @@ button:hover {
 }
 
 /* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 150px) {
+@media screen and (max-width: 300px) {
 	.cancelbtn, .signupbtn {
 		width: 100%;
 	}
 }
-</style>
 
+.form-group {
+	display: inline-block;
+}
+</style>
 <body>
 	<center>
-		<c:if test="${not empty msg}">
-			<script type="text/javascript">
-				alert("${msg}");
-			</script>
-		</c:if>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
 		<div class="container">
 
-			<form action="loginProcess.food" style="border: 1px solid #ccc"
-				method="post">
-				<h1>
-					로그인 페이지<img width="50px" height="50px"
-						src="resources/img/animat-tent-color.gif">
-				</h1>
-				<p>아래 사항들을 적어주세요.</p>
-				<hr>
+			<form action="findprocess.food?id=${id}&phone=${phone }" style="border: 1px solid #ccc">
 				<div class="container2">
-					<label for="id"><b>아이디</b></label> 
-					<input type="text" placeholder="ID" name="id" required> <label for="psw"><b>비밀번호</b></label>
-					<input type="password" placeholder="Password" name="pass" required>
+					<h1>
+						비밀번호 찾기  <img width="50px" height="50px" src="resources/img/animat-compass-color.gif">
+					</h1>
+					<hr>
+
+					<label for="id" style="font-family: 'Sunflower', sans-serif;"><b>아이디</b></label> <input type="text" placeholder="Enter id" name="id" required>
+					<label for="phone"><b>전화 번호</b></label> <input type="text" placeholder="Phone Number" name="phone" required> 
+
+					<br> <br>
+
 
 					<div class="clearfix">
-						<button type="submit" class="signupbtn" > 로그인</a> </button>
-						<button type="button" class="cancelbtn" onclick="location.href='main.food'">취소</button>
+						<button type="submit" class="signupbtn" >비밀번호 찾기</button>
+						<button type="button" class="cancelbtn" onclick="location.href='login.food' ">취 소</button>
 					</div>
-
-					<div class="clearfix">
-						<button type="button" class="signupbtn" style="background-color: black" onclick="location.href='findpass.food'"> 비밀번호 찾기</a> </button>
-						<button type="button" class="signupbtn" style="background-color: blue" onclick="location.href='insertForm.food' "> 회원가입</a> 	</button>
-					</div>
-
-
 				</div>
 			</form>
 		</div>

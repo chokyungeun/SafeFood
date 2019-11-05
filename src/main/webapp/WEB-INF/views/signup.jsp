@@ -102,8 +102,7 @@ button:hover {
 			<form action="signup.food" style="border: 1px solid #ccc">
 				<div class="container2">
 					<h1>
-						회원가입 <img width="50px" height="50px"
-							src="resources/img/animat-pencil-color.gif">
+						회원가입 <img width="50px" height="50px" src="resources/img/animat-pencil-color.gif">
 					</h1>
 					<hr>
 
