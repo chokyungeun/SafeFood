@@ -4,7 +4,11 @@
 <!DOCTYPE html>
 <html lang="en" style="font-family: 'Sunflower', sans-serif;">
 	<%@ include file="banner.jsp"%>
-
+<c:if test="${not empty msg}">
+			<script type="text/javascript">
+				alert("${msg}");
+			</script>
+		</c:if>
     <div class="site-section  pb-0" >
       <div class="container">
         <div class="row mb-5 justify-content-center">

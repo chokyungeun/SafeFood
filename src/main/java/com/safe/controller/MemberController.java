@@ -61,6 +61,7 @@ public class MemberController {
 	@GetMapping(value = "/logout.food")
 	public String logout(HttpSession session) {
 		session.setAttribute("id", null);
+		session.setAttribute("msg", "로그아웃되었습니다.");
 		return "redirect:/main.food";
 	}
 
@@ -70,9 +71,10 @@ public class MemberController {
 	}
 
 	@GetMapping("/signup.food")
-	public String signup(Member m) {
+	public String signup(Member m, HttpSession session) {
 		mservice.insert(m);
-		return "redirect:/main.food";
+		session.setAttribute("msg", "회원가입이 완료되었습니다.");
+		return "redirect:/relogin.food";
 	}
 
 	@GetMapping("/delete.food")
@@ -84,10 +86,11 @@ public class MemberController {
 	}
 	
 	@GetMapping("/deletemyfood.food")
-	public String deletemyfood(String id, int code) {
+	public String deletemyfood(String id, int code, HttpSession session) {
 		MyFood mf = new MyFood(id,code);
 		mservice.deletelist(mf);
-		return "redirect:/main.food";
+		session.setAttribute("msg", "삭제되었습니다.");
+		return "redirect:/remypage.food";
 	}
 
 	@PostMapping("/update.food")
@@ -98,8 +101,8 @@ public class MemberController {
 		if (m.getAllergy() == null)
 			m.setAllergy(m2.getAllergy());
 		mservice.update(m);
-
-		return "redirect:/main.food";
+		session.setAttribute("msg", "수정이 완료되었습니다.");
+		return "redirect:/remypage.food";
 	}
 	
 	@GetMapping("/updateForm.food")
@@ -113,6 +116,28 @@ public class MemberController {
 
 	@GetMapping("/mypage.food")
 	public String myPage(Model model, HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		if(id==null) {
+			session.setAttribute("msg","로그인해주세요.");
+			return "redirect:/remain.food";
+		}
+		if(session.getAttribute("msg")!=null) {
+			session.setAttribute("msg",null);
+		}
+		List<MyFood> list = mservice.AllMyfood(id);
+		for(int i=0;i<list.size();i++) {
+			Food f = fservice.selectOne(list.get(i).getCode());
+			list.get(i).setImg(f.getImg());
+			list.get(i).setName(f.getName());
+			list.get(i).setAllergy(f.getAllergy());
+			System.out.println(f);
+		}
+		model.addAttribute("list", list);
+		return "mypage";
+	}
+	
+	@GetMapping("/remypage.food")
+	public String remyPage(Model model, HttpSession session) {
 		String id = (String) session.getAttribute("id");
 		if(id==null) {
 			session.setAttribute("msg","로그인해주세요.");
