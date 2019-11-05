@@ -82,6 +82,13 @@ public class MemberController {
 		mservice.delete(id);
 		return "redirect:/main.food";
 	}
+	
+	@GetMapping("/deletemyfood.food")
+	public String deletemyfood(String id, int code) {
+		MyFood mf = new MyFood(id,code);
+		mservice.deletelist(mf);
+		return "redirect:/main.food";
+	}
 
 	@PostMapping("/update.food")
 	public String update(Member m, HttpSession session) {

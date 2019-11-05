@@ -63,4 +63,12 @@ public class MemberServiceImpl implements MemberService{
 		mdao.updateMyfood(mf2);
 	}
 
+	@Override
+	public void deletelist(MyFood mf) {
+		mdao.deleteMyfood(mf);
+		
+	}
+
+
+
 }

@@ -14,6 +14,7 @@ public interface MemberService {
 	public Member selectOne(String id);
 
 	public void delete(String id);
+	public void deletelist(MyFood mf);
 
 	public List<MyFood> AllMyfood(String id);
 	public MyFood selectMyfood(MyFood mf);

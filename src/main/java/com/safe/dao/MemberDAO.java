@@ -56,12 +56,15 @@ public class MemberDAO implements IMember {
 	public void updateMyfood(MyFood mf) {
 		session.update("member.updateMyfood", mf);
 	}
-	public void deleteMyfood(MyFood mf) {
-		session.update("member.deleteMyfood", mf);
-	}
 
 	@Override
 	public MyFood selectMyfood(MyFood mf) {
 		return session.selectOne("member.selectMyfood", mf);
+	}
+
+	@Override
+	public void deleteMyfood(MyFood mf) {
+		session.update("member.deleteMyfood", mf);
+		
 	}
 }

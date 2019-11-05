@@ -77,7 +77,11 @@ public class BoardController {
 	}
 
 	@GetMapping("/deletelist.food")
-	public String delete(String num) {
+	public String delete(String num, HttpSession session, String id) {
+		if(session.getAttribute("id")==null || !session.getAttribute("id").equals(id)) {
+			session.setAttribute("msg", "수정 권한이 없습니다.");
+			return "redirect:reboardlist.food";
+		}
 		bservice.delete(num);
 		return "redirect:boardlist.food";
 	}
