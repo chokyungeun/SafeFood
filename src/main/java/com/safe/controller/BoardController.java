@@ -2,6 +2,7 @@ package com.safe.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,12 +34,22 @@ public class BoardController {
 	}
 
 	@GetMapping("/boardlist.food")
-	public String boardList(Model model) {
+	public String boardList(Model model, HttpSession session) {
+		if(session.getAttribute("msg")!=null) {
+			session.setAttribute("msg", null);
+		}
 		List<Board> list = bservice.selectAll();
 		model.addAttribute("list", list);
 		return "list";
 	}
-
+	
+	@GetMapping("/reboardlist.food")
+	public String reboardlist(Model model, HttpSession session) {
+		List<Board> list = bservice.selectAll();
+		model.addAttribute("list", list);
+		return "list";
+	}
+	
 	@GetMapping("/listread.food")
 	public String searchBoard(String num, Model model) {
 		Board b = bservice.selectOne(num);
@@ -47,8 +58,14 @@ public class BoardController {
 	}
 
 	@GetMapping("/listinsert.food")
-	public String insert() {
-		return "listinsert";
+	public String insert(HttpSession session) {
+		
+		if(session.getAttribute("id")!=null) //session.equals(null)
+			return "listinsert";
+		else {
+			session.setAttribute("msg",  "로그인 하세요.");
+			return "redirect:reboardlist.food";
+		}
 	}
 
 	@PostMapping("/insertprocess.food")
@@ -64,6 +81,8 @@ public class BoardController {
 		bservice.delete(num);
 		return "redirect:boardlist.food";
 	}
+	
+	
 //	
 //	@PostMapping("/search.do")
 //	public String search(String search, String searchtext, Model model) {
@@ -80,7 +99,14 @@ public class BoardController {
 //	}
 //	
 	@GetMapping("/updatelist.food")
-	public String update(String num, Model model) {
+	public String update(String num, Model model, HttpSession session,String id) {
+		System.out.println(id);
+		System.out.println(session.getAttribute("id"));
+		if(!session.getAttribute("id").equals(id)) {
+			session.setAttribute("msg", "수정 권한이 없습니다.");
+			return "redirect:reboardlist.food";
+		}
+			
 		Board b = bservice.selectOne(num);
 		model.addAttribute("cc", b);
 		return "listupdate";

@@ -207,7 +207,7 @@
 									</h3>
 								</div>
 								<div class="drpt"><%=list.get(i).getMaterial()%></div>
-								<a href="#" class="btn btn-outline-primary">추가</a>
+								<a href="add.food?code=<%=list.get(i).getCode()%>" class="btn btn-outline-primary">추가</a>
 							</div>
 						</div>
 

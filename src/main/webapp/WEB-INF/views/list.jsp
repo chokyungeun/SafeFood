@@ -6,6 +6,11 @@
 <hr><br><br><br>
 	
 <center>
+		<c:if test="${not empty msg}">
+			<script type="text/javascript">
+				alert("${msg}");
+			</script>
+		</c:if>
 		<h1 style="font-family: 'Sunflower', sans-serif;">공지사항</h1>	
 		<br>
 		<form method="post" action="listsearch.food" style="font-family: 'Sunflower', sans-serif;">
