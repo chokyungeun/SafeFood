@@ -148,7 +148,7 @@ public class MemberController {
 	@GetMapping("/findprocess.food")
 	public String findprocess(String id, String phone, HttpSession session) {
 		Member m = mservice.selectOne(id);
-		if(m==null) {
+		if(m==null || !m.getPhone().equals(phone)) {
 			session.setAttribute("msg", "해당 아이디가 존재하지 않습니다.");
 		}
 		else {
