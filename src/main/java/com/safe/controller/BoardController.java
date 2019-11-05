@@ -41,14 +41,14 @@ public class BoardController {
 	}
 
 	@GetMapping("/listinsert.food")
-	public String insert(Board b) {
+	public String insert() {
 		return "listinsert";
 	}
 
 	@PostMapping("/insertprocess.food")
-	public String insertProcess(Board b) {
-		service.insert(b);
-		return "insertProcess";
+	public String insertProcess(String id, String content, String title) {
+//		service.insert(b);
+		return "redirect:boardlist.food";
 	}
 
 //	@GetMapping("/delete.do")

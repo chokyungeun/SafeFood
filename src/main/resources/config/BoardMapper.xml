@@ -15,11 +15,11 @@
   <update id="countUp" parameterType="board">
   	update board set count = count+1 where num = #{num}
   </update>
-<!--  
-  <insert id="insert" parameterType="Board">
-  	insert into board(pass, name, wdate, title, content, count) values(#{pass}, #{name}, sysdate(), #{title}, #{content}, "0")  내부에서 getter 호출
+
+  <insert id="insert" parameterType="board">
+  	insert into board(name, wdate, title, content, count) values(#{pass}, #{name}, sysdate(), #{title}, #{content}, "0")  내부에서 getter 호출
   </insert>
-  
+<!--  
   <update id="update" parameterType="Board">
   	update board set pass = #{pass},name = #{name},content = #{content},title = #{title} where num = #{num}
   </update>
