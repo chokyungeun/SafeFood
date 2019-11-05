@@ -13,7 +13,7 @@
 			<div class="container">
 
 				<h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">식품검색</h2><br>
-				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<nav class="navbar navbar-expand-lg navbar-dark bg-light">
 					<a class="navbar-brand" href="#"></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>

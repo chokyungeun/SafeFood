@@ -72,7 +72,7 @@
 
 
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-light">
 	<a class="navbar-brand" href="main.food" style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarColor02" aria-controls="navbarColor02"
@@ -160,7 +160,7 @@
 					<div class="col-12 section-title text-center mb-5">
 						<p>
 
-							<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+							<nav class="navbar navbar-expand-lg navbar-dark bg-light">
 								<a class="navbar-brand" href="#"></a>
 								<button class="navbar-toggler" type="button"
 									data-toggle="collapse" data-target="#navbarColor02"
