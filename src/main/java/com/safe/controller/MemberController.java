@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.safe.service.MemberService;
 import com.safe.vo.Member;
+import com.safe.vo.MyFood;
 
 @Controller
 public class MemberController {
@@ -84,5 +85,15 @@ public class MemberController {
 		model.addAttribute("m", m);
 		return "memberInfo";
 	}
+	
+	@GetMapping("/updateMyfood.food")
+	public String updateMyfood(String id, String code) {
+		//MyFood mf = mservice.selectMyfood(id,code);
+		
+		
+		
+		return "redirect:/mypage.food";
+	}
+	
 
 }

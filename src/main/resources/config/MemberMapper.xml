@@ -26,6 +26,10 @@
 		delete from member where id=#{x}
 	</delete>
 	
+	<select id="selectMyfood" parameterType="myfood" resultType="myfood">
+		select * from myfood where id=#{id} and code=#{code}
+	</select>
+	
 	<insert id="insertfood" parameterType="myfood">
 		insert into myfood(id,code,count) value(#{id},#{code},#{count})
 	</insert>
