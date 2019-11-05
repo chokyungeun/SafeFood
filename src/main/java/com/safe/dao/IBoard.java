@@ -13,5 +13,5 @@ public interface IBoard {
 	public void countUp(String num);
 	public void delete(String num);
 	public List<Board> findByTitle(String title);
-	public List<Board> findByName(String name);
+	public List<Board> findById(String id);
 }

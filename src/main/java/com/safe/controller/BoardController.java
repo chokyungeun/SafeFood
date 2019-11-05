@@ -83,21 +83,19 @@ public class BoardController {
 	}
 	
 	
-//	
-//	@PostMapping("/search.do")
-//	public String search(String search, String searchtext, Model model) {
-//		List<Board> list = null;
-//		System.out.println(search);
-//		System.out.println(searchtext);
-//		if(search.contentEquals("name")) {
-//			list = service.findByName(searchtext);
-//		}else if(search.contentEquals("title")) {
-//			list = service.findByTitle(searchtext);
-//		}
-//		model.addAttribute("list", list);
-//		return "board/search";
-//	}
-//	
+	
+	@PostMapping("/listsearch.food")
+	public String search(String search, String searchtext, Model model) {
+		List<Board> list = null;
+		if(search.contentEquals("id")) {
+			list = bservice.findById(searchtext);
+		}else if(search.contentEquals("title")) {
+			list = bservice.findByTitle(searchtext);
+		}
+		model.addAttribute("list", list);
+		return "listsearch";
+	}
+	
 	@GetMapping("/updatelist.food")
 	public String update(String num, Model model, HttpSession session,String id) {
 		System.out.println(id);

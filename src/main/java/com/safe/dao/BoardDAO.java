@@ -32,8 +32,8 @@ public class BoardDAO implements IBoard {
 		session.delete("board.delete",num);
 	}
 
-	public List<Board> findByName(String name) {
-		return session.selectList("board.findName",name);
+	public List<Board> findById(String id) {
+		return session.selectList("board.findId",id);
 	}
 
 	public List<Board> findByTitle(String title) {

@@ -46,15 +46,12 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public List<Board> findByTitle(String title) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findByTitle(title);
 	}
 
 	@Override
-	public List<Board> findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Board> findById(String id) {
+		return dao.findById(id);
 	}
-	
 	
 }
