@@ -13,6 +13,8 @@
            <tr>
                <td>작성자</td>
                <td>${cc.name }</td>
+               <td>ID</td>
+               <td>${cc.id }</td>
                <td>날짜</td>
                <td>${cc.wdate }</td>
            </tr>
