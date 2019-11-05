@@ -133,7 +133,7 @@ public class MemberController {
 	@GetMapping("safefood/addfood.food")
 	public String updateMyfood(Model model,HttpSession session,int code, int count) {
 		String id= (String)session.getAttribute("id");
-		System.out.println(id+" "+code+" "+count);
+		
 		mservice.updateMyfood(id,code,count);
 		Food f = fservice.selectOne(code);
 		model.addAttribute("b", f);

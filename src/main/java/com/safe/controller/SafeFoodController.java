@@ -52,7 +52,11 @@ public class SafeFoodController {
 	}
 
 	@GetMapping("/read.food")
-	public String detail(Model model, int code) {
+	public String detail(Model model, int code, HttpSession session) {
+		if(session.getAttribute("id")==null) {
+			session.setAttribute("msg", "로그인해주세요.");
+			return "redirect:remain.food";
+		}
 		fservice.countUp(code);
 		Food f = fservice.selectOne(code);
 		model.addAttribute("b", f);
