@@ -2,6 +2,8 @@ package com.safe.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +30,15 @@ public class SafeFoodController {
 	}
 
 	@GetMapping("/main.food")
-	public String main(Model model) {
+	public String main(Model model, HttpSession session) {
+		if(session.getAttribute("msg")!=null)
+			session.setAttribute("msg", null);
+		List<Food> list = fservice.searchAll();
+		model.addAttribute("list", list);
+		return "main";
+	}
+	@GetMapping("/remain.food")
+	public String remain(Model model) {
 		List<Food> list = fservice.searchAll();
 		model.addAttribute("list", list);
 		return "main";

@@ -114,9 +114,11 @@ public class MemberController {
 	@GetMapping("/mypage.food")
 	public String myPage(Model model, HttpSession session) {
 		String id = (String) session.getAttribute("id");
-		System.out.println(id);
+		if(id==null) {
+			session.setAttribute("msg","로그인해주세요.");
+			return "redirect:/remain.food";
+		}
 		List<MyFood> list = mservice.AllMyfood(id);
-		System.out.println(list.size());
 		for(int i=0;i<list.size();i++) {
 			Food f = fservice.selectOne(list.get(i).getCode());
 			list.get(i).setImg(f.getImg());
