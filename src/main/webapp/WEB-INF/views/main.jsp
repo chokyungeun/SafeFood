@@ -3,7 +3,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<%@ include file="banner.jsp"%>
-
+		<c:if test="${not empty msg}">
+			<script type="text/javascript">
+				alert("${msg}");
+			</script>
+		</c:if>
 		<!-- 검색창 -->
 		<div class="site-section mt-5">
 			<div class="container">
