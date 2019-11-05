@@ -62,7 +62,7 @@ public class MemberController {
 	public String logout(HttpSession session) {
 		session.setAttribute("id", null);
 		session.setAttribute("msg", "로그아웃되었습니다.");
-		return "redirect:/main.food";
+		return "redirect:/remain.food";
 	}
 
 	@GetMapping("/insertForm.food")
