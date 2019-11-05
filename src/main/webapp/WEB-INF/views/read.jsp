@@ -58,6 +58,20 @@
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
         chart.draw(data, options);
       }
+      $(document).ready(function(){
+    	  $('#add').click(function(){
+    		 var val = $('#count');
+    		 var code = $('#code	');
+    		  
+    		  
+    		  
+    		  
+    	  });
+      });
+      
+      
+      
+      
     </script>
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -221,7 +235,7 @@
 									<button class="btn btn-outline-primary js-btn-minus"
 										type="button">&minus;</button>
 								</div>
-								<input type="text" class="form-control text-center border mr-0" value="1" placeholder="" 
+								<input type="text" id ="count" class="form-control text-center border mr-0" value="1" placeholder="" 
 								aria-label="Example text with button addon" aria-describedby="button-addon1">
 								<div class="input-group-append">
 									<button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
@@ -230,8 +244,9 @@
 
 						</div>
 						<p>
-							<a href="#" class="btn btn-outline-primary">추가하기</a>
-
+							<a href="#" id="add" class="btn btn-outline-primary">추가하기</a>
+							<input type="hidden" id="code" value="${b.code }"/>
+							
 							<!-- Button trigger modal -->
 							<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">성분표 보기 </button>
 

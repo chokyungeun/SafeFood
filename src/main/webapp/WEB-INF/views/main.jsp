@@ -66,7 +66,7 @@
 
 								</div>
 
-								<a href="#" class="btn add"></span>추가</a>
+								<a href="read.food?code=<%=list.get(i).getCode() %>" class="btn add"></span>추가</a>
 							</div>
 						</div>
 
