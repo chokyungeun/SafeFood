@@ -42,6 +42,6 @@
 	    </c:forEach>
 </table>
 <br></br>
-<button></button>
-<a href=listinsert.food>새글쓰기</a>
+<button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#e3fced"><a href=listinsert.food>새글쓰기</a></button>
+
 </body></html>
