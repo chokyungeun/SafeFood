@@ -100,7 +100,7 @@ public class BoardController {
 	public String update(String num, Model model, HttpSession session,String id) {
 		System.out.println(id);
 		System.out.println(session.getAttribute("id"));
-		if(!session.getAttribute("id").equals(id)) {
+		if(session.getAttribute("id")==null || !session.getAttribute("id").equals(id)) {
 			session.setAttribute("msg", "수정 권한이 없습니다.");
 			return "redirect:reboardlist.food";
 		}

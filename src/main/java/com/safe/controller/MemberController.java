@@ -40,12 +40,21 @@ public class MemberController {
 			return "redirect:/main.food";
 		} else {
 			session.setAttribute("msg",  "ID/PW를 확인해주세요.");
-			return "redirect:/login.food";
+			return "redirect:/relogin.food";
 		}
 	}
 
+	@GetMapping("/relogin.food")
+	public String relogin(HttpSession session) {
+		
+		return "login";
+	}
+	
 	@GetMapping("/login.food")
-	public String login(String id, String pass) {
+	public String login(HttpSession session) {
+		if(session.getAttribute("msg")!= null) {
+			session.setAttribute("msg", null);
+		}
 		return "login";
 	}
 
