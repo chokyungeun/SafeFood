@@ -2,6 +2,8 @@ package com.safe.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,13 +13,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.safe.service.BoardService;
+import com.safe.service.MemberService;
 import com.safe.vo.Board;
+import com.safe.vo.Member;
 
 
 @Controller
 public class BoardController {
 	@Autowired
-	BoardService service;
+	BoardService bservice;
+	
+	@Autowired
+	MemberService mservice;
 
 	@ExceptionHandler
 	public ModelAndView handler(Exception e) {
@@ -28,14 +35,14 @@ public class BoardController {
 
 	@GetMapping("/boardlist.food")
 	public String boardList(Model model) {
-		List<Board> list = service.selectAll();
+		List<Board> list = bservice.selectAll();
 		model.addAttribute("list", list);
 		return "list";
 	}
 
 	@GetMapping("/listread.food")
 	public String searchBoard(String num, Model model) {
-		Board b = service.selectOne(num);
+		Board b = bservice.selectOne(num);
 		model.addAttribute("cc", b);
 		return "listread";
 	}
@@ -47,7 +54,9 @@ public class BoardController {
 
 	@PostMapping("/insertprocess.food")
 	public String insertProcess(String id, String content, String title) {
-//		service.insert(b);
+		Member m = mservice.selectOne(id);
+		Board b = new Board(id, null, m.getName(), null, title, content, null);
+		bservice.insert(b);
 		return "redirect:boardlist.food";
 	}
 
@@ -71,13 +80,13 @@ public class BoardController {
 //		return "board/search";
 //	}
 //	
-//	@GetMapping("/update.do")
-//	public String update(Board c,Model model) {
-//		Board b = service.selectOne(c.getNum());
-//		model.addAttribute("b", c);
-//		return "listupdate";
-//	}
-//	@PostMapping("/update.do")
+	@GetMapping("/updatelist.food")
+	public String update(String num, Model model) {
+		Board b = bservice.selectOne(num);
+		model.addAttribute("cc", b);
+		return "listupdate";
+	}
+//	@PostMapping("/updatelist.food")
 //	public String updateProcess(Board b) {
 //		Board pass = service.select(b.getNum());
 //		if(pass.getPass().equals(b.getPass())) {

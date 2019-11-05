@@ -17,7 +17,7 @@
   </update>
 
   <insert id="insert" parameterType="board">
-  	insert into board(name, wdate, title, content, count) values(#{pass}, #{name}, sysdate(), #{title}, #{content}, "0")  내부에서 getter 호출
+  	insert into board(id, name, wdate, title, content) values(#{id}, #{name}, sysdate(), #{title}, #{content})
   </insert>
 <!--  
   <update id="update" parameterType="Board">
