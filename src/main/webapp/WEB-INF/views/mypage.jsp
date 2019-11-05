@@ -5,7 +5,7 @@
 <html lang="en" style="font-family: 'Sunflower', sans-serif;">
 	<%@ include file="banner.jsp"%>
 
-    <div class="site-section  pb-0">
+    <div class="site-section  pb-0" >
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-7 section-title text-center mb-5">
@@ -30,7 +30,7 @@
                   <c:forEach var="row" items="${list}">
                   <tr>
                     <td class="product-thumbnail">
-                    <a href="milk.html"><img src="resources/${row.img }" alt="Image" class="img-fluid"></a>
+                    <a href="#"><img src="resources/${row.img }" alt="Image" class="img-fluid"></a>
                     </td>
                     <td class="product-name">
                       <h2 class="h5 cart-product-title text-black">${row.name }</h2>
@@ -48,11 +48,11 @@
     
       </div>
     </div>
-
-
-
+    
+    <center>
+	<button class="btn btn-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;"><a href="insertform.food" style="color: white">회원 정보 수정</a></button>
+     
     
 <%@ include file="footer.jsp"%>
 </body>
-
 </html>

@@ -103,7 +103,7 @@ button:hover {
 			<form action="update.food" method="post" style="border: 1px solid #ccc">
 				<div class="container2">
 					<h1>
-						마이 페이지<img width="50px" height="50px"
+						회원 정보 수정<img width="50px" height="50px"
 							src="resources/img/animat-customize-color.gif">
 					</h1>
 					<p>개인 정보를 수정 해주세요.</p>
