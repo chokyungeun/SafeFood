@@ -7,10 +7,6 @@
 	<%@ include file="banner.jsp"%>
     
     
-    
-
-      
-    
 
     <div class="site-section  pb-0">
       <div class="container">
