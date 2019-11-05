@@ -1,7 +1,4 @@
 package com.safe.dao;
-//DAO(Data Access Object): jsp를 위해 db 작업 수행
-
-//Create, Read, Update, Delete
 
 import java.util.List;
 

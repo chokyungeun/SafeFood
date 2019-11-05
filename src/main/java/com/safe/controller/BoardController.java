@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.safe.service.BoardService;
@@ -32,24 +33,24 @@ public class BoardController {
 		return "list";
 	}
 
-//	@GetMapping("/read.do")
-//	public String searchBoard(String num, Model model) {
-//		Board b = service.selectOne(num);
-//		model.addAttribute("b", b);
-//		return "board/read";
-//	}
-//
-//	@GetMapping("/insert.do")
-//	public String insert(Board b) {
-//		return "board/insert";
-//	}
-//
-//	@PostMapping("/insert.do")
-//	public String insertProcess(Board b) {
-//		service.insert(b);
-//		return "board/insertProcess";
-//	}
-//
+	@GetMapping("/listread.food")
+	public String searchBoard(String num, Model model) {
+		Board b = service.selectOne(num);
+		model.addAttribute("cc", b);
+		return "listread";
+	}
+
+	@GetMapping("/listinsert.food")
+	public String insert(Board b) {
+		return "listinsert";
+	}
+
+	@PostMapping("/insertprocess.food")
+	public String insertProcess(Board b) {
+		service.insert(b);
+		return "insertProcess";
+	}
+
 //	@GetMapping("/delete.do")
 //	public String delete(String num) {
 //		service.delete(num);
@@ -72,9 +73,9 @@ public class BoardController {
 //	
 //	@GetMapping("/update.do")
 //	public String update(Board c,Model model) {
-//		Board b = service.select(c.getNum());
-//		model.addAttribute("b", b);
-//		return "board/update";
+//		Board b = service.selectOne(c.getNum());
+//		model.addAttribute("b", c);
+//		return "listupdate";
 //	}
 //	@PostMapping("/update.do")
 //	public String updateProcess(Board b) {

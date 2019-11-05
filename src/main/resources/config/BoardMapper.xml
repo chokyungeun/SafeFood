@@ -8,21 +8,20 @@
 	 <select id="selectAll" resultType="board">
     select * from board
   </select>
-<!--  
   <select id="selectOne" parameterType="java.lang.String" resultType="board">
     select * from board where num = #{num}
   </select>
- 
+  
+  <update id="countUp" parameterType="board">
+  	update board set count = count+1 where num = #{num}
+  </update>
+<!--  
   <insert id="insert" parameterType="Board">
   	insert into board(pass, name, wdate, title, content, count) values(#{pass}, #{name}, sysdate(), #{title}, #{content}, "0")  내부에서 getter 호출
   </insert>
   
   <update id="update" parameterType="Board">
   	update board set pass = #{pass},name = #{name},content = #{content},title = #{title} where num = #{num}
-  </update>
-
-  <update id="countUp" parameterType="Board">
-  	update board set count = count+1 where num = #{num}
   </update>
  
   <delete id="delete" parameterType="Board">

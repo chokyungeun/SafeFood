@@ -8,7 +8,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <h2 class="text-center">게시글 작성</h2><p>&nbsp;</p>
-        <form action="updatelist.food" method="post">
+        <form action="insertprocess.food" method="post">
             <div class="table table-responsive">
                       <table class="table table-striped">
             <tr>

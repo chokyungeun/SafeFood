@@ -21,26 +21,22 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public Board selectOne(String num) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.selectOne(num);
 	}
 
 	@Override
 	public void insert(Board b) {
-		// TODO Auto-generated method stub
-		
+		dao.insert(b);
 	}
 
 	@Override
 	public void update(Board b) {
-		// TODO Auto-generated method stub
-		
+		dao.update(b);
 	}
 
 	@Override
 	public void countUp(String num) {
-		// TODO Auto-generated method stub
-		
+		dao.countUp(num);
 	}
 
 	@Override
