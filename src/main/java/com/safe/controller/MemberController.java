@@ -94,6 +94,15 @@ public class MemberController {
 
 		return "redirect:/main.food";
 	}
+	
+	@GetMapping("/updateForm.food")
+	public String updateForm(Model model, HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		Member m = mservice.selectOne(id);
+		model.addAttribute("m", m);
+
+		return "memberInfo";
+	}
 
 	@GetMapping("/mypage.food")
 	public String myPage(Model model, HttpSession session) {

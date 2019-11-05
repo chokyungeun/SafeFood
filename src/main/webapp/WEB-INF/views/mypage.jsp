@@ -50,7 +50,7 @@
     </div>
     
     <center>
-	<button class="btn btn-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;"><a href="insertform.food" style="color: white">회원 정보 수정</a></button>
+	<button class="btn btn-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;"><a href="updateForm.food" style="color: white">회원 정보 수정</a></button>
      
     
 <%@ include file="footer.jsp"%>
