@@ -9,7 +9,8 @@
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <h2 class="text-center" style="font-family: 'Sunflower', sans-serif;">게시글 수정</h2><p>&nbsp;</p>
+        <h2 class="text-center" style="font-family: 'Sunflower', sans-serif;">게시글 수정<img width="80px" height="80px"
+							src="resources/img/animat-checkmark-color.gif"></h2><p>&nbsp;</p>
         <form action="updatelist.food" method="post">
         <input type="hidden" name='num' value="${cc.num }">
             <div class="table table-responsive">

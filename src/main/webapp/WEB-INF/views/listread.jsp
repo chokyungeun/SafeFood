@@ -9,7 +9,8 @@
 <div class="row" style="font-family: 'Sunflower', sans-serif;">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <h2 class="text-center" style="font-family: 'Sunflower', sans-serif;">게시글 내용</h2><p>&nbsp;</p>
+        <h2 class="text-center" style="font-family: 'Sunflower', sans-serif;">게시글 내용<img width="80px" height="80px"
+							src="resources/img/animat-sign-post-color.gif"></h2><p>&nbsp;</p>
            <div class="table table-responsive">
                      <table class="table table-striped">
            <tr>

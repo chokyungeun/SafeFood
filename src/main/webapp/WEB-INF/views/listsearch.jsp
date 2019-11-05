@@ -11,7 +11,8 @@
 				alert("${msg}");
 			</script>
 		</c:if>
-		<h1 style="font-family: 'Sunflower', sans-serif;">공지사항</h1>	
+		<h1 style="font-family: 'Sunflower', sans-serif;">검색결과<img width="80px" height="80px"
+							src="resources/img/animat-search-color.gif"></h1>	
 		<br>
 		<form method="post" action="listsearch.food" style="font-family: 'Sunflower', sans-serif;">
 			<select name="search">
