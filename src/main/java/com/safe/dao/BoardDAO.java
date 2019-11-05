@@ -46,7 +46,6 @@ public class BoardDAO implements IBoard {
 
 	public void update(Board b) {
 		session.update("board.update", b);
-		
 	}
 
 }

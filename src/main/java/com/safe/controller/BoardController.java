@@ -2,7 +2,6 @@ package com.safe.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,11 +59,11 @@ public class BoardController {
 		return "redirect:boardlist.food";
 	}
 
-//	@GetMapping("/delete.do")
-//	public String delete(String num) {
-//		service.delete(num);
-//		return "redirect:/list.do";
-//	}
+	@GetMapping("/deletelist.food")
+	public String delete(String num) {
+		bservice.delete(num);
+		return "redirect:boardlist.food";
+	}
 //	
 //	@PostMapping("/search.do")
 //	public String search(String search, String searchtext, Model model) {
@@ -86,14 +85,10 @@ public class BoardController {
 		model.addAttribute("cc", b);
 		return "listupdate";
 	}
-//	@PostMapping("/updatelist.food")
-//	public String updateProcess(Board b) {
-//		Board pass = service.select(b.getNum());
-//		if(pass.getPass().equals(b.getPass())) {
-//			service.update(b);
-//			return "board/updateProcess";
-//		}else {
-//			return "board/updateFail";
-//		}
-//	}
+	@PostMapping("/updatelist.food")
+	public String updateProcess(Board b) {
+		Board bb = new Board(b.getId(), b.getNum(), null, null, b.getTitle(), b.getContent(),null);
+		bservice.update(bb);
+		return "redirect:boardlist.food";
+	}
 }

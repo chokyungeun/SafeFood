@@ -41,7 +41,7 @@
            
            <tr style="background: white; border-color: white">  
                <td colspan="8"  class="text-center">
-                   <input type="button"  class="btn btn-danger" onclick="location.href='deletelist.food?num=${cc.num}''" value="삭제">
+                   <input type="button"  class="btn btn-danger" onclick="location.href='deletelist.food?num=${cc.num}'" value="삭제">
                </td>
                
            </tr>

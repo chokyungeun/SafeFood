@@ -19,14 +19,16 @@
   <insert id="insert" parameterType="board">
   	insert into board(id, name, wdate, title, content) values(#{id}, #{name}, sysdate(), #{title}, #{content})
   </insert>
-<!--  
+
   <update id="update" parameterType="Board">
-  	update board set pass = #{pass},name = #{name},content = #{content},title = #{title} where num = #{num}
+  	update board set title = #{title},content = #{content} where num = #{num}
   </update>
  
   <delete id="delete" parameterType="Board">
   	delete from board where num = #{num}
   </delete>
+
+<!--  
 
   <select id="findName" parameterType="java.lang.String" resultMap="BoardResult">
   	select * from board where name like concat('%',#{name},'%')
