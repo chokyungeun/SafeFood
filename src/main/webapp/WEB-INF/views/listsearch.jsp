@@ -15,22 +15,22 @@
 							src="resources/img/animat-search-color.gif"></h1>	
 		<br>
 		<form method="post" action="listsearch.food" style="font-family: 'Sunflower', sans-serif;">
-			<select name="search">
+			<select name="search" style="width: 80px; height: 30px;">
 				<option value="id">ID</option>
 				<option value="title">제목</option>
 			</select>
 			<input type="text" name="searchtext"/>
-			<input type="submit" value="검색"/>
+			<input type="submit" value="검색" style="background-color: white; border-radius: 10px; font-family: 'Sunflower', sans-serif; border-color:#ffeded; width: 100px; height: 30px"/>
 		</form>
 		<br><br>
 
 		<TABLE BORDER=1 CELLSPACING=1 CELLPADDING = 1 style="font-family: 'Sunflower', sans-serif; text-align:center" ><TR>
-		<th width=100 bgcolor=#e3fced><font color=#000000 size=2>번호</th>
-		<th width=100 bgcolor=#e3fced><font color=#000000 size=2>ID</th>
-		<th width=200 bgcolor=#e3fced><font color=#000000 size=2>제목</th>
-		<th width=100 bgcolor=#e3fced><font color=#000000 size=2>글쓴이</th>
-		<th width=150 bgcolor=#e3fced><font color=#000000 size=2>날짜</th>
-		<th width=100 bgcolor=#e3fced><font color=#000000 size=2>조회수</th>
+		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>번호</th>
+		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>ID</th>
+		<th width=200 bgcolor=#ffeded><font color=#000000 size=2>제목</th>
+		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>글쓴이</th>
+		<th width=150 bgcolor=#ffeded><font color=#000000 size=2>날짜</th>
+		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>조회수</th>
 
 	  <c:forEach var="row" items="${list}">
 	    <tr>
@@ -50,6 +50,6 @@
 	    </c:forEach>
 </table>
 <br></br>
-<button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#e3fced"><a href=boardlist.food>돌아가기</a></button>
+<button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#ffeded"><a href=boardlist.food>돌아가기</a></button>
 
 </body></html>
