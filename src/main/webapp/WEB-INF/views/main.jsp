@@ -8,9 +8,9 @@
 		<div class="site-section mt-5">
 			<div class="container">
 
+				<h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">식품검색</h2><br>
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-					<a class="navbar-brand" href="#" style="font-family: 'Sunflower', sans-serif;">식품검색</a>
+					<a class="navbar-brand" href="#"></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -44,9 +44,9 @@
 					<%
 						for (int i = 0; i < 3; i++) {
 					%>
-					<div class="col-lg-4 mb-5 col-md-6" >
+					<div class="col-lg-4 mb-5 col-md-6">
 
-						<div class="wine_v_1 text-center pb-4" >
+						<div class="wine_v_1 text-center pb-4">
 							<a href="read.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4">
 							<img src="/safefood/resources/<%=list.get(i).getImg()%>" alt="Image" class="img-fluid"></a>
 							<div>
@@ -66,7 +66,7 @@
 
 								</div>
 
-								<a href="read.food?code=<%=list.get(i).getCode() %>" class="btn add"></span>추가</a>
+								<a href="read.food?code=<%=list.get(i).getCode() %>" class="btn add" style="border-radius: 10px;"></span>추가</a>
 							</div>
 						</div>
 

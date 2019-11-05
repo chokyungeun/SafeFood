@@ -8,7 +8,7 @@
 	rel="stylesheet">
 
 <head>
-<title>SafeFood &mdash;</title>
+<title>내 알러지를 부탁해 &mdash;</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -73,8 +73,7 @@
 
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="#"
-		style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
+	<a class="navbar-brand" href="main.food" style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarColor02" aria-controls="navbarColor02"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -182,14 +181,14 @@
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 									</ul>
 									<form method="post" action="chart.food" class="form-inline my-2 my-lg-0" >
-										<select name="condition" class="custom-select">
+										<select name="condition" class="custom-select" style="font-family: 'Sunflower', sans-serif;">
 											<option value="popular" >인기순</option>
 											<option value="best">권장식품</option>
 											<option value="bad">비권장식품</option>
 										</select> <span></span> &nbsp;
-										<button class="btn btn-secondary my-2 my-sm-0" type="submit">검색</button>
+										<button class="btn btn-secondary my-2 my-sm-0" type="submit" style="font-family: 'Sunflower', sans-serif;">검색</button>
 									</form>
-									&nbsp; <a href="random.food" button	class="btn btn-secondary my-2 my-sm-0">랜덤식품</a>
+									&nbsp; <a href="random.food" button	class="btn btn-secondary my-2 my-sm-0" style="font-family: 'Sunflower', sans-serif;">랜덤식품</a>
 								</div>
 							</nav>
 						</p>

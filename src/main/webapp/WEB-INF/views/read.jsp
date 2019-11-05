@@ -82,7 +82,7 @@
       
     </script>
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-#ff8282 bg-light">
 	<a class="navbar-brand" href="#"
 		style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
