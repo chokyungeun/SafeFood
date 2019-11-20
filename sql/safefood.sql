@@ -74,7 +74,20 @@ create table myfood(
     CONSTRAINT PRIMARY KEY(num)
 );
 
+create table qna(
+	id varchar(20) not null, 
+    num int primary key auto_increment, 
+    name varchar(20) not null, 
+    wdate datetime, 
+    title varchar(20) not null, 
+    content varchar(1000), 
+    count int default 0,
+    comment varchar(1000)
+);
 
+insert into qna values('admin', null, "admin", sysdate(), "첫번째", "수고했다", 0, null);
+
+select * from qna;
 
 
 
