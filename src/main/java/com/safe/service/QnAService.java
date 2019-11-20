@@ -2,7 +2,6 @@ package com.safe.service;
 
 import java.util.List;
 
-import com.safe.vo.Board;
 import com.safe.vo.QnA;
 
 public interface QnAService {

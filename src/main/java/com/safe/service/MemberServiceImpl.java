@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.safe.dao.IMember;
-import com.safe.vo.Food;
 import com.safe.vo.Member;
 import com.safe.vo.MyFood;
 

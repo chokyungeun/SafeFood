@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.safe.dao.IBoard;
 import com.safe.dao.IQnA;
-import com.safe.vo.Board;
 import com.safe.vo.QnA;
 
 @Service("qservice")

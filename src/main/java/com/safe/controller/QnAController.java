@@ -2,13 +2,11 @@ package com.safe.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.safe.service.QnAService;
@@ -32,7 +30,7 @@ public class QnAController {
 	}
 
 	@PostMapping("/qna/insert")
-	public void qnainsert(QnA q) {
+	public void qnainsert(@RequestBody QnA q) {
 		System.out.println(q);
 		qservice.insertQ(q);
 	}
