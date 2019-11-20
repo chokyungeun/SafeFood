@@ -37,6 +37,7 @@ public class QnAController {
 
 	@GetMapping("/qna/delete")
 	public void qnadelete(@RequestBody String num) {
+		System.out.println(num);
 		qservice.delete(num);
 	}
 	
