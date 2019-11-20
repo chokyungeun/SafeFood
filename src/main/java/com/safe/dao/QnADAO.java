@@ -18,7 +18,7 @@ public class QnADAO implements IQnA {
 
 	@Override
 	public List<QnA> selectAll() {
-		return session.selectList("");
+		return session.selectList("qna.selectAll");
 	}
 
 	@Override

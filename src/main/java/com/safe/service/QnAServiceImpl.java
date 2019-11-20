@@ -11,8 +11,8 @@ import com.safe.vo.Board;
 import com.safe.vo.QnA;
 
 @Service("qservice")
-public class QnAServiceImpl implements QnAService{
-	
+public class QnAServiceImpl implements QnAService {
+
 	@Autowired
 	IQnA dao;
 
@@ -60,6 +60,5 @@ public class QnAServiceImpl implements QnAService{
 	public List<QnA> findById(String id) {
 		return dao.findById(id);
 	}
-	
-	
+
 }
