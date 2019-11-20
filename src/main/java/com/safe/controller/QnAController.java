@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.safe.service.QnAService;
 import com.safe.vo.QnA;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = { "*" }, maxAge = 6000)
 @RestController
 public class QnAController {
 	@Autowired
@@ -24,8 +26,8 @@ public class QnAController {
 		return qservice.selectAll();
 	}
 
-	@GetMapping("/qna/read")
-	public QnA qnasearch(String num) {
+	@GetMapping("/qna/read/{num}")
+	public QnA qnasearch(@PathVariable String num) {
 		return qservice.selectOne(num);
 	}
 
@@ -35,8 +37,8 @@ public class QnAController {
 		qservice.insertQ(q);
 	}
 
-	@GetMapping("/qna/delete")
-	public void qnadelete(String num) {
+	@DeleteMapping("/qna/delete/{num}")
+	public void qnadelete(@PathVariable String num) {
 		System.out.println(num);
 		qservice.delete(num);
 	}
