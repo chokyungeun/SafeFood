@@ -25,7 +25,7 @@ public class QnAController {
 	}
 
 	@GetMapping("/qna/read")
-	public QnA qnasearch(@RequestBody String num) {
+	public QnA qnasearch(String num) {
 		return qservice.selectOne(num);
 	}
 
@@ -36,7 +36,7 @@ public class QnAController {
 	}
 
 	@GetMapping("/qna/delete")
-	public void qnadelete(@RequestBody String num) {
+	public void qnadelete(String num) {
 		System.out.println(num);
 		qservice.delete(num);
 	}
