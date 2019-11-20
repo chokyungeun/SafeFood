@@ -26,29 +26,29 @@ public class QnAController {
 		return qservice.selectAll();
 	}
 
-	@GetMapping("/qnaread.food")
+	@GetMapping("/qna/read")
 	public QnA qnasearch(String num, Model model) {
 		return qservice.selectOne(num);
 	}
 
-	@GetMapping("/qnainsert.food")
+	@GetMapping("/qna/insert")
 	public void qnainsert(QnA q) {
 		qservice.insertQ(q);
 	}
 
-	@GetMapping("/qnadelete.food")
+	@GetMapping("/qna/delete")
 	public void qnadelete(String num) {
 		qservice.delete(num);
 	}
 	
-	@GetMapping("/insertcomment.food")
+	@GetMapping("/qna/insertcomment")
 	public void insertcomment(String num, String comment) {
 		QnA q = qservice.selectOne(num);
 		q.setComment(comment);
 		qservice.insertA(q);
 	}
 	
-	@PostMapping("/updateqna.food")
+	@PostMapping("/qna/update")
 	public void updateProcess(QnA q) {
 		QnA qq = new QnA(q.getId(), q.getNum(), null, null, q.getTitle(), q.getContent(),null, q.getComment());
 		qservice.update(qq);
