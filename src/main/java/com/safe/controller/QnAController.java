@@ -25,7 +25,7 @@ public class QnAController {
 	}
 
 	@GetMapping("/qna/read")
-	public QnA qnasearch(String num) {
+	public QnA qnasearch(@RequestBody String num) {
 		return qservice.selectOne(num);
 	}
 
