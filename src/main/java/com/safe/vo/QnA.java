@@ -51,6 +51,13 @@ public class QnA {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public QnA(String id, String name, String title, String content) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.title = title;
+		this.content = content;
+	}
 	public String getContent() {
 		return content;
 	}

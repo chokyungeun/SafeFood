@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.safe.service.QnAService;
@@ -31,8 +32,9 @@ public class QnAController {
 		return qservice.selectOne(num);
 	}
 
-	@GetMapping("/qna/insert")
-	public void qnainsert(QnA q) {
+	@PostMapping("/qna/insert")
+	public void qnainsert(@RequestBody QnA q) {
+		System.out.println(q.getId());
 		qservice.insertQ(q);
 	}
 
