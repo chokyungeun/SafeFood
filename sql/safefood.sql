@@ -89,5 +89,32 @@ insert into qna values('admin', null, "admin", sysdate(), "첫번째", "수고�
 
 select * from qna;
 
+create table menu (
+	code int(11) primary key auto_increment,
+    food varchar(100) not null,
+    allergy varchar(1000),
+    calory varchar(100),
+    img varchar(1000)
+);
+
+
+insert into menu values(null, '비빔밥', '달걀', '700', 'img/비빔밥.jpg');
+insert into menu values(null, '쌀밥', null, '272', 'img/쌀밥.jpg');
+insert into menu values(null, '보리밥', null, '294', 'img/보리밥.jpg');
+
+select * from menu;
+
+create table mymenu (
+	num int(7) AUTO_INCREMENT,
+    id varchar(20),
+	code int(11),
+    constraint fk_mid foreign key(id) references member(id),
+    constraint fk_mcode foreign key(code) references menu(code),
+    CONSTRAINT PRIMARY KEY(num)
+);
+
+insert into mymenu values(null, 'admin', 1);
+
+select * from mymenu;
 
 
