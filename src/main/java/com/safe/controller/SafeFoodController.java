@@ -43,7 +43,13 @@ public class SafeFoodController {
 		return "main";
 	}
 	@GetMapping("/qna.food")
-	public String qna() {
+	public String qna(HttpSession session) {
+		if(session.getAttribute("msg")!=null)
+			session.setAttribute("msg", null);
+		return "qna";
+	}
+	@GetMapping("/reqna.food")
+	public String reqna() {
 		return "qna";
 	}
 	

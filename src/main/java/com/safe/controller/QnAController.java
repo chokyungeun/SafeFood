@@ -2,6 +2,8 @@ package com.safe.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -43,10 +45,15 @@ public class QnAController {
 	}
 	
 	@PutMapping("/qna/insertcomment")
-	public void insertcomment(@RequestBody QnA q) {
+	public String insertcomment(@RequestBody QnA q, HttpSession session) {
 		System.out.println(q.getNum() + " " + q.getComment());
+		if(!session.getAttribute("id").equals("admin")) {
+			session.setAttribute("msg", "댓글은 관리자만 등록할 수 있습니다.");
+			return "redirect:reqna.food";
+		}
 		q.setComment(q.getComment());
 		qservice.insertA(q);
+		return "qna";
 	}
 	
 	@PutMapping("/qna/update")
