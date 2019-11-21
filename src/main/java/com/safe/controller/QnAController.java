@@ -46,11 +46,7 @@ public class QnAController {
 	
 	@PutMapping("/qna/insertcomment")
 	public String insertcomment(@RequestBody QnA q, HttpSession session) {
-		System.out.println(q.getNum() + " " + q.getComment());
-		if(!session.getAttribute("id").equals("admin")) {
-			session.setAttribute("msg", "댓글은 관리자만 등록할 수 있습니다.");
-			return "redirect:reqna.food";
-		}
+		
 		q.setComment(q.getComment());
 		qservice.insertA(q);
 		return "qna";

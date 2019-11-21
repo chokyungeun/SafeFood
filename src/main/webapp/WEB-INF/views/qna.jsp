@@ -3,11 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@ include file="banner.jsp"%>
-<c:if test="${not empty msg}">
-			<script type="text/javascript">
-				alert("${msg}");
-			</script>
-		</c:if>
+
 <meta http-equiv=X-UA-Compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <link rel=icon href=/favicon.ico>
