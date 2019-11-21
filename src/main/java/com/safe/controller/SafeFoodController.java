@@ -27,7 +27,7 @@ public class SafeFoodController {
 		mav.addObject("msg", e.getMessage());
 		return mav;
 	}
-
+	
 	@GetMapping("/main.food")
 	public String main(Model model, HttpSession session) {
 		if(session.getAttribute("msg")!=null)
@@ -41,6 +41,10 @@ public class SafeFoodController {
 		List<Food> list = fservice.searchAll();
 		model.addAttribute("list", list);
 		return "main";
+	}
+	@GetMapping("/qna.food")
+	public String qna() {
+		return "qna";
 	}
 	
 	@GetMapping("/list.food")
