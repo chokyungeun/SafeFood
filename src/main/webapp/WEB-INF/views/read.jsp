@@ -65,7 +65,7 @@
     		 var count = $('#count').val();
     		 var code = $('#code').val();
     		 $.ajax({
-    			url:"safefood/addfood.food",
+    			url:"addfood.food",
     			data:{
     				code:code,
     				count:count
@@ -146,7 +146,7 @@
 									<li><a href="list.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
 									<li><a href="chart.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
 									<li><a href="mypage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
-									<li><a href="#" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">Q&A</a></li>
+									<li><a href="index.html" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">Q&A</a></li>
 								</ul>
 								</ul>
 							</nav>

@@ -52,7 +52,7 @@
 
 						<div class="wine_v_1 text-center pb-4">
 							<a href="read.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4">
-							<img src="/safefood/resources/<%=list.get(i).getImg()%>" alt="Image" class="img-fluid"></a>
+							<img src="/resources/<%=list.get(i).getImg()%>" alt="Image" class="img-fluid"></a>
 							<div>
 								<h3 class="heading mb-1">
 									<a href="#" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getName()%></a>

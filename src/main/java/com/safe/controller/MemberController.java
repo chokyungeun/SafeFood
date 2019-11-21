@@ -155,7 +155,7 @@ public class MemberController {
 		return "mypage";
 	}
 	
-	@GetMapping("safefood/addfood.food")
+	@GetMapping("/addfood.food")
 	public String updateMyfood(Model model,HttpSession session,int code, int count) {
 		String id= (String)session.getAttribute("id");
 		
