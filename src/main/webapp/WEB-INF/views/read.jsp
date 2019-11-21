@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="com.safe.vo.Food"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="UTF-8">
 <link
@@ -181,13 +182,9 @@
 							</tr>
 							<tr>
 								<th>알러지 성분
-								</td>
 								<th>${b.allergy }
-								</td>
 							</tr>
 						</table>
-
-
 					</div>
 					<div class="col-lg-6 ml-auto">
 						<table class="table table-bordered" style="font-family: 'Sunflower', sans-serif;">
