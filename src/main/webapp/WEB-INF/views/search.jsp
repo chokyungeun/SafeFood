@@ -128,6 +128,7 @@
 									<li><a href="main.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">&nbsp 홈 화면</a></li>
 									<li><a href="boardlist.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
 									<li><a href="list.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
+									<li><a href="#" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">식단정보</a></li>
 									<li><a href="chart.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
 									<li><a href="mypage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
 									<li><a href="qna.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">Q&A</a></li>
@@ -144,7 +145,8 @@
 
 		<div class="site-section mt-5">
 			<div class="container">
-				<h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">상품 정보 검색</h2>
+				<h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">상품 정보 검색<img width="80px" height="80px"
+							src="resources/img/animat-search-color.gif"></h2>
 
 				<div class="row mb-5">
 					<div class="col-12 section-title text-center mb-5">

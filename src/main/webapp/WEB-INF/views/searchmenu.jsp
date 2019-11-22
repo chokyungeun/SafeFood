@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8" import="java.util.ArrayList, com.safe.vo.Food"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="UTF-8">
 <link
 	href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap"
 	rel="stylesheet">
@@ -73,7 +73,8 @@
 
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="main.food" style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
+	<a class="navbar-brand" href="main.food"
+		style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarColor02" aria-controls="navbarColor02"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -89,13 +90,6 @@
 
 <body data-spy="scroll" data-target=".site-navbar-target"
 	data-offset="300">
-
-	<%
-		ArrayList<Food> list = (ArrayList<Food>) request.getAttribute("list");
-		int cnt = 3;
-		String msg = (String) request.getAttribute("msg");
-	%>
-
 
 	<div class="site-wrap">
 
@@ -114,28 +108,23 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-12 text-center">
-						<a href="main.food" class="site-logo"> <img src="resources/img/logo2.png" width="500px"	height="100px"  alt="Image" class="img-fluid">
+						<a href="main.food" class="site-logo"> <img src="resources/img/logo2.png" alt="Image" class="img-fluid" width="500px"	height="100px"  alt="Image" class="img-fluid">
 						</a>
 					</div>
-					<a href="main.food"
-						class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
-						class="icon-menu h3"></span></a>
+					<a href="main.food" class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black">
+						<span class="icon-menu h3"></span></a>
 				</div>
 			</div>
 
 
-			<div
-				class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block"
-				role="banner">
+			<div class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block" role="banner">
 
 				<div class="container">
 					<div class="d-flex align-items-center">
 
 						<div class="mx-auto">
-							<nav class="site-navigation position-relative text-left"
-								role="navigation">
-								<ul
-									class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
+							<nav class="site-navigation position-relative text-left" role="navigation">
+								<ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
 									<li><a href="main.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">&nbsp 홈 화면</a></li>
 									<li><a href="boardlist.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
 									<li><a href="list.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
@@ -156,7 +145,8 @@
 
 		<div class="site-section mt-5">
 			<div class="container">
-				<h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">${msg }</h2>
+				<h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">식단 정보 검색<img width="80px" height="80px"
+							src="resources/img/animat-search-color.gif"></h2>
 
 				<div class="row mb-5">
 					<div class="col-12 section-title text-center mb-5">
@@ -164,10 +154,8 @@
 
 							<nav class="navbar navbar-expand-lg navbar-dark bg-light">
 								<a class="navbar-brand" href="#"></a>
-								<button class="navbar-toggler" type="button"
-									data-toggle="collapse" data-target="#navbarColor02"
-									aria-controls="navbarColor02" aria-expanded="false"
-									aria-label="Toggle navigation">
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+									aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
 									<span class="navbar-toggler-icon"></span>
 								</button>
 
@@ -182,22 +170,22 @@
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 									</ul>
-									<form method="post" action="chart.food" class="form-inline my-2 my-lg-0" >
+									<form method="post" action="search.food" class="form-inline my-2 my-lg-0">
 										<select name="condition" class="custom-select" style="font-family: 'Sunflower', sans-serif;">
-											<option value="popular" >인기순</option>
-											<option value="best">권장식품</option>
-											<option value="bad">비권장식품</option>
-										</select> <span></span> &nbsp;
+											<option value="name">이름</option>
+										</select> <span></span> <input class="form-control mr-sm-2" type="text" placeholder="" name="word">
 										<button class="btn btn-secondary my-2 my-sm-0" type="submit" style="font-family: 'Sunflower', sans-serif;">검색</button>
 									</form>
-									&nbsp; <a href="random.food" button	class="btn btn-secondary my-2 my-sm-0" style="font-family: 'Sunflower', sans-serif;">랜덤식품</a>
 								</div>
 							</nav>
 						</p>
 					</div>
 				</div>
 
-
+				<%
+					ArrayList<Food> list = (ArrayList<Food>) request.getAttribute("list");
+					int cnt = 3;
+				%>
 				<div class="contents" style="margin-bottom: 10px;">
 					<%
 						for (int i = 0; i < list.size(); i++) {
@@ -220,7 +208,7 @@
 									</h3>
 								</div>
 								<div class="drpt" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getMaterial()%></div>
-								<a href="read.food?code=<%=list.get(i).getCode() %>" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif;">추가</a>
+								<a href="read.food?code=<%=list.get(i).getCode()%>" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif;">추가</a>
 							</div>
 						</div>
 
@@ -238,7 +226,8 @@
 					%>
 				</div>
 
-<%@ include file="footer.jsp"%>
+
+				<%@ include file="footer.jsp"%>
 </body>
 
 </html>
