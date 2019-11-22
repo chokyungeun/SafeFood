@@ -51,7 +51,7 @@
     				count:count
     			},
     		 	success:function(result, status, xhr){
-    		 		alert("추가되었습니다.");
+    		 		alert("나의 식단에 추가되었습니다.");
     		 	}
     			
     		 });
@@ -68,7 +68,7 @@
      				id:id
      			},
      		 	success:function(result, status, xhr){
-     		 		alert("추천되었습니다.");
+     		 		alert( id + "님의 식단에 추가되었습니다.");
      		 	}
      			
      		 });

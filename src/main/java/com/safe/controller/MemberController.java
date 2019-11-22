@@ -186,17 +186,8 @@ public class MemberController {
 	}
 	
 	@GetMapping("/allmenu.food")
-	public String allmenu(Model model, HttpSession session) {
-		if(session.getAttribute("msg")!=null) {
-			session.setAttribute("msg", null);
-		}
-		List<Menu> list = mservice.AllMenu();
-		model.addAttribute("list", list);
-		return "menu";
-	}
-	
-	@GetMapping("/reallmenu.food")
-	public String reallmenu(Model model) {
+	public String allmenu(Model model) {
+		
 		List<Menu> list = mservice.AllMenu();
 		model.addAttribute("list", list);
 		return "menu";
@@ -221,16 +212,14 @@ public class MemberController {
 		String id = (String) session.getAttribute("id");
 		MyMenu mm = new MyMenu(null, id, code);
 		mservice.InsertMymenu(mm);
-		session.setAttribute("msg", "나의 식단에 추가되었습니다.");
-		return "redirect:/reallmenu.food";
+		return "redirect:/allmenu.food";
 	}
 	
 	@GetMapping("/insertyourmenu.food")
 	public String insertyourmenu(String code, String id, HttpSession session) {
 		MyMenu mm = new MyMenu(null, id, code);
 		mservice.InsertMymenu(mm);
-		session.setAttribute("msg", id + "님의 식단에 추가되었습니다.");
-		return "redirect:/reallmenu.food";
+		return "redirect:/allmenu.food";
 	}
 	
 	@GetMapping("/deletemymenu.food")

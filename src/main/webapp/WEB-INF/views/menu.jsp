@@ -90,11 +90,7 @@
 
 <body data-spy="scroll" data-target=".site-navbar-target"
 	data-offset="300">
-<c:if test="${not empty msg}">
-			<script type="text/javascript">
-				alert("${msg}");
-			</script>
-		</c:if>
+
 	<div class="site-wrap">
 
 		<div class="site-mobile-menu site-navbar-target">
