@@ -275,6 +275,7 @@ public class MemberController {
 	@PostMapping("/sendmessage.food")
 	public String sendmessage(String sendid, String receiveid, String title, String message, HttpSession session) {
 		Message m = new Message(null, sendid, receiveid, title, message, null);
+		System.out.println(m);
 		mservice.SendMessage(m);
 		session.setAttribute("msg", "전송되었습니다.");
 		return "redirect:/reallreceivemessage.food";

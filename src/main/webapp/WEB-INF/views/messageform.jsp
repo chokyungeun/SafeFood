@@ -15,22 +15,22 @@
             <table class="table table-striped">
             <tr>
                 <td>ID</td>
-                <td><input type=input name='sendid' size=42 value="${id }" readonly="readonly"></td>
+                <td><input type=input name='sendid' id='sendid' size=42 value="${id }" readonly="readonly"></td>
             </tr>         
                       
             <tr>
                 <td>받는사람 ID</td>
-                <td><input type=input name='receiveid' size=42></td>
+                <td><input type=input name='receiveid' id='receiveid' size=42></td>
             </tr>
             
             <tr>
                 <td>제목</td>
-                <td colspan="3"><input type=input name='title' size=42></td>
+                <td colspan="3"><input type=input name='title' id='title'  size=42></td>
             </tr>
 
             <tr>
                 <td>쪽지 내용</td>
-                <td colspan="3"><textarea name="content" style="width: 100%; height: 200px"></textarea></td>
+                <td colspan="3"><textarea name="message" id='message'  style="width: 100%; height: 200px"></textarea></td>
             </tr>
              <br><br>
             <tr>  

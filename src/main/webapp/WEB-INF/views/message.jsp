@@ -21,21 +21,19 @@
 		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>ID</th>
 		<th width=200 bgcolor=#ffeded><font color=#000000 size=2>제목</th>
 		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>보낸 사람</th>
-		<th width=150 bgcolor=#ffeded><font color=#000000 size=2>받은 날짜</th>
 
 	  <c:forEach var="row" items="${list}">
 	    <tr>
 		   <td align=center>&nbsp;<font size=2>${row.num }</td>
 	       
-	      <td align=center>&nbsp;<font size=2>${row.id }</td>
+	      <td align=center>&nbsp;<font size=2>${row.receiveid }</td>
 	      <td align=center>&nbsp;<font size=2>
 	       <a href="messageread.food?num=${row.num }">${row.title }</a></td>
 	       
-	      <td align=center>&nbsp;<font size=2>${row.name }</td>
+	      <td align=center>&nbsp;<font size=2>${row.sendid }</td>
 	       
-	      <td align=center>&nbsp;<font size=2>${row.wdate }</td>
-	       
-	      <td align=center style="hidden">&nbsp;<font size=2>${row.count }</td>
+	      <!--  <input align=center type="hidden">${row.count }</td> -->
+	      <input type="hidden" id="count" value="${row.count }"/>
 	       
 	    </tr>
 	    </c:forEach>

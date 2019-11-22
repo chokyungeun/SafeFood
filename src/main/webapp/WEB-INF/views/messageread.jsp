@@ -14,32 +14,28 @@
            <div class="table table-responsive">
                      <table class="table table-striped">
            <tr>
-               <td style="font-weight: bold">보낸 사람</td>
-               <td colspan="1">${cc.name }</td>
                <td style="font-weight: bold">보낸 ID</td>
-               <td colspan="1" >${cc.id }</td>
-               <td style="font-weight: bold">보낸 날짜</td>
-               <td colspan="1">${cc.wdate }</td>
+               <td colspan="1">${m.sendid }</td>
            </tr>
            <tr>
                <td style="font-weight: bold">제목</td>
-               <td colspan="4">"${cc.title }"</td>
+               <td colspan="4">"${m.title }"</td>
            </tr>
 
            <tr>
                <td style="font-weight: bold">쪽지 내용</td>
-               <td colspan="8"><textarea  name="content" style="width: 100%; height: 200px"readonly="readonly" >${cc.content }</textarea></td>
+               <td colspan="8"><textarea  name="message" style="width: 100%; height: 200px"readonly="readonly" >${m.message }</textarea></td>
            </tr>
             
            <tr>  
                <td colspan="8"  class="text-center">
-                   <input type="button"  class="btn btn-primary" onclick="location.href='allreceivemessage.food.food'" value="돌아가기">
+                   <input type="button"  class="btn btn-primary" onclick="location.href='allreceivemessage.food'" value="돌아가기">
                </td>
            </tr>
            
            <tr style="background: white; border-color: white">  
                <td colspan="8"  class="text-center">
-                   <input type="button"  class="btn btn-danger" onclick="location.href='deletemessage.food?num=${cc.num}'" value="삭제">
+                   <input type="button"  class="btn btn-danger" onclick="location.href='deletemessage.food?num=${m.num}'" value="삭제">
                </td>
                
            </tr>
