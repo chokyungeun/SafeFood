@@ -131,4 +131,9 @@ public class MemberDAO implements IMember {
 		session.update("member.countUpMessage", num);
 		
 	}
+
+	@Override
+	public List<Member> selectAll() {
+		return session.selectList("member.checkid");
+	}
 }

@@ -5,6 +5,10 @@
 
 	<mapper namespace="member">
 	
+	<select id="checkid" resultType="member">
+		select* from member
+	</select>
+	
 	<select id="checkMember" resultType="member">
 		select* from member where id = #{id} and pw = #{pw}
 	</select>

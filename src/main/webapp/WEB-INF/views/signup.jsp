@@ -1,7 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" >
+		$(document).ready(function() {
+			$('#idcheck').blur(function() {
+				var id = $('#idcheck').val();
+				console.log("idid::"+id);
+			$.ajax({
+				url : 'idcheck.food',
+				data : {
+					id : id
+				},
+				success : function(result, status, xhr) {
+					$('#msg').html(result)
+					}
+				});
+			});
+		});
+
+    </script>
+    
 <link
 	href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap"
 	rel="stylesheet">
@@ -84,6 +105,11 @@ button:hover {
 	display: table;
 }
 
+.btn{
+	background-color:#a8e5ff;
+	color: white;
+}
+
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
 	.cancelbtn, .signupbtn {
@@ -106,10 +132,12 @@ button:hover {
 					</h1>
 					<hr>
 
-					<label for="id" style="font-family: 'Sunflower', sans-serif;"><b>아이디</b></label> <input type="text" placeholder="Enter id" name="id" required>
-					<label for="pass"><b>비밀번호</b></label> <input type="password" placeholder="Enter Password" name="pw" required> 
-					<label for="name"><b>이 름</b></label> <input type="text" placeholder="Enter Name" name="name" required> 
-					<label for="phone"><b>전화 번호</b></label> <input type="text" placeholder="Phone Number" name="phone" required> 
+					<label for="id" style="font-family: 'Sunflower', sans-serif;"><b>아이디</b></label><br> 
+					<input type="text" placeholder="아이디를 입력하세요" id="idcheck" name="id" required>
+					<div id="msg" style="color:red"></div>
+					<label for="pass"><b>비밀번호</b></label> <input type="password" placeholder="비밀번호를 입력하세요" name="pw" required> 
+					<label for="name"><b>이 름</b></label> <input type="text" placeholder="이름을 입력하세요" name="name" required> 
+					<label for="phone"><b>전화 번호</b></label> <input type="text" placeholder="전화번호를 입력하세요" name="phone" required> 
 					<label for="allergy"><h4>알러지 정보</h4></label>
 
 					<div class="form-group">

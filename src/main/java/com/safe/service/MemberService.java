@@ -10,6 +10,8 @@ import com.safe.vo.MyFood;
 import com.safe.vo.MyMenu;
 
 public interface MemberService {
+	public List<Member> selectAll();
+	
 	public boolean checkMember(String id, String pass);
 
 	public void insert(Member m);

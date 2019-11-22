@@ -132,5 +132,10 @@ public class MemberServiceImpl implements MemberService{
 		mdao.countUpMessage(num);
 		
 	}
+
+	@Override
+	public List<Member> selectAll() {
+		return mdao.selectAll();
+	}
 	
 }

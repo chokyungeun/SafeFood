@@ -10,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.safe.service.FoodService;
@@ -26,7 +29,7 @@ import com.safe.vo.MyMenu;
 public class MemberController {
 	@Autowired
 	MemberService mservice;
-	
+
 	@Autowired
 	FoodService fservice;
 
@@ -43,20 +46,20 @@ public class MemberController {
 			session.setAttribute("id", id);
 			return "redirect:/main.food";
 		} else {
-			session.setAttribute("msg",  "ID/PW를 확인해주세요.");
+			session.setAttribute("msg", "ID/PW를 확인해주세요.");
 			return "redirect:/relogin.food";
 		}
 	}
 
 	@GetMapping("/relogin.food")
 	public String relogin(HttpSession session) {
-		
+
 		return "login";
 	}
-	
+
 	@GetMapping("/login.food")
 	public String login(HttpSession session) {
-		if(session.getAttribute("msg")!= null) {
+		if (session.getAttribute("msg") != null) {
 			session.setAttribute("msg", null);
 		}
 		return "login";
@@ -74,6 +77,22 @@ public class MemberController {
 		return "signup";
 	}
 
+	@ResponseBody
+	@RequestMapping(value = "/idcheck.food", method = RequestMethod.GET)
+	public String idcheck(String id) {
+		List<Member> list = mservice.selectAll();
+
+		String message = "사용가능한 아이디입니다.";
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getId().equals(id)) {
+				message = "이미 사용중인 아이디입니다.";
+				break;
+			}
+		}
+
+		return message; // 논리적 view 이름!
+	}
+
 	@GetMapping("/signup.food")
 	public String signup(Member m, HttpSession session) {
 		mservice.insert(m);
@@ -88,10 +107,10 @@ public class MemberController {
 		mservice.delete(id);
 		return "redirect:/main.food";
 	}
-	
+
 	@GetMapping("/deletemyfood.food")
 	public String deletemyfood(String id, int code, HttpSession session) {
-		MyFood mf = new MyFood(id,code);
+		MyFood mf = new MyFood(id, code);
 		mservice.deletelist(mf);
 		session.setAttribute("msg", "삭제되었습니다.");
 		return "redirect:/remypage.food";
@@ -108,7 +127,7 @@ public class MemberController {
 		session.setAttribute("msg", "수정이 완료되었습니다.");
 		return "redirect:/remypage.food";
 	}
-	
+
 	@GetMapping("/updateForm.food")
 	public String updateForm(Model model, HttpSession session) {
 		String id = (String) session.getAttribute("id");
@@ -121,15 +140,15 @@ public class MemberController {
 	@GetMapping("/mypage.food")
 	public String myPage(Model model, HttpSession session) {
 		String id = (String) session.getAttribute("id");
-		if(id==null) {
-			session.setAttribute("msg","로그인해주세요.");
+		if (id == null) {
+			session.setAttribute("msg", "로그인해주세요.");
 			return "redirect:/remain.food";
 		}
-		if(session.getAttribute("msg")!=null) {
-			session.setAttribute("msg",null);
+		if (session.getAttribute("msg") != null) {
+			session.setAttribute("msg", null);
 		}
 		List<MyFood> list = mservice.AllMyfood(id);
-		for(int i=0;i<list.size();i++) {
+		for (int i = 0; i < list.size(); i++) {
 			Food f = fservice.selectOne(list.get(i).getCode());
 			list.get(i).setImg(f.getImg());
 			list.get(i).setName(f.getName());
@@ -139,16 +158,16 @@ public class MemberController {
 		model.addAttribute("list", list);
 		return "mypage";
 	}
-	
+
 	@GetMapping("/remypage.food")
 	public String remyPage(Model model, HttpSession session) {
 		String id = (String) session.getAttribute("id");
-		if(id==null) {
-			session.setAttribute("msg","로그인해주세요.");
+		if (id == null) {
+			session.setAttribute("msg", "로그인해주세요.");
 			return "redirect:/remain.food";
 		}
 		List<MyFood> list = mservice.AllMyfood(id);
-		for(int i=0;i<list.size();i++) {
+		for (int i = 0; i < list.size(); i++) {
 			Food f = fservice.selectOne(list.get(i).getCode());
 			list.get(i).setImg(f.getImg());
 			list.get(i).setName(f.getName());
@@ -158,17 +177,17 @@ public class MemberController {
 		model.addAttribute("list", list);
 		return "mypage";
 	}
-	
+
 	@GetMapping("/addfood.food")
-	public String updateMyfood(Model model,HttpSession session,int code, int count) {
-		String id= (String)session.getAttribute("id");
-		
-		mservice.updateMyfood(id,code,count);
+	public String updateMyfood(Model model, HttpSession session, int code, int count) {
+		String id = (String) session.getAttribute("id");
+
+		mservice.updateMyfood(id, code, count);
 		Food f = fservice.selectOne(code);
 		model.addAttribute("b", f);
 		return "read";
 	}
-	
+
 	@GetMapping("/findpass.food")
 	public String findpass() {
 		return "findpass";
@@ -177,37 +196,36 @@ public class MemberController {
 	@GetMapping("/findprocess.food")
 	public String findprocess(String id, String phone, HttpSession session) {
 		Member m = mservice.selectOne(id);
-		if(m==null || !m.getPhone().equals(phone)) {
+		if (m == null || !m.getPhone().equals(phone)) {
 			session.setAttribute("msg", "해당 아이디가 존재하지 않습니다.");
-		}
-		else {
+		} else {
 			session.setAttribute("msg", "비밀번호는 '" + m.getPw() + "' 입니다.");
 		}
 		return "redirect:/relogin.food";
 	}
-	
+
 	@GetMapping("/allmenu.food")
 	public String allmenu(Model model) {
-		
+
 		List<Menu> list = mservice.AllMenu();
 		model.addAttribute("list", list);
 		return "menu";
 	}
-	
+
 	@GetMapping("/selectmenu.food")
 	public String selectmenu(String code, Model model) {
 		Menu m = mservice.SelectMenu(code);
 		model.addAttribute("m", m);
 		return "readmenu";
 	}
-	
+
 	@PostMapping("/searchmenu.food")
 	public String searchmenu(String word, Model model) {
 		List<Menu> list = mservice.SearchMenu(word);
 		model.addAttribute("list", list);
 		return "searchmenu";
 	}
-	
+
 	@GetMapping("/insertmymenu.food")
 	public String insertmymenu(String code, HttpSession session) {
 		String id = (String) session.getAttribute("id");
@@ -215,20 +233,20 @@ public class MemberController {
 		mservice.InsertMymenu(mm);
 		return "redirect:/allmenu.food";
 	}
-	
+
 	@GetMapping("/insertyourmenu.food")
 	public String insertyourmenu(String code, String id, HttpSession session) {
 		MyMenu mm = new MyMenu(null, id, code);
 		mservice.InsertMymenu(mm);
 		return "redirect:/allmenu.food";
 	}
-	
+
 	@GetMapping("/deletemymenu.food")
 	public String deletemymenu(String num, HttpSession session) {
 		mservice.DeleteMymenu(num);
 		return "redirect:/mymenu.food";
 	}
-	
+
 	@GetMapping("/mymenu.food")
 	public String mymenu(HttpSession session, Model model) {
 		String id = (String) session.getAttribute("id");
@@ -236,43 +254,43 @@ public class MemberController {
 		model.addAttribute("list", list);
 		return "mymenu";
 	}
-	
+
 	@GetMapping("/allreceivemessage.food")
 	public String allreceivemessage(HttpSession session, Model model) {
-		if(session.getAttribute("msg")!=null) {
+		if (session.getAttribute("msg") != null) {
 			session.setAttribute("msg", null);
 		}
-		if(session.getAttribute("id")==null) {
+		if (session.getAttribute("id") == null) {
 			session.setAttribute("msg", "로그인 후 이용해주세요.");
 			return "redirect:/remain.food";
 		}
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> list = mservice.AllReceivemessage(receiveid);
 		model.addAttribute("list", list);
-		return "message"; 
+		return "message";
 	}
-	
+
 	@GetMapping("/reallreceivemessage.food")
 	public String reallreceivemessage(HttpSession session, Model model) {
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> list = mservice.AllReceivemessage(receiveid);
 		model.addAttribute("list", list);
-		return "message"; 
+		return "message";
 	}
-	
+
 	@GetMapping("/allsendmessage.food")
 	public String allsendmessage(HttpSession session, Model model) {
 		String sendid = (String) session.getAttribute("id");
 		List<Message> list = mservice.AllSendmessage(sendid);
 		model.addAttribute("list", list);
-		return "messagesend"; 
+		return "messagesend";
 	}
-	
+
 	@GetMapping("/sendform.food")
 	public String sendform() {
 		return "messageform";
 	}
-	
+
 	@PostMapping("/sendmessage.food")
 	public String sendmessage(String sendid, String receiveid, String title, String message, HttpSession session) {
 		Message m = new Message(null, sendid, receiveid, title, message, null);
@@ -281,19 +299,19 @@ public class MemberController {
 		session.setAttribute("msg", "전송되었습니다.");
 		return "redirect:/reallreceivemessage.food";
 	}
-	
+
 	@GetMapping("/messageread.food")
 	public String messageread(String num, Model model, HttpSession session) {
 		String id = (String) session.getAttribute("id");
 		Message m = mservice.SelectMessage(num);
-		if(id.equals(m.getReceiveid())) {
+		if (id.equals(m.getReceiveid())) {
 			mservice.countUpMessage(num);
 		}
-		
+
 		model.addAttribute("m", m);
 		return "messageread";
 	}
-	
+
 	@GetMapping("/deletemessage.food")
 	public String deletemessage(String num, HttpSession session) {
 		mservice.DeleteMessage(num);
