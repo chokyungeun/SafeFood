@@ -35,10 +35,14 @@
              <br><br>
             <tr>  
                 <td colspan="4"  class="text-center">
-                    <input type="submit" value="쪽지 보내기" class="btn btn-warning">
+                    <input type="submit" value="쪽지 보내기" class="btn btn-warning"><br>
+                </td>
+            <tr>  
+            <tr>  
+            	<td colspan="4"  class="text-center">
                     <input type="button"  class="btn btn-primary" onclick="location.href='allreceivemessage.food'" value="돌아가기">
                 </td>
-            </tr>
+            <tr>  
           </table>
          
      

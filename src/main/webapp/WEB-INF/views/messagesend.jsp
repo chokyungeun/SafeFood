@@ -12,20 +12,17 @@
 		<br><br>
 
 		<TABLE BORDER=1 CELLSPACING=1 CELLPADDING = 1 style="font-family: 'Sunflower', sans-serif; text-align:center" ><TR>
-		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>번호</th>
 		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>ID</th>
 		<th width=200 bgcolor=#ffeded><font color=#000000 size=2>제목</th>
 		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>받은 사람</th>
 
 	  <c:forEach var="row" items="${list}">
 	    <tr>
-		   <td align=center>&nbsp;<font size=2>${row.num }</td>
-	       
-	      <td align=center>&nbsp;<font size=2>${row.sendid }</td>
+	      <td align=center>&nbsp;<font size=2>${row.receiveid }</td>
 	      <td align=center>&nbsp;<font size=2>
 	       <a href="messageread.food?num=${row.num }">${row.title }</a></td>
 	       
-	      <td align=center>&nbsp;<font size=2>${row.receiveid }</td>
+	      <td align=center>&nbsp;<font size=2>${row.sendid }</td>
 	       
 	       
 	    </tr>
