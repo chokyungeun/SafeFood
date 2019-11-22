@@ -104,8 +104,9 @@ insert into menu values(null, '보리밥', null, '294', 'img/보리밥.jpg');
 insert into menu values(null, '떡볶이', '달걀', '300', 'img/떡볶이.jpg');
 insert into menu values(null, '새우볶음밥', '새우', '241', 'img/새우볶음밥.jpg');
 insert into menu values(null, '김치볶음밥', '콩', '571', 'img/김치볶음밥.jpg');
-
-
+insert into menu values(null, '된장찌개', '콩', '176', 'img/된장찌개.jpg');
+insert into menu values(null, '해물볶음우동', '새우, 조개', '387', 'img/해물볶음우동.jpg');
+insert into menu values(null, '짜장면', '새우, 콩', '800', 'img/짜장면.jpg');
 
 select * from menu;
 
