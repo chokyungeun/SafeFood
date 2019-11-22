@@ -11,8 +11,7 @@
 				alert("${msg}");
 			</script>
 		</c:if>
-		<h1 style="font-family: 'Sunflower', sans-serif;">받은 쪽지함<img width="80px" height="80px"
-							src="resources/img/animat-rocket-color.gif"></h1>	
+		<h1 style="font-family: 'Sunflower', sans-serif;"><img width="80px" height="80px"src="resources/img/animat-road-trip-color.gif">받은 쪽지함</h1>	
 		<br>
 		<br><br>
 
