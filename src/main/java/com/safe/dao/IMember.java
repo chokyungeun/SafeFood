@@ -5,6 +5,7 @@ import java.util.List;
 import com.safe.vo.Member;
 import com.safe.vo.Menu;
 import com.safe.vo.Menu2;
+import com.safe.vo.Message;
 import com.safe.vo.MyFood;
 import com.safe.vo.MyMenu;
 
@@ -41,5 +42,15 @@ public interface IMember {
 	public void DeleteMymenu(String num);
 	
 	public List<Menu2> SelectMymenu(String id);
+	
+	public List<Message> AllReceivemessage(String receiveid);
+	
+	public List<Message> AllSendmessage(String sendid);
+	
+	public Message SelectMessage(String num);
+	
+	public void SendMessage(Message m);
+	
+	public void DeleteMessage(String num);
 	
 }

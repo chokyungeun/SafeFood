@@ -9,6 +9,7 @@ import com.safe.dao.IMember;
 import com.safe.vo.Member;
 import com.safe.vo.Menu;
 import com.safe.vo.Menu2;
+import com.safe.vo.Message;
 import com.safe.vo.MyFood;
 import com.safe.vo.MyMenu;
 
@@ -99,6 +100,31 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public List<Menu2> SelectMymenu(String id) {
 		return mdao.SelectMymenu(id);
+	}
+
+	@Override
+	public List<Message> AllReceivemessage(String receiveid) {
+		return mdao.AllReceivemessage(receiveid);
+	}
+
+	@Override
+	public List<Message> AllSendmessage(String sendid) {
+		return mdao.AllSendmessage(sendid);
+	}
+
+	@Override
+	public Message SelectMessage(String num) {
+		return mdao.SelectMessage(num);
+	}
+
+	@Override
+	public void SendMessage(Message m) {
+		mdao.SendMessage(m);
+	}
+
+	@Override
+	public void DeleteMessage(String num) {
+		mdao.DeleteMessage(num);
 	}
 	
 }

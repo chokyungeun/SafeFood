@@ -89,7 +89,7 @@
 		select * from message where sendid=#{sendid}
 	</select>
 	
-	<select id="selectMessage" parameterType="java.lang.String" resultType="message">
+	<select id="SelectMessage" parameterType="java.lang.String" resultType="message">
 		select * from message where num = #{num}
 	</select>
 	
@@ -97,7 +97,7 @@
   		insert into message(num, sendid, receiveid, title, message, count) values(null, #{sendid}, #{receiveid}, #{title}, #{message}, null)
   	</insert>
   	
-  	<delete id="deleteMessage" parameterType="java.lang.String">
+  	<delete id="DeleteMessage" parameterType="java.lang.String">
 		delete from message where num=#{num}
 	</delete>
 	

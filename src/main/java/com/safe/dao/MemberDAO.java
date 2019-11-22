@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.safe.vo.Member;
 import com.safe.vo.Menu;
 import com.safe.vo.Menu2;
+import com.safe.vo.Message;
 import com.safe.vo.MyFood;
 import com.safe.vo.MyMenu;
 
@@ -98,5 +99,30 @@ public class MemberDAO implements IMember {
 	@Override
 	public List<Menu2> SelectMymenu(String id) {
 		return session.selectList("member.selectMymenu", id);
+	}
+
+	@Override
+	public List<Message> AllReceivemessage(String receiveid) {
+		return session.selectList("member.AllReceivemessage", receiveid);
+	}
+
+	@Override
+	public List<Message> AllSendmessage(String sendid) {
+		return session.selectList("member.AllSendmessage", sendid);
+	}
+
+	@Override
+	public Message SelectMessage(String num) {
+		return session.selectOne("member.SelectMessage", num);
+	}
+
+	@Override
+	public void SendMessage(Message m) {
+		session.insert("member,SendMessage", m);
+	}
+
+	@Override
+	public void DeleteMessage(String num) {
+		session.delete("member.DeleteMessage", num);
 	}
 }
