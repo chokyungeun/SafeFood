@@ -6,7 +6,6 @@
 <hr><br><br><br>
 	
 <center>
-		
 		<h1 style="font-family: 'Sunflower', sans-serif;">보낸 쪽지함<img width="80px" height="80px"
 							src="resources/img/animat-rocket-color.gif"></h1>	
 		<br>
