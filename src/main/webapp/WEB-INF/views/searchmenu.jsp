@@ -207,7 +207,7 @@
 										<a href="#" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getFood()%></a>
 									</h3>
 								</div>
-								<a href="read.food?code=<%=list.get(i).getCode()%>" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif;">추가</a>
+								<a href="selectmenu.food?code=<%=list.get(i).getCode()%>" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif;">추가</a>
 							</div>
 						</div>
 
