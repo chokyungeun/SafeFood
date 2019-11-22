@@ -244,6 +244,7 @@ public class MemberController {
 		}
 		if(session.getAttribute("id")==null) {
 			session.setAttribute("msg", "로그인 후 이용해주세요.");
+			return "redirect:/remain.food";
 		}
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> list = mservice.AllReceivemessage(receiveid);

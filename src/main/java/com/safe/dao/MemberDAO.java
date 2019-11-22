@@ -118,7 +118,7 @@ public class MemberDAO implements IMember {
 
 	@Override
 	public void SendMessage(Message m) {
-		session.insert("member,SendMessage", m);
+		session.insert("member.SendMessage", m);
 	}
 
 	@Override
