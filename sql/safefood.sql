@@ -101,6 +101,10 @@ create table menu (
 insert into menu values(null, '비빔밥', '달걀', '700', 'img/비빔밥.jpg');
 insert into menu values(null, '쌀밥', null, '272', 'img/쌀밥.jpg');
 insert into menu values(null, '보리밥', null, '294', 'img/보리밥.jpg');
+insert into menu values(null, '떡볶이', '달걀', '300', 'img/떡볶이.jpg');
+insert into menu values(null, '새우볶음밥', '새우', '241', 'img/새우볶음밥.jpg');
+insert into menu values(null, '김치볶음밥', '콩', '571', 'img/김치볶음밥.jpg');
+
 
 select * from menu;
 
