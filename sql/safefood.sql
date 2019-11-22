@@ -130,6 +130,7 @@ create table message(
 	num int(7) AUTO_INCREMENT,
     sendid varchar(20),
     receiveid varchar(20),
+    title varchar(100),
 	message varchar(5000),
     count int(7) default 0,
     constraint fk_sid foreign key(sendid) references member(id),

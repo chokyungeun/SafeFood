@@ -77,6 +77,30 @@
 		select mm.num, m.code, m.food, m.allergy, m.calory, m.img from menu m, mymenu mm where m.code = mm.code and mm.id = #{id};
 	</select>
 	
+	
+	
+	
+	
+	<select id="AllReceivemessage" parameterType="String" resultType="message">
+		select * from message where receiveid=#{receiveid}
+	</select>
+	
+	<select id="AllSendmessage" parameterType="String" resultType="message">
+		select * from message where sendid=#{sendid}
+	</select>
+	
+	<select id="selectMessage" parameterType="java.lang.String" resultType="message">
+		select * from message where num = #{num}
+	</select>
+	
+	<insert id="SendMessage" parameterType="message">
+  		insert into message(num, sendid, receiveid, title, message, count) values(null, #{sendid}, #{receiveid}, #{title}, #{message}, null)
+  	</insert>
+  	
+  	<delete id="deleteMessage" parameterType="java.lang.String">
+		delete from message where num=#{num}
+	</delete>
+	
 </mapper>
 
 
