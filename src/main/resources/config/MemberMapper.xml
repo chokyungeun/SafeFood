@@ -57,11 +57,11 @@
 	</select>
 
 	<select id="selectMenu" parameterType="java.lang.String" resultType="menu">
-		select* from menu where code = #{code}
+		select * from menu where code = #{code}
 	</select>
 
 	<select id="searchMenu" resultType="menu" parameterType="java.lang.String">
-		select * from menu where name like concat('%', #{word}, '%')
+		select * from menu where food like concat('%', #{word}, '%')
 	</select>
 
 
