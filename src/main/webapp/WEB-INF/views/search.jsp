@@ -145,8 +145,7 @@
 
 		<div class="site-section mt-5">
 			<div class="container">
-				<h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">상품 정보 검색<img width="80px" height="80px"
-							src="resources/img/animat-search-color.gif"></h2>
+				<h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">상품 정보 검색</h2>
 
 				<div class="row mb-5">
 					<div class="col-12 section-title text-center mb-5">
