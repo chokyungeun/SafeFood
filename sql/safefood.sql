@@ -106,6 +106,7 @@ insert into menu values(null, '새우볶음밥', '새우', '241', 'img/새우볶
 insert into menu values(null, '김치볶음밥', '콩', '571', 'img/김치볶음밥.jpg');
 
 
+
 select * from menu;
 
 create table mymenu (
