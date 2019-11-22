@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="java.util.ArrayList, com.safe.vo.Food"%>
+	pageEncoding="UTF-8" import="java.util.ArrayList, com.safe.vo.MyMenu"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en" style="font-family: 'Sunflower', sans-serif;">
@@ -32,6 +32,7 @@
                 <tbody>
                 
                   <c:forEach var="row" items="${list}">
+                  <input type="hidden" id="code" value="${row.num }"/>
                   <tr>
                     <td class="product-thumbnail">
                     <a href="#"><img src="resources/${row.img }" alt="Image" class="img-fluid" style="font-family: 'Sunflower', sans-serif;"></a>
@@ -40,7 +41,7 @@
                       <h2 class="h5 cart-product-title text-black" style="font-family: 'Sunflower', sans-serif;">${row.name }</h2>
                     </td>
                     <td><!--  <img src="resource/img/경고.PNG" alt="Image" class="img-fluid"> --></td>
-                    <td><a href="deletemyfood.food?id=${row.id }&code=${row.code}" class="btn btn-primary height-auto btn-sm" style="font-family: 'Sunflower', sans-serif;">삭제</a></td>
+                    <td><a href="deletemymenu.food?num=${row.num }&code=${row.code}" class="btn btn-primary height-auto btn-sm" style="font-family: 'Sunflower', sans-serif;">삭제</a></td>
                   </tr>
     			</c:forEach>
                 </tbody>

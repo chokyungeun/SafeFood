@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="com.safe.vo.Food"%>
+	pageEncoding="UTF-8" import="com.safe.vo.Menu"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="UTF-8">
@@ -45,7 +45,7 @@
     		 var count = $('#count').val();
     		 var code = $('#code').val();
     		 $.ajax({
-    			url:"addfood.food",
+    			url:"insertmymenu.food",
     			data:{
     				code:code,
     				count:count
@@ -59,11 +59,13 @@
     	  });
     	  
     	  $('#addfriend').click(function(){
-     		 var code = $('#code').val();
+      		 var code = $('#code').val();
+     		 var id = $('#id').val();
      		 $.ajax({
-     			url:"친구에게 추천.food",
+     			url:"insertyourmenu.food",
      			data:{
-     				code:code
+     				code:code,
+     				id:id
      			},
      		 	success:function(result, status, xhr){
      		 		alert("추천되었습니다.");
@@ -121,9 +123,6 @@
 				</div>
 			</div>
 
-
-
-
 			<div
 				class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block"
 				role="banner">
@@ -139,11 +138,10 @@
 									<li><a href="main.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">&nbsp 홈 화면</a></li>
 									<li><a href="boardlist.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
 									<li><a href="list.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
-									<li><a href="#" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">식단정보</a></li>
+									<li><a href="allmenu.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">식단정보</a></li>
 									<li><a href="chart.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
 									<li><a href="mypage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
 									<li><a href="qna.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">Q&A</a></li>
-								</ul>
 								</ul>
 							</nav>
 
@@ -180,12 +178,13 @@
 						<p>
 							<button id="add" class="btn btn-outline-primary">추가하기</button>
 							<input type="hidden" id="code" value="${b.code }"/>
+							<input type="hidden" id="id" value="${b.id }"/>
 							<br>
 							<button id="addfriend" class="btn btn-outline-primary">친구에게 추천하기</button>
 							<input type="hidden" id="code" value="${b.code }"/>
+							<input type="hidden" id="id" value="${b.id }"/>
 							<br>
-							<h6>*친구에게 추천하기를 누르실 경우, 친구의 식단에 메뉴가 추가됩니다.</h6>
-
+							<span style="color:gray;">*친구에게 추천하기를 누르실 경우, 친구의 식단에 메뉴가 추가됩니다.</span>
 						</p>
 					</div>
 				</div>

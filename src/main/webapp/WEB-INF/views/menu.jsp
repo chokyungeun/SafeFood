@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="java.util.ArrayList, com.safe.vo.Food"%>
+	pageEncoding="UTF-8" import="java.util.ArrayList, com.safe.vo.Menu"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="UTF-8">
@@ -128,7 +128,7 @@
 									<li><a href="main.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">&nbsp 홈 화면</a></li>
 									<li><a href="boardlist.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
 									<li><a href="list.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
-									<li><a href="#" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">식단정보</a></li>
+									<li><a href="allmenu.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">식단정보</a></li>
 									<li><a href="chart.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
 									<li><a href="mypage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
 									<li><a href="qna.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">Q&A</a></li>
@@ -169,9 +169,9 @@
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 									</ul>
-									<form method="post" action="search.food" class="form-inline my-2 my-lg-0">
+									<form method="post" action="searchmenu.food" class="form-inline my-2 my-lg-0">
 										<select name="condition" class="custom-select" style="font-family: 'Sunflower', sans-serif;">
-											<option value="name">이름</option>
+											<option value="food">이름</option>
 										</select> <span></span> <input class="form-control mr-sm-2" type="text" placeholder="" name="word">
 										<button class="btn btn-secondary my-2 my-sm-0" type="submit" style="font-family: 'Sunflower', sans-serif;">검색</button>
 									</form>
@@ -182,7 +182,7 @@
 				</div>
 
 				<%
-					ArrayList<Food> list = (ArrayList<Food>) request.getAttribute("list");
+					ArrayList<Menu> list = (ArrayList<Menu>) request.getAttribute("list");
 					int cnt = 3;
 				%>
 				<div class="contents" style="margin-bottom: 10px;">
@@ -199,15 +199,14 @@
 						%>
 						<div class="col-sm-4">
 							<div class="wine_v_1 text-center pb-4">
-								<a href="read.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4" style="font-family: 'Sunflower', sans-serif;">
+								<a href="selectmenu.food?code=<%=list.get(i).getCode()%>" class="thumbnail d-block mb-4" style="font-family: 'Sunflower', sans-serif;">
 								<img src="/resources/<%=list.get(i).getImg()%>" alt="Image" class="img-fluid"></a>
 								<div>
 									<h3 class="heading mb-1">
-										<a href="#" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getName()%></a>
+										<a href="#" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getFood()%></a>
 									</h3>
 								</div>
-								<div class="drpt" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getMaterial()%></div>
-								<a href="read.food?code=<%=list.get(i).getCode()%>" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif;">추가</a>
+								<a href="selectmenu.food?code=<%=list.get(i).getCode()%>" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif;">추가</a>
 							</div>
 						</div>
 
