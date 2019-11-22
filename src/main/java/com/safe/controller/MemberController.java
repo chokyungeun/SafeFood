@@ -18,6 +18,7 @@ import com.safe.vo.Food;
 import com.safe.vo.Member;
 import com.safe.vo.Menu;
 import com.safe.vo.Menu2;
+import com.safe.vo.Message;
 import com.safe.vo.MyFood;
 import com.safe.vo.MyMenu;
 
@@ -236,4 +237,57 @@ public class MemberController {
 		return "mymenu";
 	}
 	
+	@GetMapping("/allreceivemessage.food")
+	public String allreceivemessage(HttpSession session, Model model) {
+		if(session.getAttribute("msg")!=null) {
+			session.setAttribute("msg", null);
+		}
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> list = mservice.AllReceivemessage(receiveid);
+		model.addAttribute("list", list);
+		return "message"; 
+	}
+	
+	@GetMapping("/reallreceivemessage.food")
+	public String reallreceivemessage(HttpSession session, Model model) {
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> list = mservice.AllReceivemessage(receiveid);
+		model.addAttribute("list", list);
+		return "message"; 
+	}
+	
+	@GetMapping("/allsendmessage.food")
+	public String allsendmessage(HttpSession session, Model model) {
+		String sendid = (String) session.getAttribute("id");
+		List<Message> list = mservice.AllSendmessage(sendid);
+		model.addAttribute("list", list);
+		return "messagesend"; 
+	}
+	
+	@GetMapping("/sendform.food")
+	public String sendform() {
+		return "messageform";
+	}
+	
+	@PostMapping("/sendmessage.food")
+	public String sendmessage(String sendid, String receiveid, String title, String message, HttpSession session) {
+		Message m = new Message(null, sendid, receiveid, title, message, null);
+		mservice.SendMessage(m);
+		session.setAttribute("msg", "전송되었습니다.");
+		return "redirect:/reallreceivemessage.food";
+	}
+	
+	@GetMapping("/messageread.food")
+	public String messageread(String num, Model model) {
+		Message m = mservice.SelectMessage(num);
+		model.addAttribute("m", m);
+		return "messageread";
+	}
+	
+	@GetMapping("/deletemessage.food")
+	public String deletemessage(String num, HttpSession session) {
+		mservice.DeleteMessage(num);
+		session.setAttribute("msg", "삭제되었습니다.");
+		return "redirect:/reallreceivemessage.food";
+	}
 }

@@ -101,6 +101,7 @@
 		delete from message where num=#{num}
 	</delete>
 	
+	
 </mapper>
 
 
