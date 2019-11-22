@@ -126,4 +126,14 @@ insert into mymenu values(null, 'admin', 1);
 
 select * from mymenu;
 
+create table message(
+	num int(7) AUTO_INCREMENT,
+    sendid varchar(20),
+    receiveid varchar(20),
+	message varchar(5000),
+    count int(7) default 0,
+    constraint fk_sid foreign key(sendid) references member(id),
+    constraint fk_rid foreign key(receiveid) references member(id),
+    CONSTRAINT PRIMARY KEY(num)
+);
 
