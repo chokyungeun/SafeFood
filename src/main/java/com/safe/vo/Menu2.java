@@ -1,7 +1,6 @@
 package com.safe.vo;
 
 public class Menu2 {
-	
 	private String num;
 	private String code;
 	private String food;
@@ -73,7 +72,5 @@ public class Menu2 {
 		return "Menu2 [num=" + num + ", code=" + code + ", food=" + food + ", allergy=" + allergy + ", calory=" + calory
 				+ ", img=" + img + "]";
 	}
-
-	
 	
 }
