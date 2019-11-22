@@ -61,7 +61,6 @@
 	data-offset="300">
 
 
-
 	<div class="site-wrap">
 
 		<div class="site-mobile-menu site-navbar-target">
@@ -88,9 +87,6 @@
 				</div>
 			</div>
 
-
-
-
 			<div
 				class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block" role="banner">
 
@@ -107,6 +103,7 @@
 									<li><a href="chart.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
 									<li><a href="mypage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
 									<li><a href="qna.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">Q&A</a></li>
+									<li><a href="allreceivemessage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">쪽지함</a></li>
 								</ul>
 							</nav>
 
