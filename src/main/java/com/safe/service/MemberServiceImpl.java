@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.safe.dao.IMember;
 import com.safe.vo.Member;
 import com.safe.vo.Menu;
+import com.safe.vo.Menu2;
 import com.safe.vo.MyFood;
 import com.safe.vo.MyMenu;
 
@@ -91,8 +92,13 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void DeleteMymenu(String code) {
-		mdao.DeleteMymenu(code);
+	public void DeleteMymenu(String num) {
+		mdao.DeleteMymenu(num);
 	}
 
+	@Override
+	public List<Menu2> SelectMymenu(String id) {
+		return mdao.SelectMymenu(id);
+	}
+	
 }

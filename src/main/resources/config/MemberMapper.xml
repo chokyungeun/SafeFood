@@ -65,15 +65,18 @@
 	</select>
 
 
-
-
 	<insert id="insertMymenu" parameterType="mymenu">
   		insert into mymenu(num, id, code) values(null, #{id}, #{code})
   	</insert>
   	
   	<delete id="deleteMymenu" parameterType="java.lang.String">
-		delete from mymenu where code=#{code}
+		delete from mymenu where num=#{num}
 	</delete>
+	
+	<select id="selectMymenu" parameterType="java.lang.String" resultType="menu2">
+		select mm.num, m.code, m.food, m.allergy, m.calory, m.img from menu m, mymenu mm where m.code = mm.code and mm.id = #{id};
+	</select>
+	
 </mapper>
 
 

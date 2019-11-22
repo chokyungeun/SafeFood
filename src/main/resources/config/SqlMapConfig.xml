@@ -13,6 +13,7 @@
 		<typeAlias type="com.safe.vo.MyFood"   		alias="myfood"/>
 		<typeAlias type="com.safe.vo.QnA"   		alias="qna"/>
 		<typeAlias type="com.safe.vo.Menu"   		alias="menu"/>
+		<typeAlias type="com.safe.vo.Menu2"   		alias="menu2"/>
 		<typeAlias type="com.safe.vo.MyMenu"   		alias="mymenu"/>
 	</typeAliases>
 	<mappers>

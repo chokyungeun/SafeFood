@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.safe.vo.Member;
 import com.safe.vo.Menu;
+import com.safe.vo.Menu2;
 import com.safe.vo.MyFood;
 import com.safe.vo.MyMenu;
 
@@ -37,6 +38,8 @@ public interface IMember {
 	
 	public void InsertMymenu(MyMenu mm);
 	
-	public void DeleteMymenu(String code);
+	public void DeleteMymenu(String num);
+	
+	public List<Menu2> SelectMymenu(String id);
 	
 }

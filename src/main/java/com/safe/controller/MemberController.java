@@ -17,6 +17,7 @@ import com.safe.service.MemberService;
 import com.safe.vo.Food;
 import com.safe.vo.Member;
 import com.safe.vo.Menu;
+import com.safe.vo.Menu2;
 import com.safe.vo.MyFood;
 import com.safe.vo.MyMenu;
 
@@ -206,10 +207,32 @@ public class MemberController {
 	}
 	
 	@GetMapping("/insertmymenu.food")
-	public void insertmymenu(String code, HttpSession session) {
+	public String insertmymenu(String code, HttpSession session) {
 		String id = (String) session.getAttribute("id");
 		MyMenu mm = new MyMenu(null, id, code);
 		mservice.InsertMymenu(mm);
+		return "menu";
+	}
+	
+	@GetMapping("/insertyourmenu.food")
+	public String insertyourmenu(String code, String id) {
+		MyMenu mm = new MyMenu(null, id, code);
+		mservice.InsertMymenu(mm);
+		return "menu";
+	}
+	
+	@GetMapping("/deletemymenu.food")
+	public String deletemymenu(String num, HttpSession session) {
+		mservice.DeleteMymenu(num);
+		return "redirect:/mymenu.food";
+	}
+	
+	@GetMapping("/mymenu.food")
+	public String mymenu(HttpSession session, Model model) {
+		String id = (String) session.getAttribute("id");
+		List<Menu2> list = mservice.SelectMymenu(id);
+		model.addAttribute("list", list);
+		return "mymenu";
 	}
 	
 }

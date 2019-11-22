@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.safe.vo.Member;
 import com.safe.vo.Menu;
+import com.safe.vo.Menu2;
 import com.safe.vo.MyFood;
 import com.safe.vo.MyMenu;
 
@@ -90,7 +91,12 @@ public class MemberDAO implements IMember {
 	}
 
 	@Override
-	public void DeleteMymenu(String code) {
-		session.update("member.deleteMymenu", code);
+	public void DeleteMymenu(String num) {
+		session.update("member.deleteMymenu", num);
+	}
+
+	@Override
+	public List<Menu2> SelectMymenu(String id) {
+		return session.selectList("member.selectMymenu", id);
 	}
 }
