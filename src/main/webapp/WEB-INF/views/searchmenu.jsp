@@ -170,7 +170,7 @@
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 										<li class="nav-item"><a class="nav-link" href="#"></a></li>
 									</ul>
-									<form method="post" action="search.food" class="form-inline my-2 my-lg-0">
+									<form method="post" action="searchmenu.food" class="form-inline my-2 my-lg-0">
 										<select name="condition" class="custom-select" style="font-family: 'Sunflower', sans-serif;">
 											<option value="food">이름</option>
 										</select> <span></span> <input class="form-control mr-sm-2" type="text" placeholder="" name="word">

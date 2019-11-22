@@ -159,30 +159,29 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-5">
-						<img src="resources/${b.img }" alt="Image" class="img-fluid"> <br>
+						<img src="resources/${m.img }" alt="Image" class="img-fluid"> <br>
 						<table class="table" style="font-family: 'Sunflower', sans-serif;">
 							<tr>
 								<th>이름</th>
-								<th>${b.food }</th>
+								<th>${m.food }</th>
 							</tr>
 							<tr>
 								<th>칼로리</th>
-								<th>${b.calory }</th>
+								<th>${m.calory }</th>
 							</tr>
 							<tr>
 								<th>알러지 성분</th>
-								<th>${b.allergy }</th>
+								<th>${m.allergy }</th>
 							</tr>
 						</table>
 					</div>
 						<p>
 							<button id="add" class="btn btn-outline-primary">추가하기</button>
-							<input type="hidden" id="code" value="${b.code }"/>
-							<input type="hidden" id="id" value="${b.id }"/>
+							<input type="hidden" id="code" value="${m.code }"/>
 							<br>
+							<input id="id"></input>
 							<button id="addfriend" class="btn btn-outline-primary">친구에게 추천하기</button>
-							<input type="hidden" id="code" value="${b.code }"/>
-							<input type="hidden" id="id" value="${b.id }"/>
+							<input type="hidden" id="code" value="${m.code }"/>
 							<br>
 							<span style="color:gray;">*친구에게 추천하기를 누르실 경우, 친구의 식단에 메뉴가 추가됩니다.</span>
 						</p>

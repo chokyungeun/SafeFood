@@ -14,7 +14,7 @@
         <div class="row mb-5 justify-content-center">
           <div class="col-7 section-title text-center mb-5">
             <h2 class="d-block" style="font-family: 'Sunflower', sans-serif;">내 식단<img width="80px" height="80px"
-							src="resources/img/animat-swiss-knife-color.gif"></h2>
+							src="resources/img/animat-diamond-color.gif"></h2>
           </div>
         </div>
         <div class="row mb-5" style="font-family: 'Sunflower', sans-serif;">
@@ -37,10 +37,15 @@
                     <td class="product-thumbnail">
                     <a href="#"><img src="resources/${row.img }" alt="Image" class="img-fluid" style="font-family: 'Sunflower', sans-serif;"></a>
                     </td>
+                    
                     <td class="product-name">
-                      <h2 class="h5 cart-product-title text-black" style="font-family: 'Sunflower', sans-serif;">${row.name }</h2>
+                      <h2 class="h5 cart-product-title text-black" style="font-family: 'Sunflower', sans-serif;">${row.food }</h2>
                     </td>
-                    <td><!--  <img src="resource/img/경고.PNG" alt="Image" class="img-fluid"> --></td>
+                    
+                    <td class="product-name">
+                      <h2 class="h5 cart-product-title text-black" style="font-family: 'Sunflower', sans-serif;">${row.allergy }</h2>
+                    </td>
+                    
                     <td><a href="deletemymenu.food?num=${row.num }&code=${row.code}" class="btn btn-primary height-auto btn-sm" style="font-family: 'Sunflower', sans-serif;">삭제</a></td>
                   </tr>
     			</c:forEach>
