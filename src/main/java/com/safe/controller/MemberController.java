@@ -242,6 +242,9 @@ public class MemberController {
 		if(session.getAttribute("msg")!=null) {
 			session.setAttribute("msg", null);
 		}
+		if(session.getAttribute("id")==null) {
+			session.setAttribute("msg", "로그인 후 이용해주세요.");
+		}
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> list = mservice.AllReceivemessage(receiveid);
 		model.addAttribute("list", list);
