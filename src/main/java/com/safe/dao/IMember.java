@@ -53,4 +53,5 @@ public interface IMember {
 	
 	public void DeleteMessage(String num);
 	
+	public void countUpMessage(String num);
 }

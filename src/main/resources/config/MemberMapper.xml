@@ -94,14 +94,20 @@
 	</select>
 	
 	<insert id="SendMessage" parameterType="message">
-  		insert into message(num, sendid, receiveid, title, message, count) values(null, #{sendid}, #{receiveid}, #{title}, #{message}, null)
+  		insert into message(num, sendid, receiveid, title, message, count) values(null, #{sendid}, #{receiveid}, #{title}, #{message}, 0)
   	</insert>
   	
   	<delete id="DeleteMessage" parameterType="java.lang.String">
 		delete from message where num=#{num}
 	</delete>
 	
+	<update id="countUpMessage" parameterType="java.lang.String">
+  		update message set count = count+1 where num = #{num}
+  	</update>
 	
+	<select id="CheckRead" parameterType="java.lang.String">
+		select count(*) from message where num = #{num}
+	</select>
 </mapper>
 
 

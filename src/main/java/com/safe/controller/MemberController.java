@@ -283,8 +283,13 @@ public class MemberController {
 	}
 	
 	@GetMapping("/messageread.food")
-	public String messageread(String num, Model model) {
+	public String messageread(String num, Model model, HttpSession session) {
+		String id = (String) session.getAttribute("id");
 		Message m = mservice.SelectMessage(num);
+		if(id.equals(m.getReceiveid())) {
+			mservice.countUpMessage(num);
+		}
+		
 		model.addAttribute("m", m);
 		return "messageread";
 	}

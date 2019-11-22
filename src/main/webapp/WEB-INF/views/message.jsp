@@ -19,6 +19,7 @@
 		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>ID</th>
 		<th width=200 bgcolor=#ffeded><font color=#000000 size=2>제목</th>
 		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>보낸 사람</th>
+		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>확인</th>
 
 	  <c:forEach var="row" items="${list}">
 	    <tr>
@@ -27,6 +28,16 @@
 	       <a href="messageread.food?num=${row.num }">${row.title }</a></td>
 	       
 	      <td align=center>&nbsp;<font size=2>${row.sendid }</td>
+	      <c:choose>
+	      	<c:when test="${row.count > 0}" >
+	      		<td align=center>&nbsp;<font size=2 style="color:blue">확인</td>
+	      	</c:when>
+	      	<c:otherwise>
+	      	<td align=center>&nbsp;<font size=2 style="color:red">미확인</td>
+	      </c:otherwise>
+	      </c:choose>
+	      
+	      
 	       
 	      <!--  <input align=center type="hidden">${row.count }</td> -->
 	      <input type="hidden" id="count" value="${row.count }"/>

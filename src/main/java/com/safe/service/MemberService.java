@@ -50,5 +50,6 @@ public interface MemberService {
 	
 	public void DeleteMessage(String num);
 	
+	public void countUpMessage(String num);
 	
 }

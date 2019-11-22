@@ -125,4 +125,10 @@ public class MemberDAO implements IMember {
 	public void DeleteMessage(String num) {
 		session.delete("member.DeleteMessage", num);
 	}
+
+	@Override
+	public void countUpMessage(String num) {
+		session.update("member.countUpMessage", num);
+		
+	}
 }

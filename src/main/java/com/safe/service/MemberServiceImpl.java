@@ -126,5 +126,11 @@ public class MemberServiceImpl implements MemberService{
 	public void DeleteMessage(String num) {
 		mdao.DeleteMessage(num);
 	}
+
+	@Override
+	public void countUpMessage(String num) {
+		mdao.countUpMessage(num);
+		
+	}
 	
 }
