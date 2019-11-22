@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.safe.vo.Member;
+import com.safe.vo.Menu;
 import com.safe.vo.MyFood;
+import com.safe.vo.MyMenu;
 
 @Repository("mdao")
 public class MemberDAO implements IMember {
@@ -65,5 +67,30 @@ public class MemberDAO implements IMember {
 	public void deleteMyfood(MyFood mf) {
 		session.update("member.deleteMyfood", mf);
 		
+	}
+
+	@Override
+	public List<Menu> AllMenu() {
+		return session.selectList("member.allMenu");
+	}
+
+	@Override
+	public Menu SelectMenu(String code) {
+		return session.selectOne("member.selectMenu", code);
+	}
+
+	@Override
+	public List<Menu> SearchMenu(String word) {
+		return session.selectList("member.searchMenu", word);
+	}
+
+	@Override
+	public void InsertMymenu(MyMenu mm) {
+		session.insert("member.insertMymenu", mm);
+	}
+
+	@Override
+	public void DeleteMymenu(String code) {
+		session.update("member.deleteMymenu", code);
 	}
 }

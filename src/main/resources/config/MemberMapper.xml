@@ -48,6 +48,32 @@
 	<update id="updateMyfood" parameterType="myfood">
 		update myfood set count=#{count} where id=#{id} and code=#{code}
 	</update>
+	
+	
+	
+	
+	<select id="allMenu" resultType="menu">
+		select* from menu order by code
+	</select>
+
+	<select id="selectMenu" parameterType="java.lang.String" resultType="menu">
+		select* from menu where code = #{code}
+	</select>
+
+	<select id="searchMenu" resultType="menu" parameterType="java.lang.String">
+		select * from menu where name like concat('%', #{word}, '%')
+	</select>
+
+
+
+
+	<insert id="insertMymenu" parameterType="mymenu">
+  		insert into mymenu(num, id, code) values(null, #{id}, #{code})
+  	</insert>
+  	
+  	<delete id="deleteMymenu" parameterType="java.lang.String">
+		delete from mymenu where code=#{code}
+	</delete>
 </mapper>
 
 

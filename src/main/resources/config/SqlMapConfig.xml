@@ -12,6 +12,8 @@
 		<typeAlias type="com.safe.vo.Board"   		alias="board"/>
 		<typeAlias type="com.safe.vo.MyFood"   		alias="myfood"/>
 		<typeAlias type="com.safe.vo.QnA"   		alias="qna"/>
+		<typeAlias type="com.safe.vo.Menu"   		alias="menu"/>
+		<typeAlias type="com.safe.vo.MyMenu"   		alias="mymenu"/>
 	</typeAliases>
 	<mappers>
 	 <mapper resource="config/FoodMapper.xml" />

@@ -16,7 +16,9 @@ import com.safe.service.FoodService;
 import com.safe.service.MemberService;
 import com.safe.vo.Food;
 import com.safe.vo.Member;
+import com.safe.vo.Menu;
 import com.safe.vo.MyFood;
+import com.safe.vo.MyMenu;
 
 @Controller
 public class MemberController {
@@ -182,5 +184,32 @@ public class MemberController {
 		return "redirect:/relogin.food";
 	}
 	
-
+	@GetMapping("/allmenu.food")
+	public String allmenu(Model model) {
+		List<Menu> list = mservice.AllMenu();
+		model.addAttribute("list", list);
+		return "menu";
+	}
+	
+	@GetMapping("/selectmenu.food")
+	public String selectmenu(String code, Model model) {
+		Menu m = mservice.SelectMenu(code);
+		model.addAttribute("m", m);
+		return "readmenu";
+	}
+	
+	@PostMapping("/searchmenu.food")
+	public String searchmenu(String word, Model model) {
+		List<Menu> list = mservice.SearchMenu(word);
+		model.addAttribute("list", list);
+		return "searchmenu";
+	}
+	
+	@GetMapping("/insertmymenu.food")
+	public void insertmymenu(String code, HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		MyMenu mm = new MyMenu(null, id, code);
+		mservice.InsertMymenu(mm);
+	}
+	
 }
