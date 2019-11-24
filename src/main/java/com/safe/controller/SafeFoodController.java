@@ -14,12 +14,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.safe.algo.Algo;
 import com.safe.service.FoodService;
+import com.safe.service.MemberService;
 import com.safe.vo.Food;
+import com.safe.vo.Message;
 
 @Controller
 public class SafeFoodController {
 	@Autowired
 	FoodService fservice;
+	@Autowired
+	MemberService mservice;
 
 	@ExceptionHandler
 	public ModelAndView handler(Exception e) {
@@ -29,11 +33,16 @@ public class SafeFoodController {
 	}
 	
 	@GetMapping("/main.food")
-	public String main(Model model, HttpSession session) {
+	public String main(Model model, Model model2, HttpSession session) {
 		if(session.getAttribute("msg")!=null)
 			session.setAttribute("msg", null);
 		List<Food> list = fservice.searchAll();
 		model.addAttribute("list", list);
+		
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
+		
 		return "main";
 	}
 	@GetMapping("/remain.food")

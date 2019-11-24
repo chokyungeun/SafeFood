@@ -124,7 +124,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --
 						<div class="mx-auto">
 							<nav class="site-navigation position-relative text-left" role="navigation">
 								<ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
-									<li><a href="main.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;"> 홈 화면</a></li>
+									<li><a href="main.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">&nbsp; 홈 화면</a></li>
 									<li><a href="boardlist.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
 									<li><a href="list.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
 									<li><a href="allmenu.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">식단정보</a></li>

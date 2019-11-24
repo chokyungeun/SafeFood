@@ -92,6 +92,23 @@ public class MemberController {
 
 		return message; // 논리적 view 이름!
 	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/findf.food", method = RequestMethod.GET)
+	public String findf(String id) {
+		List<Member> list = mservice.selectAll();
+
+		String message = "검색실패..";
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getId().equals(id)) {
+				message = "검색성공!";
+				break;
+			}
+		}
+
+		return message; // 논리적 view 이름!
+	}
+	
 
 	@GetMapping("/signup.food")
 	public String signup(Member m, HttpSession session) {

@@ -74,6 +74,20 @@
      		 });
      		  
      	  });
+    	  
+    	  $('#id').blur(function() {
+				var id = $('#id').val();
+				console.log("idid::"+id);
+			$.ajax({
+				url : 'findf.food',
+				data : {
+					id : id
+				},
+				success : function(result, status, xhr) {
+					$('#msg').html(result)
+					}
+				});
+			});
       });
       
       
@@ -180,11 +194,13 @@
 							<button id="add" class="btn btn-outline-primary">추가하기</button>
 							<input type="hidden" id="code" value="${m.code }"/>
 							<br>
-							<input id="id"></input>
+							<input type="text" placeholder="친구 아이디를 입력하세요" id="id" name="id"></input>
 							<button id="addfriend" class="btn btn-outline-primary">친구에게 추천하기</button>
 							<input type="hidden" id="code" value="${m.code }"/>
 							<br>
+							<span id="msg" style="color:red"></span><br>
 							<span style="color:gray;">*친구에게 추천하기를 누르실 경우, 친구의 식단에 메뉴가 추가됩니다.</span>
+							
 						</p>
 					</div>
 				</div>
