@@ -112,6 +112,7 @@
 									      	</c:if>
 									      </c:if>
 									    </c:forEach>
+									<li><a href="map.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">지도</a></li>
 									</a></li>
 								</ul>
 							</nav>

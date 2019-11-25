@@ -32,7 +32,10 @@ public class SafeFoodController {
 		return mav;
 	}
 	@GetMapping("map.food")
-	public String map() {
+	public String map(Model model2, HttpSession session) {
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "map";
 	}
 	@GetMapping("/main.food")
