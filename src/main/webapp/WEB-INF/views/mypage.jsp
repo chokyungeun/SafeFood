@@ -55,6 +55,9 @@
     </div>
     
     <center>
+    <span style="font-family: 'Sunflower', sans-serif; margin: auto; font-size:30px;" >오늘 섭취한 칼로리는 총 
+    <span style="font-family: 'Sunflower', sans-serif; margin: auto; font-size:30px; color:red"> ${sum } </span> 
+    kcal입니다.</span><br><br>
 	<button class="btn btn-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;"><a href="updateForm.food" style="color: white">회원 정보 수정</a></button>
      
     

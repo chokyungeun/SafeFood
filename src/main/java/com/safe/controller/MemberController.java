@@ -164,7 +164,7 @@ public class MemberController {
 	}
 
 	@GetMapping("/mypage.food")
-	public String myPage(Model model, HttpSession session, Model model2) {
+	public String myPage(Model model, HttpSession session, Model model2, Model model3) {
 		String id = (String) session.getAttribute("id");
 		if (id == null) {
 			session.setAttribute("msg", "로그인해주세요.");
@@ -174,13 +174,17 @@ public class MemberController {
 			session.setAttribute("msg", null);
 		}
 		List<MyFood> list = mservice.AllMyfood(id);
+		int sum=0;
 		for (int i = 0; i < list.size(); i++) {
 			Food f = fservice.selectOne(list.get(i).getCode());
 			list.get(i).setImg(f.getImg());
 			list.get(i).setName(f.getName());
 			list.get(i).setAllergy(f.getAllergy());
 			System.out.println(f);
+			System.out.println(f.getCalory());
+			sum+=f.getCalory();
 		}
+		model3.addAttribute("sum", sum);
 		model.addAttribute("list", list);
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
@@ -303,14 +307,22 @@ String receiveid = (String) session.getAttribute("id");
 	}
 
 	@GetMapping("/mymenu.food")
-	public String mymenu(HttpSession session, Model model, Model model2) {
+	public String mymenu(HttpSession session, Model model, Model model2, Model model3) {
 		String id = (String) session.getAttribute("id");
 		List<Menu2> list = mservice.SelectMymenu(id);
 		model.addAttribute("list", list);
+		
+		int sum=0;
+		for(int i=0;i<list.size();i++) {
+			sum+=Integer.parseInt(list.get(0).getCalory());
+		}
+		System.out.println(sum);
+		model3.addAttribute("sum", sum);
 
 String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
 		model2.addAttribute("mlist", mlist);
+		
 		return "mymenu";
 	}
 

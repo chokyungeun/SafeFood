@@ -30,7 +30,6 @@
                   </tr>
                 </thead>
                 <tbody>
-                
                   <c:forEach var="row" items="${list}">
                   <input type="hidden" id="code" value="${row.num }"/>
                   <tr>
@@ -47,6 +46,7 @@
                     </td>
                     
                     <td><a href="deletemymenu.food?num=${row.num }&code=${row.code}" class="btn btn-primary height-auto btn-sm" style="font-family: 'Sunflower', sans-serif;">삭제</a></td>
+                  	
                   </tr>
     			</c:forEach>
                 </tbody>
@@ -59,6 +59,9 @@
     </div>
     
     <center>
+    <span style="font-family: 'Sunflower', sans-serif; margin: auto; font-size:30px;" >오늘 식단의 칼로리는 총 
+    <span style="font-family: 'Sunflower', sans-serif; margin: auto; font-size:30px; color:red"> ${sum } </span> 
+    kcal입니다.</span><br><br>
 	<button class="btn btn-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;"><a href="updateForm.food" style="color: white">회원 정보 수정</a></button>
      
     
