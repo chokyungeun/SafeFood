@@ -9,7 +9,7 @@
 <style>
 #map_canvas {
 	float: left;
-	width: 700px;
+	width: 800px;
 	height: 600px;
 }
 </style>

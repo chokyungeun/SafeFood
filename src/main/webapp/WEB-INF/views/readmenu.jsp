@@ -93,7 +93,7 @@
       
     </script>
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<a class="navbar-brand" href="main.food"
 		style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -160,7 +160,7 @@
 									<c:forEach var="row" items="${mlist}">
 										<c:if test="${not loop_flag }">
 									      	<c:if test="${row.count == 0}" >
-									      		<font size=2 style="color : red">n</font>
+									      		<img src="resources/img/new.jpg" alt="Image" class="img-fluid">
 									      		<c:set var="loop_flag" value="true"/>
 									      	</c:if>
 									      </c:if>
