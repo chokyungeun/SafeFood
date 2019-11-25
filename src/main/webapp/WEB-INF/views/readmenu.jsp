@@ -40,6 +40,13 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" >
+	function showPopup() { 
+		var url = "http://www.10000recipe.com/recipe/list.html?q=${m.food }";
+		window.open(url, 
+				"popup", 
+				"width=800, height=500, left=100, top=50"); 
+		};
+	
       $(document).ready(function(){
     	  $('#add').click(function(){
     		 var count = $('#count').val();
@@ -208,10 +215,9 @@
 							<input type="hidden" id="code" value="${m.code }"/>
 							<br>
 							<span id="msg" style="color:red"></span><br>
-							<span style="color:gray;">*친구에게 추천하기를 누르실 경우, 친구의 식단에 메뉴가 추가됩니다.</span>
-							<br>
-							<iframe src="'https://www.youtube.com/embed/z4WkEKC08bI?amp;autoplay=1'" width="400" height="400" name="ppp" frameborder="0"></iframe>
-							<!--  <iframe src="'https://www.youtube.com/embed/results?search_query='+${m.food }+'amp;autoplay=1'" width="400" height="400" name="ppp" frameborder="0"></iframe>-->
+
+							<span style="color:gray;">*친구에게 추천하기를 누르실 경우, 친구의 식단에 메뉴가 추가됩니다.</span><br>
+							<input type="button" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;" value="레시피보러가기" onclick="showPopup();"></input>
 						</p>
 					</div>
 				</div>
