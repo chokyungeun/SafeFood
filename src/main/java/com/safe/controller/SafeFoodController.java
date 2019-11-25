@@ -31,7 +31,10 @@ public class SafeFoodController {
 		mav.addObject("msg", e.getMessage());
 		return mav;
 	}
-	
+	@GetMapping("map.food")
+	public String map() {
+		return "map";
+	}
 	@GetMapping("/main.food")
 	public String main(Model model, Model model2, HttpSession session) {
 		if(session.getAttribute("msg")!=null)
