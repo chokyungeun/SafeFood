@@ -1,18 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.util.ArrayList, com.safe.vo.Food"%>
 <!DOCTYPE html>
 <html>
+<%@ include file="banner.jsp"%>
+<hr><br><br><br>
+	
   <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        /*height: 100%;*/
-        height: 500px;
-        width: 700px;
+        height: 700px;
+        width: 900px;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -23,6 +23,7 @@
     </style>
   </head>
   <body>
+  <center>
     <div id="map"></div>
     <script>
       var map;
@@ -35,5 +36,6 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Wo6RSdiNvMn6GnrrpRHs2Jq02aR78-c&callback=initMap"
     async defer></script>
+    <%@ include file="footer.jsp"%>
   </body>
 </html>

@@ -103,7 +103,7 @@
 									<li><a href="chart.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
 									<li><a href="mypage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
 									<li><a href="qna.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">Q&A</a></li>
-									<li><a href="allreceivemessage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">쪽지함<c:set var="loop_flag" value="false"/>
+									<li><a href="allreceivemessage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">쪽지함
 									<c:forEach var="row" items="${mlist}">
 										<c:if test="${not loop_flag }">
 									      	<c:if test="${row.count == 0}" >
@@ -112,7 +112,6 @@
 									      	</c:if>
 									      </c:if>
 									    </c:forEach>
-									
 									</a></li>
 								</ul>
 							</nav>
