@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@ include file="banner.jsp"%>
+<link
+	href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap"
+	rel="stylesheet">
 <style>
 #map_canvas {
 	float: left;
@@ -14,16 +17,16 @@
 	<div class="container place">
 		<div class="row">
 			<div class="section_top">
-				<div class="title_text title_animation active">
-					검색 하고 싶은 음식을<br> <span class="en">SafeFood</span>에서
+				<div class="title_text title_animation active" style="font-family: 'Sunflower', sans-serif;">
+					검색 하고 싶은 음식을<br> <span class="en" style="color:red">내 알러지를 부탁해</span>에서
 					검색해보세요.
 
 				</div>
 				<!--//텍스트-->
-				<div class="title_serach title_animation active">
+				<div class="title_search title_animation active" style="font-family: 'Sunflower', sans-serif;">
 					<!--검색창-->
 					<input type="text" id="autocomplete" class="form-control input-lg"
-						placeholder="메뉴검색">
+						placeholder="메뉴검색"><br>
 				</div>
 				<!--/검색창-->
 			</div>
@@ -35,21 +38,19 @@
 			<div class="col-xs-2">
 				<div id="controls">
 					<form name="controls">
-						 <br /> <input
-							type="hidden" name="type" value="hospital" onclick="search()" />
-						<br /> <input type="radio" name="type" value="restaurant"
-							onclick="search()" />레스토랑 <br /> 
+						<input type="hidden" name="type" value="hospital" onclick="search()" />
+						<input style="display:none" type="radio" name="type" value="restaurant" onclick="search()" checked="checked"/> <br /> 
 						
 					</form>
 				</div>
 			</div>
 		</div>
 
-		<div class="container" id="search_result">
-			<span>검색 결과</span>
+		<div class="container" id="search_result" style="font-family: 'Sunflower', sans-serif;">
+			<span style="font-size:30px; color:black">[검색 결과]</span>
 		</div>
-
-		<div class="container" id="listing">
+		<br>
+		<div class="container" id="listing" style="font-family: 'Sunflower', sans-serif;">
 			<div class="row">
 				<table id="results"></table>
 			</div>
@@ -65,7 +66,7 @@
 	var markers = [];
 	var autocomplete;
 	function initialize() {
-		var myLatlng = new google.maps.LatLng(37.566535, 126.97796919999996);
+		var myLatlng = new google.maps.LatLng(37.501311, 127.037471);
 		var myOptions = {
 			zoom : 14,
 			center : myLatlng,
@@ -92,7 +93,7 @@
 		clearResults();
 		clearMarkers();
 		var place = autocomplete.getPlace();
-		alert(place.geometry.location);
+		//alert(place.geometry.location);
 		map.panTo(place.geometry.location);
 		markers[0] = new google.maps.Marker({
 			position : place.geometry.location,
@@ -144,10 +145,11 @@
 	}
 	function dropMarker(i) {
 		return function() {
-			markers[i].setMap(map);
+			markers[i].setMap(map); //빨간 핀이 떨어지는 애
 		}
 	}
 	function addResult(result, i) {
+		var num=4;
 		var results = document.getElementById('results');
 		var tr = document.createElement('tr');
 		tr.style.backgroundColor = (i % 2 == 0 ? '#F0F0F0' : '#FFFFFF');
@@ -157,14 +159,14 @@
 		var iconTd = document.createElement('td');
 		var nameTd = document.createElement('td');
 		var icon = document.createElement('img');
-		icon.src = result.icon.replace('http:', '');
+		//icon.src = result.icon.replace('http:', ''); //아이콘 그림
 		icon.setAttribute('class', 'placeIcon');
 		var name = document.createTextNode(result.name);
-		iconTd.appendChild(icon);
+		iconTd.appendChild(icon); //아이콘 그림
 		nameTd.appendChild(name);
 		tr.appendChild(iconTd);
 		tr.appendChild(nameTd);
-		results.appendChild(tr);
+		results.appendChild(tr); //검색 리스트 띄우는 애(글자)
 	}
 	function clearResults() {
 		var results = document.getElementById('results');
