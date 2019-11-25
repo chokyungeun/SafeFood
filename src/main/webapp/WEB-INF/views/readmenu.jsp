@@ -209,7 +209,9 @@
 							<br>
 							<span id="msg" style="color:red"></span><br>
 							<span style="color:gray;">*친구에게 추천하기를 누르실 경우, 친구의 식단에 메뉴가 추가됩니다.</span>
-							
+							<br>
+							<iframe src="'https://www.youtube.com/embed/z4WkEKC08bI?amp;autoplay=1'" width="400" height="400" name="ppp" frameborder="0"></iframe>
+							<!--  <iframe src="'https://www.youtube.com/embed/results?search_query='+${m.food }+'amp;autoplay=1'" width="400" height="400" name="ppp" frameborder="0"></iframe>-->
 						</p>
 					</div>
 				</div>
