@@ -38,25 +38,7 @@
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <link rel="stylesheet" href="css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" >
-	$(document).ready(function(){
-    	  $('#receiveid').blur(function() {
-				var id = $('#receiveid').val();
-				console.log("idid::"+id);
-			$.ajax({
-				url : 'findf.food',
-				data : {
-					id : id
-				},
-				success : function(result, status, xhr) {
-					$('#msg').html(result)
-					}
-				});
-			});
-      });
-      
-      
-    </script>
+
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-light">
 	<a class="navbar-brand" href="main.food"
@@ -122,12 +104,14 @@
 									<li><a href="mypage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
 									<li><a href="qna.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">Q&A</a></li>
 									<li><a href="allreceivemessage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">쪽지함
+									<c:set var="loop_flag" value="false"/>
 									<c:forEach var="row" items="${mlist}">
-									      <c:choose>
-									      	<c:when test="${row.count > 0}" >
-									      		<font size=2 style="red">n
-									      	</c:when>
-									      </c:choose>
+										<c:if test="${not loop_flag }">
+									      	<c:if test="${row.count == 0}" >
+									      		<font size=2 style="color : red">n</font>
+									      		<c:set var="loop_flag" value="true"/>
+									      	</c:if>
+									      </c:if>
 									    </c:forEach>
 									</a></li>
 								</ul>

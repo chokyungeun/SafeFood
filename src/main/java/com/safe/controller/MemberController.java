@@ -52,16 +52,22 @@ public class MemberController {
 	}
 
 	@GetMapping("/relogin.food")
-	public String relogin(HttpSession session) {
-
+	public String relogin(HttpSession session, Model model2) {
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "login";
 	}
 
 	@GetMapping("/login.food")
-	public String login(HttpSession session) {
+	public String login(HttpSession session, Model model2) {
 		if (session.getAttribute("msg") != null) {
 			session.setAttribute("msg", null);
 		}
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
+		
 		return "login";
 	}
 
@@ -74,6 +80,7 @@ public class MemberController {
 
 	@GetMapping("/insertForm.food")
 	public String insertForm() {
+		
 		return "signup";
 	}
 
@@ -146,16 +153,18 @@ public class MemberController {
 	}
 
 	@GetMapping("/updateForm.food")
-	public String updateForm(Model model, HttpSession session) {
+	public String updateForm(Model model, HttpSession session, Model model2) {
 		String id = (String) session.getAttribute("id");
 		Member m = mservice.selectOne(id);
 		model.addAttribute("m", m);
-
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "memberInfo";
 	}
 
 	@GetMapping("/mypage.food")
-	public String myPage(Model model, HttpSession session) {
+	public String myPage(Model model, HttpSession session, Model model2) {
 		String id = (String) session.getAttribute("id");
 		if (id == null) {
 			session.setAttribute("msg", "로그인해주세요.");
@@ -173,11 +182,14 @@ public class MemberController {
 			System.out.println(f);
 		}
 		model.addAttribute("list", list);
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "mypage";
 	}
 
 	@GetMapping("/remypage.food")
-	public String remyPage(Model model, HttpSession session) {
+	public String remyPage(Model model, HttpSession session, Model model2) {
 		String id = (String) session.getAttribute("id");
 		if (id == null) {
 			session.setAttribute("msg", "로그인해주세요.");
@@ -192,21 +204,33 @@ public class MemberController {
 			System.out.println(f);
 		}
 		model.addAttribute("list", list);
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
+		
 		return "mypage";
 	}
 
 	@GetMapping("/addfood.food")
-	public String updateMyfood(Model model, HttpSession session, int code, int count) {
+	public String updateMyfood(Model model, HttpSession session, int code, int count, Model model2) {
 		String id = (String) session.getAttribute("id");
 
 		mservice.updateMyfood(id, code, count);
 		Food f = fservice.selectOne(code);
 		model.addAttribute("b", f);
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
+		
 		return "read";
 	}
 
 	@GetMapping("/findpass.food")
-	public String findpass() {
+	public String findpass(Model model2, HttpSession session) {
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
+		
 		return "findpass";
 	}
 
@@ -222,24 +246,38 @@ public class MemberController {
 	}
 
 	@GetMapping("/allmenu.food")
-	public String allmenu(Model model) {
+	public String allmenu(Model model, Model model2, HttpSession session) {
 
 		List<Menu> list = mservice.AllMenu();
 		model.addAttribute("list", list);
+
+String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
+		
 		return "menu";
 	}
 
 	@GetMapping("/selectmenu.food")
-	public String selectmenu(String code, Model model) {
+	public String selectmenu(String code, Model model, Model model2, HttpSession session) {
 		Menu m = mservice.SelectMenu(code);
 		model.addAttribute("m", m);
+
+String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
+		
 		return "readmenu";
 	}
 
 	@PostMapping("/searchmenu.food")
-	public String searchmenu(String word, Model model) {
+	public String searchmenu(String word, Model model, Model model2, HttpSession session) {
 		List<Menu> list = mservice.SearchMenu(word);
 		model.addAttribute("list", list);
+
+String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "searchmenu";
 	}
 
@@ -265,15 +303,19 @@ public class MemberController {
 	}
 
 	@GetMapping("/mymenu.food")
-	public String mymenu(HttpSession session, Model model) {
+	public String mymenu(HttpSession session, Model model, Model model2) {
 		String id = (String) session.getAttribute("id");
 		List<Menu2> list = mservice.SelectMymenu(id);
 		model.addAttribute("list", list);
+
+String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "mymenu";
 	}
 
 	@GetMapping("/allreceivemessage.food")
-	public String allreceivemessage(HttpSession session, Model model) {
+	public String allreceivemessage(HttpSession session, Model model, Model model2) {
 		if (session.getAttribute("msg") != null) {
 			session.setAttribute("msg", null);
 		}
@@ -284,27 +326,38 @@ public class MemberController {
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> list = mservice.AllReceivemessage(receiveid);
 		model.addAttribute("list", list);
+
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "message";
 	}
 
 	@GetMapping("/reallreceivemessage.food")
-	public String reallreceivemessage(HttpSession session, Model model) {
+	public String reallreceivemessage(HttpSession session, Model model, Model model2) {
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> list = mservice.AllReceivemessage(receiveid);
 		model.addAttribute("list", list);
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "message";
 	}
 
 	@GetMapping("/allsendmessage.food")
-	public String allsendmessage(HttpSession session, Model model) {
+	public String allsendmessage(HttpSession session, Model model, Model model2) {
 		String sendid = (String) session.getAttribute("id");
 		List<Message> list = mservice.AllSendmessage(sendid);
 		model.addAttribute("list", list);
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "messagesend";
 	}
 
 	@GetMapping("/sendform.food")
-	public String sendform() {
+	public String sendform( Model model2, HttpSession session) {
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "messageform";
 	}
 
@@ -318,7 +371,7 @@ public class MemberController {
 	}
 
 	@GetMapping("/messageread.food")
-	public String messageread(String num, Model model, HttpSession session) {
+	public String messageread(String num, Model model, HttpSession session, Model model2) {
 		String id = (String) session.getAttribute("id");
 		Message m = mservice.SelectMessage(num);
 		if (id.equals(m.getReceiveid())) {
@@ -326,6 +379,9 @@ public class MemberController {
 		}
 
 		model.addAttribute("m", m);
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "messageread";
 	}
 

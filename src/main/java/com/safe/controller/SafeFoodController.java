@@ -46,27 +46,35 @@ public class SafeFoodController {
 		return "main";
 	}
 	@GetMapping("/remain.food")
-	public String remain(Model model) {
+	public String remain(Model model, Model model2, HttpSession session) {
 		List<Food> list = fservice.searchAll();
 		model.addAttribute("list", list);
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "main";
 	}
 	@GetMapping("/qna.food")
-	public String qna(HttpSession session) {
-		
+	public String qna(HttpSession session, Model model2) {
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "qna";
 	}
 
 	
 	@GetMapping("/list.food")
-	public String searchAll(Model model) {
+	public String searchAll(Model model,Model model2, HttpSession session) {
 		List<Food> list = fservice.searchAll();
 		model.addAttribute("list", list);
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "search";
 	}
 
 	@GetMapping("/read.food")
-	public String detail(Model model, int code, HttpSession session) {
+	public String detail(Model model, int code, HttpSession session,Model model2) {
 		if(session.getAttribute("id")==null) {
 			session.setAttribute("msg", "로그인해주세요.");
 			return "redirect:remain.food";
@@ -74,26 +82,34 @@ public class SafeFoodController {
 		fservice.countUp(code);
 		Food f = fservice.selectOne(code);
 		model.addAttribute("b", f);
-
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "read";
 	}
 
 	@PostMapping("/search.food")
-	public String search(Model model, String condition, String word) {
+	public String search(Model model, String condition, String word,Model model2, HttpSession session) {
 		List<Food> list = fservice.search(condition, word);
 		model.addAttribute("list", list);
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "search";
 	}
 	
 	@GetMapping("/chart.food")
-	public String chart(Model model) {
+	public String chart(Model model, Model model2, HttpSession session) {
 		List<Food> list = fservice.searchAll();
 		model.addAttribute("list", list);
 		model.addAttribute("msg", "인기순");
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "chart";
 	}
 	@PostMapping("/chart.food")
-	public String chart(Model model, String condition) {
+	public String chart(Model model, String condition,Model model2, HttpSession session) {
 		List<Food> list = fservice.searchAll();
 		Algo a = new Algo();
 		if(condition.equals("popular") ) {
@@ -108,14 +124,21 @@ public class SafeFoodController {
 		}
 		model.addAttribute("list", list);
 		model.addAttribute("condition", list);
+
+String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "chart";
 	}
 	@GetMapping("/random.food")
-	public String random(Model model) {
+	public String random(Model model,Model model2, HttpSession session) {
 		List<Food> list = fservice.searchAll();
 		Algo a = new Algo();
 		Food b = a.randomFood(list);
 		model.addAttribute("b", b);
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
 		return "read";
 		
 	}
