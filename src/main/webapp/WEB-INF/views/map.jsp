@@ -9,13 +9,22 @@
 <style>
 #map_canvas {
 	float: left;
-	width: 1500px;
-	height: 450px;
+	width: 1000px;
+	height: 600px;
 }
 </style>
 <div class="container-fluid">
 	<div class="container place">
 		<div class="row">
+		<div class="container" id="search_result" style="font-family: 'Sunflower', sans-serif;">
+			<span style="font-size:30px; color:black">[검색 결과]</span>
+		</div>
+		<br>
+		<div class="container" id="listing" style="font-family: 'Sunflower', sans-serif;">
+			<div class="row">
+				<table id="results"></table>
+			</div>
+		</div>
 			<div class="section_top">
 				<div class="title_text title_animation active" style="font-family: 'Sunflower', sans-serif;">
 					검색 하고 싶은 음식을<br> <span class="en" style="color:red">내 알러지를 부탁해</span>에서
@@ -46,15 +55,7 @@
 			</div>
 		</div>
 
-		<div class="container" id="search_result" style="font-family: 'Sunflower', sans-serif;">
-			<span style="font-size:30px; color:black">[검색 결과]</span>
-		</div>
-		<br>
-		<div class="container" id="listing" style="font-family: 'Sunflower', sans-serif;">
-			<div class="row">
-				<table id="results"></table>
-			</div>
-		</div>
+		
 	</div>
 </div>
 <%@ include file="footer.jsp"%>
