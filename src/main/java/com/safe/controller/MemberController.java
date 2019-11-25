@@ -1,5 +1,6 @@
 package com.safe.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -164,7 +165,7 @@ public class MemberController {
 	}
 
 	@GetMapping("/mypage.food")
-	public String myPage(Model model, HttpSession session, Model model2, Model model3) {
+	public String myPage(Model model, HttpSession session, Model model2, Model model3, Model model4) {
 		String id = (String) session.getAttribute("id");
 		if (id == null) {
 			session.setAttribute("msg", "로그인해주세요.");
@@ -174,16 +175,32 @@ public class MemberController {
 			session.setAttribute("msg", null);
 		}
 		List<MyFood> list = mservice.AllMyfood(id);
+		List<Double> flist = new ArrayList<>();
 		int sum=0;
+		double carbo = 0;
+		double protein = 0;
+		double fat = 0;
+		double sugar = 0;
+		double fattyacid = 0;
 		for (int i = 0; i < list.size(); i++) {
 			Food f = fservice.selectOne(list.get(i).getCode());
 			list.get(i).setImg(f.getImg());
 			list.get(i).setName(f.getName());
 			list.get(i).setAllergy(f.getAllergy());
-			System.out.println(f);
-			System.out.println(f.getCalory());
+			carbo += f.getCarbo();
+			protein += f.getProtein();
+			fat += f.getFat();
+			sugar += f.getSugar();
+			fattyacid += f.getFattyacid();
 			sum+=f.getCalory();
 		}
+		flist.add(carbo);
+		flist.add(protein);
+		flist.add(fat);
+		flist.add(sugar);
+		flist.add(fattyacid);
+		
+		model4.addAttribute("flist", flist);
 		model3.addAttribute("sum", sum);
 		model.addAttribute("list", list);
 		String receiveid = (String) session.getAttribute("id");
