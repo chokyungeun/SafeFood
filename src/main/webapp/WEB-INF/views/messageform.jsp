@@ -159,17 +159,17 @@
                       
             <tr>
                 <td>받는사람 ID</td>
-                <td><input type=input name='receiveid' id='receiveid' size=42><span id="msg" style="color:red"></span></td>
+                <td><input type=input name='receiveid' id='receiveid' size=42><span id="msg" style="color:red" required></span></td>
             </tr>
             
             <tr>
                 <td>제목</td>
-                <td colspan="3"><input type=input name='title' id='title'  size=42></td>
+                <td colspan="3"><input type=input name='title' id='title' size=42 required></td>
             </tr>
 
             <tr>
                 <td>쪽지 내용</td>
-                <td colspan="3"><textarea name="message" id='message'  style="width: 100%; height: 200px"></textarea></td>
+                <td colspan="3"><textarea name="message" id='message' style="width: 100%; height: 200px" required></textarea></td>
             </tr>
              <br><br>
             <tr>  
