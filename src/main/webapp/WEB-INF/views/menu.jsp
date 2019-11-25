@@ -135,7 +135,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --
 									<c:forEach var="row" items="${mlist}">
 										<c:if test="${not loop_flag }">
 									      	<c:if test="${row.count == 0}" >
-									      		<font size=2 style="color : red">n</font>
+									      		<img src="resources/img/new.jpg" alt="Image" class="img-fluid">
 									      		<c:set var="loop_flag" value="true"/>
 									      	</c:if>
 									      </c:if>

@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@ include file="banner.jsp"%>
+<meta charset=utf-8>
 <meta http-equiv=X-UA-Compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <link rel=icon href=/favicon.ico>
@@ -11,10 +12,10 @@
 <link rel=stylesheet
 	href="https://fonts.googleapis.com/css?family=Ubuntu">
 <title>todolist</title>
-<link href=/css/app.582efa46.css rel=preload as=style>
-<link href=/js/app.572af2ce.js rel=preload as=script>
+<link href=/css/app.bd10295b.css rel=preload as=style>
+<link href=/js/app.82fd020e.js rel=preload as=script>
 <link href=/js/chunk-vendors.ab416914.js rel=preload as=script>
-<link href=/css/app.582efa46.css rel=stylesheet>
+<link href=/css/app.bd10295b.css rel=stylesheet>
 </head>
 <body>
 	<noscript>
@@ -23,6 +24,6 @@
 	</noscript>
 	<div id=app></div>
 	<script src=/js/chunk-vendors.ab416914.js></script>
-	<script src=/js/app.572af2ce.js></script>
+	<script src=/js/app.82fd020e.js></script>
 </body>
 </html>
