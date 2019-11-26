@@ -68,6 +68,9 @@
 		select * from menu where food like concat('%', #{word}, '%')
 	</select>
 
+	<insert id="insertmenu" parameterType="menu">
+		insert into menu(code, food, allergy, calory, img) values(null, #{food}, #{allergy}, #{calory}, #{img})
+	</insert>
 
 	<insert id="insertMymenu" parameterType="mymenu">
   		insert into mymenu(num, id, code) values(null, #{id}, #{code})

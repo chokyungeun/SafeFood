@@ -68,7 +68,7 @@ public class MemberController {
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
 		model2.addAttribute("mlist", mlist);
-		
+
 		return "login";
 	}
 
@@ -81,7 +81,7 @@ public class MemberController {
 
 	@GetMapping("/insertForm.food")
 	public String insertForm() {
-		
+
 		return "signup";
 	}
 
@@ -100,7 +100,7 @@ public class MemberController {
 
 		return message; // 논리적 view 이름!
 	}
-	
+
 	@ResponseBody
 	@RequestMapping(value = "/findf.food", method = RequestMethod.GET)
 	public String findf(String id) {
@@ -116,7 +116,6 @@ public class MemberController {
 
 		return message; // 논리적 view 이름!
 	}
-	
 
 	@GetMapping("/signup.food")
 	public String signup(Member m, HttpSession session) {
@@ -176,7 +175,7 @@ public class MemberController {
 		}
 		List<MyFood> list = mservice.AllMyfood(id);
 		List<Double> flist = new ArrayList<>();
-		int sum=0;
+		int sum = 0;
 		double carbo = 0;
 		double protein = 0;
 		double fat = 0;
@@ -192,14 +191,14 @@ public class MemberController {
 			fat += f.getFat();
 			sugar += f.getSugar();
 			fattyacid += f.getFattyacid();
-			sum+=f.getCalory();
+			sum += f.getCalory();
 		}
 		flist.add(carbo);
 		flist.add(protein);
 		flist.add(fat);
 		flist.add(sugar);
 		flist.add(fattyacid);
-		
+
 		model4.addAttribute("flist", flist);
 		model3.addAttribute("sum", sum);
 		model.addAttribute("list", list);
@@ -228,7 +227,7 @@ public class MemberController {
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
 		model2.addAttribute("mlist", mlist);
-		
+
 		return "mypage";
 	}
 
@@ -242,7 +241,7 @@ public class MemberController {
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
 		model2.addAttribute("mlist", mlist);
-		
+
 		return "read";
 	}
 
@@ -251,7 +250,7 @@ public class MemberController {
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
 		model2.addAttribute("mlist", mlist);
-		
+
 		return "findpass";
 	}
 
@@ -268,14 +267,29 @@ public class MemberController {
 
 	@GetMapping("/allmenu.food")
 	public String allmenu(Model model, Model model2, HttpSession session) {
+		if (session.getAttribute("msg") != null) {
+			session.setAttribute("msg", null);
+		}
+		List<Menu> list = mservice.AllMenu();
+		model.addAttribute("list", list);
+
+		String receiveid = (String) session.getAttribute("id");
+		List<Message> mlist = mservice.AllReceivemessage(receiveid);
+		model2.addAttribute("mlist", mlist);
+
+		return "menu";
+	}
+	
+	@GetMapping("/remenu.food")
+	public String remenu(Model model, Model model2, HttpSession session) {
 
 		List<Menu> list = mservice.AllMenu();
 		model.addAttribute("list", list);
 
-String receiveid = (String) session.getAttribute("id");
+		String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
 		model2.addAttribute("mlist", mlist);
-		
+
 		return "menu";
 	}
 
@@ -284,10 +298,10 @@ String receiveid = (String) session.getAttribute("id");
 		Menu m = mservice.SelectMenu(code);
 		model.addAttribute("m", m);
 
-String receiveid = (String) session.getAttribute("id");
+		String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
 		model2.addAttribute("mlist", mlist);
-		
+
 		return "readmenu";
 	}
 
@@ -296,10 +310,22 @@ String receiveid = (String) session.getAttribute("id");
 		List<Menu> list = mservice.SearchMenu(word);
 		model.addAttribute("list", list);
 
-String receiveid = (String) session.getAttribute("id");
+		String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
 		model2.addAttribute("mlist", mlist);
 		return "searchmenu";
+	}
+	
+	@GetMapping("/insertmenuform.food")
+	public String insertmenuform() {
+		return "insertmenu";
+	}
+	
+	@PostMapping("insertmenu.food")
+	public String insertmenu(Menu m, Model model, HttpSession session) {
+		mservice.Insertmenu(m);
+		session.setAttribute("msg", "새로운 식단이 등록되었습니다.");
+		return "redirect:/remenu.food";
 	}
 
 	@GetMapping("/insertmymenu.food")
@@ -328,18 +354,18 @@ String receiveid = (String) session.getAttribute("id");
 		String id = (String) session.getAttribute("id");
 		List<Menu2> list = mservice.SelectMymenu(id);
 		model.addAttribute("list", list);
-		
-		int sum=0;
-		for(int i=0;i<list.size();i++) {
-			sum+=Integer.parseInt(list.get(0).getCalory());
+
+		int sum = 0;
+		for (int i = 0; i < list.size(); i++) {
+			sum += Integer.parseInt(list.get(0).getCalory());
 		}
 		System.out.println(sum);
 		model3.addAttribute("sum", sum);
 
-String receiveid = (String) session.getAttribute("id");
+		String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
 		model2.addAttribute("mlist", mlist);
-		
+
 		return "mymenu";
 	}
 
@@ -383,7 +409,7 @@ String receiveid = (String) session.getAttribute("id");
 	}
 
 	@GetMapping("/sendform.food")
-	public String sendform( Model model2, HttpSession session) {
+	public String sendform(Model model2, HttpSession session) {
 		String receiveid = (String) session.getAttribute("id");
 		List<Message> mlist = mservice.AllReceivemessage(receiveid);
 		model2.addAttribute("mlist", mlist);

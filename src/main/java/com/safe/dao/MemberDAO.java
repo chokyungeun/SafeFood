@@ -136,4 +136,10 @@ public class MemberDAO implements IMember {
 	public List<Member> selectAll() {
 		return session.selectList("member.checkid");
 	}
+
+	@Override
+	public void Insertmenu(Menu m) {
+		session.insert("member.insertmenu", m);
+		
+	}
 }

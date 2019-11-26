@@ -137,5 +137,10 @@ public class MemberServiceImpl implements MemberService{
 	public List<Member> selectAll() {
 		return mdao.selectAll();
 	}
+
+	@Override
+	public void Insertmenu(Menu m) {
+		mdao.Insertmenu(m);
+	}
 	
 }
