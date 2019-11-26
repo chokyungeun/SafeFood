@@ -205,6 +205,8 @@
 								<th>${m.allergy }</th>
 							</tr>
 						</table>
+						<input type="button"  class="btn btn-danger" onclick="location.href='deletemenu.food?code=${m.code}'" value="삭제하기">
+						<br><span style="color:red;">*삭제하기 권한은 관리자에게 있습니다. 추가한 데이터에 문제가 있으면 Q&A게시판을 활용해주세요.</span><br>
 					</div>
 						<p>
 							<button id="add" class="btn btn-outline-primary">추가하기</button>
@@ -218,7 +220,9 @@
 
 							<span style="color:gray;">*친구에게 추천하기를 누르실 경우, 친구의 식단에 메뉴가 추가됩니다.</span><br>
 							<input type="button" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;" value="레시피보러가기" onclick="showPopup();"></input>
-							<input type="button"  class="btn btn-danger" onclick="location.href='deletemenu.food?code=${m.code}'" value="삭제하기">
+							<br><br>
+							
+							
 						</p>
 					</div>
 				</div>

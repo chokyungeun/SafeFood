@@ -117,7 +117,6 @@
 									<li><a href="map.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">지도</a></li>
 								</ul>
 							</nav>
-
 						</div>
 
 					</div>
