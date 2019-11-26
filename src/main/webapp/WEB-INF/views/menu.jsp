@@ -160,7 +160,6 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --
 				<div class="row mb-5">
 					<div class="col-12 section-title text-center mb-5">
 						<p>
-
 							<nav class="navbar navbar-expand-lg navbar-dark bg-light">
 								<a class="navbar-brand" href="#"></a>
 								<button class="navbar-toggler" type="button"
@@ -169,8 +168,6 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --
 									aria-label="Toggle navigation">
 									<span class="navbar-toggler-icon"></span>
 								</button>
-
-
 
 								<div class="collapse navbar-collapse" id="navbarColor02">
 									<ul class="navbar-nav mr-auto">
@@ -196,7 +193,6 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --
 						</p>
 					</div>
 				</div>
-
 				<%
 					ArrayList<Menu> list = (ArrayList<Menu>) request.getAttribute("list");
 					int cnt = 3;
@@ -244,7 +240,9 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --
 						}
 					%>
 				</div>
-
+				<p align="center">
+					<button class="btn btn-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;"><a href="insertmenu.food" style="color: white">식단 추가</a></button>
+				</p><br>
 
 				<%@ include file="footer.jsp"%>
 </body>

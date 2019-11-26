@@ -321,7 +321,7 @@ public class MemberController {
 		return "insertmenu";
 	}
 	
-	@PostMapping("insertmenu.food")
+	@PostMapping("/insertmenu.food")
 	public String insertmenu(Menu m, Model model, HttpSession session) {
 		mservice.Insertmenu(m);
 		session.setAttribute("msg", "새로운 식단이 등록되었습니다.");
