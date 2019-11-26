@@ -339,8 +339,8 @@ public class MemberController {
         File destinationFile; 
         String destinationFileName="";
         String fileUrl = "C:\\ssafy\\springProject\\safefoodproject_inkyung_kyungeun\\src\\main\\webapp\\resources\\img\\";
+        //여기 동영상 찍을 때 수정하기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-		System.out.println("여기야여기~~~" + sourceFileName);
         Menu m = new Menu();
         m.setFood(request.getParameter("food"));
         m.setAllergy(request.getParameter("allergy"));
