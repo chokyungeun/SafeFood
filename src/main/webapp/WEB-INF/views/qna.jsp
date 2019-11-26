@@ -13,10 +13,10 @@
 <link rel=stylesheet
 	href="https://fonts.googleapis.com/css?family=Ubuntu">
 <title>todolist</title>
-<link href=/css/app.8970fdeb.css rel=preload as=style>
-<link href=/js/app.ce1068aa.js rel=preload as=script>
+<link href=/css/app.8b58c3bc.css rel=preload as=style>
+<link href=/js/app.a0e7950e.js rel=preload as=script>
 <link href=/js/chunk-vendors.ab416914.js rel=preload as=script>
-<link href=/css/app.8970fdeb.css rel=stylesheet>
+<link href=/css/app.8b58c3bc.css rel=stylesheet>
 </head>
 <body>
 	<noscript>
@@ -25,6 +25,6 @@
 	</noscript>
 	<div id=app></div>
 	<script src=/js/chunk-vendors.ab416914.js></script>
-	<script src=/js/app.ce1068aa.js></script>
+	<script src=/js/app.a0e7950e.js></script>
 </body>
 </html>
