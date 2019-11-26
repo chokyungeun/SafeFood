@@ -218,6 +218,7 @@
 
 							<span style="color:gray;">*친구에게 추천하기를 누르실 경우, 친구의 식단에 메뉴가 추가됩니다.</span><br>
 							<input type="button" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;" value="레시피보러가기" onclick="showPopup();"></input>
+							<input type="button"  class="btn btn-danger" onclick="location.href='deletemenu.food?code=${m.code}'" value="삭제하기">
 						</p>
 					</div>
 				</div>

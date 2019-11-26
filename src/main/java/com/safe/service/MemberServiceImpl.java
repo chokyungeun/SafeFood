@@ -142,5 +142,11 @@ public class MemberServiceImpl implements MemberService{
 	public void Insertmenu(Menu m) {
 		mdao.Insertmenu(m);
 	}
+
+	@Override
+	public void Deletemenu(String code) {
+		mdao.Deletemenu(code);
+		
+	}
 	
 }

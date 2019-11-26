@@ -323,7 +323,12 @@ public class MemberController {
 	}
 	
 	@GetMapping("/insertmenuform.food")
-	public String insertmenuform() {
+	public String insertmenuform(HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		if (id == null) {
+			session.setAttribute("msg", "로그인해주세요.");
+			return "redirect:/remenu.food";
+		}
 		return "insertmenu";
 	}
 	
@@ -355,6 +360,19 @@ public class MemberController {
 		return "redirect:/remenu.food";
     }
 
+	@GetMapping("/deletemenu.food")
+	public String deletemenu(HttpSession session, String code) {
+		String id = (String) session.getAttribute("id");
+		if(id==null || !id.equals("admin")) {
+			session.setAttribute("msg", "삭제 권한이 없습니다.");
+			return "redirect:/remenu.food";
+		}
+		session.setAttribute("msg", "식단 정보가 삭제되었습니다.");
+		System.out.println("*****"+code);
+		mservice.Deletemenu(code);
+		return "redirect:/remenu.food";
+	}
+	
 	@GetMapping("/insertmymenu.food")
 	public String insertmymenu(String code, HttpSession session) {
 		String id = (String) session.getAttribute("id");
@@ -378,6 +396,9 @@ public class MemberController {
 
 	@GetMapping("/mymenu.food")
 	public String mymenu(HttpSession session, Model model, Model model2, Model model3) {
+		if(session.getAttribute("msg")!=null) {
+			session.setAttribute("msg", null);
+		}
 		String id = (String) session.getAttribute("id");
 		List<Menu2> list = mservice.SelectMymenu(id);
 		model.addAttribute("list", list);

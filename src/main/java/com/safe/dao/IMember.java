@@ -36,6 +36,8 @@ public interface IMember {
 	
 	public void Insertmenu(Menu m);
 	
+	public void Deletemenu(String code);
+	
 	public Menu SelectMenu(String code);
 	
 	public List<Menu> SearchMenu(String word);

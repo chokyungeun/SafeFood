@@ -140,6 +140,10 @@ public class MemberDAO implements IMember {
 	@Override
 	public void Insertmenu(Menu m) {
 		session.insert("member.insertmenu", m);
-		
+	}
+
+	@Override
+	public void Deletemenu(String code) {
+		session.delete("member.deletemenu", code);
 	}
 }

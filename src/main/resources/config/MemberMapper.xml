@@ -72,6 +72,10 @@
 		insert into menu(code, food, allergy, calory, img) values(null, #{food}, #{allergy}, #{calory}, #{img})
 	</insert>
 
+	<delete id="deletemenu" parameterType="java.lang.String">
+		delete from menu where code=#{code}
+	</delete>
+	
 	<insert id="insertMymenu" parameterType="mymenu">
   		insert into mymenu(num, id, code) values(null, #{id}, #{code})
   	</insert>
