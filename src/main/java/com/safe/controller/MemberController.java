@@ -323,6 +323,7 @@ public class MemberController {
 	
 	@PostMapping("/insertmenu.food")
 	public String insertmenu(Menu m, Model model, HttpSession session) {
+		System.out.println(m);
 		mservice.Insertmenu(m);
 		session.setAttribute("msg", "새로운 식단이 등록되었습니다.");
 		return "redirect:/remenu.food";

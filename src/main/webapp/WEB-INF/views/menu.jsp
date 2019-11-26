@@ -8,6 +8,14 @@
 	rel="stylesheet">
 
 <head>
+
+<center>
+		<c:if test="${not empty msg}">
+			<script type="text/javascript">
+				alert("${msg}");
+			</script>
+		</c:if>
+
 <title>내 알러지를 부탁해 —</title>
 <meta charset="utf-8">
 <meta name="viewport"
@@ -241,7 +249,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --
 					%>
 				</div>
 				<p align="center">
-					<button class="btn btn-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;"><a href="insertmenu.food" style="color: white">식단 추가</a></button>
+					<button class="btn btn-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;"><a href="insertmenuform.food" style="color: white">식단 추가</a></button>
 				</p><br>
 
 				<%@ include file="footer.jsp"%>
