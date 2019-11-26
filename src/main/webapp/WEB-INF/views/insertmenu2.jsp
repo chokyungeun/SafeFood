@@ -37,6 +37,23 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" >
+	$(document).ready(function(){
+		$("#fileInput").on('change', function(){  // 값이 변경되면
+			var foodname = $("#food").val();
+			if(window.FileReader){  // modern browser
+				var filename = $(this)[0].files[0].name;
+			} else {  // old IE
+				var filename = $(this).val().split('/').pop().split('\\').pop();  // 파일명만 추출
+			}
+			var fn = filename.split('.')[1];
+			// 추출한 파일명 삽입
+			$("#img").val('img/'+foodname+"."+fn);
+		});
+	});
+      
+    </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <style>
 .collapse {
@@ -160,17 +177,31 @@
                
             </tr>
             <tr>
-                <td>알레르기 유발 재료</td>
-                <td colspan="3"><input type=input name='allergy' size=42 ><b>ex)달걀, 키위 등등</b></td>
-            </tr>
-            <tr>
                 <td>칼로리</td>
                 <td><input type=input name='calory' size=42 placeholder="칼로리 입력"><b>kcal</b></td>
                
             </tr>
+            
             <tr>
-                <td>이미지</td>
-                <td colspan="3"><input type="file" name="img">
+                <td>알레르기 유발 재료</td>
+                <td colspan="3"><input type=input name='allergy' size=42 ><b>ex)달걀, 키위 등등</b></td>
+            </tr>
+
+            <tr>
+                <td><label for="InputSubject1">이미지</label></td>
+                <td colspan="3">
+                <input id="fileInput" filestyle="" type="file" data-class-button="btn btn-default" 
+                data-class-input="form-control" data-button-text="" data-icon-name="fa fa-upload" class="form-control" 
+                tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+				<div class="bootstrap-filestyle input-group">
+					<input type="text" id="img" class="form-control" name="img" disabled="">
+					<span class="group-span-filestyle input-group-btn" tabindex="0">
+						<label for="fileInput" class="btn btn-default ">
+							<img src="resources/img/upload.png" alt="Image" class="img-fluid" style="width:30px; height:30px;">
+						</label>
+					</span>
+				</div>
+
             </tr>
              <br><br>
             <tr>  

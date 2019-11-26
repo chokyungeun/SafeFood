@@ -1,10 +1,14 @@
 package com.safe.controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +17,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.safe.service.FoodService;
@@ -322,12 +328,32 @@ public class MemberController {
 	}
 	
 	@PostMapping("/insertmenu.food")
-	public String insertmenu(Menu m, Model model, HttpSession session) {
-		System.out.println(m);
-		mservice.Insertmenu(m);
-		session.setAttribute("msg", "새로운 식단이 등록되었습니다.");
+    private String boardInsertProc(HttpServletRequest request, @RequestPart MultipartFile img, HttpSession session) throws Exception{
+        String sourceFileName = img.getOriginalFilename(); 
+        String sourceFileNameExtension = FilenameUtils.getExtension(sourceFileName).toLowerCase(); 
+        File destinationFile; 
+        String destinationFileName="";
+        String fileUrl = "C:\\ssafy\\springProject\\safefoodproject_inkyung_kyungeun\\src\\main\\webapp\\resources\\img\\";
+
+		System.out.println("여기야여기~~~" + sourceFileName);
+        Menu m = new Menu();
+        m.setFood(request.getParameter("food"));
+        m.setAllergy(request.getParameter("allergy"));
+        m.setCalory(request.getParameter("calory"));
+        m.setImg("img/"+sourceFileName);
+        System.out.println(m.getImg());
+        
+        do { 
+            destinationFileName = sourceFileName; 
+            destinationFile = new File(fileUrl + destinationFileName); 
+        } while (destinationFile.exists()); 
+        
+        destinationFile.getParentFile().mkdirs(); 
+        img.transferTo(destinationFile); 
+        mservice.Insertmenu(m);
+        session.setAttribute("msg", "새로운 식단이 등록되었습니다.");
 		return "redirect:/remenu.food";
-	}
+    }
 
 	@GetMapping("/insertmymenu.food")
 	public String insertmymenu(String code, HttpSession session) {

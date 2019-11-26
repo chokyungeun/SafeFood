@@ -1,35 +1,61 @@
 <%@page import="java.io.File"%>
+<%@page import="java.util.Enumeration"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title></title>
-		<style></style>
-		<script type="text/javascript"></script>
-	</head>
-
-	<body>
-	
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+ 
 <%
-	String saveDir = application.getRealPath("resources/img");
-	int maxSize = 1024*1024*100;
-	String encType = "UTF-8";
+    // request.getRealPath("상대경로") 를 통해 파일을 저장할 절대 경로를 구해온다.
+    // 운영체제 및 프로젝트가 위치할 환경에 따라 경로가 다르기 때문에 아래처럼 구해오는게 좋음
+    String uploadPath = request.getRealPath("/resources/img/");
+    out.println("절대경로 : " + uploadPath +"<br/>");
+     
+    int maxSize =1024 *1024 *10;// 한번에 올릴 수 있는 파일 용량 : 10M로 제한
+     
+    String img1 ="";// 중복처리된 이름
+    String img ="";// 중복 처리전 실제 원본 이름
+    long fileSize =0;// 파일 사이즈
+    String fileType ="";// 파일 타입
+     
+    MultipartRequest multi =null;
+     
+    try{
+        // request,파일저장경로,용량,인코딩타입,중복파일명에 대한 기본 정책
+        multi =new MultipartRequest(request,uploadPath,maxSize,"utf-8",new DefaultFileRenamePolicy());
 
-	MultipartRequest multipartRequest = new MultipartRequest(request, saveDir, maxSize, encType, new DefaultFileRenamePolicy());
-	
-    out.write("이름 : " + multipartRequest.getParameter("name") + "<br>");
-    out.write("파일 : " + multipartRequest.getParameter("file") + "<br>"); //null 값을 갖는다.
-    out.write("업로드파일명 : " + multipartRequest.getFilesystemName("file") + "<br>");
-    out.write("원래파일명 : " + multipartRequest.getOriginalFileName("file") + "<br>");
-    
-    File file = multipartRequest.getFile("file");
+        // 전송한 전체 파일이름들을 가져옴
+        Enumeration files = multi.getFileNames();
+         
+        while(files.hasMoreElements()){
+            // form 태그에서 <input type="file" name="여기에 지정한 이름" />을 가져온다.
+            String file1 = (String)files.nextElement();// 파일 input에 지정한 이름을 가져옴
+            // 그에 해당하는 실재 파일 이름을 가져옴
+            img = multi.getOriginalFileName(file1);
+            // 파일명이 중복될 경우 중복 정책에 의해 뒤에 1,2,3 처럼 붙어 unique하게 파일명을 생성하는데
+            // 이때 생성된 이름을 filesystemName이라 하여 그 이름 정보를 가져온다.(중복에 대한 처리)
+            img1 = multi.getFilesystemName(file1);
+            // 파일 타입 정보를 가져옴
+            fileType = multi.getContentType(file1);
+            // input file name에 해당하는 실재 파일을 가져옴
+            File file = multi.getFile(file1);
+            // 그 파일 객체의 크기를 알아냄
+            fileSize = file.length();
+        }
+    }catch(Exception e){
+        e.printStackTrace();
+    }
 %>
-
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-	파일용량 : <fmt:formatNumber value="<%=file.length() %>" groupingUsed="true"/>
-
-	</body>
-</html>
+<!--
+    해당 페이지는 사용자에게 보여줄 필요가 없고 해당 정보를 전달만 해주면 되기 때문에 hidden으로 했다.
+ -->
+<form action="insertmenu.food" method="post" name="fileCheckFormName">
+    <input type="hidden" value="<%=img1%>" name="img1" />
+    <input type="hidden" value="<%=img%>" name="img" />
+</form>
