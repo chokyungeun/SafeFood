@@ -60,9 +60,11 @@ public class QnAController {
 	}
 
 	@PutMapping("/qna/update")
-	public void updateProcess(@RequestBody QnA q) {
+	public void updateProcess(@RequestBody QnA q, HttpSession session) {
 		QnA qq = new QnA(q.getId(), q.getNum(), null, null, q.getTitle(), q.getContent(), null, q.getComment());
-		qservice.update(qq);
+		String id = (String) session.getAttribute("id");
+		if(id==q.getId())
+			qservice.update(qq);
 	}
 
 	@RequestMapping(value="/qna/getid", method=RequestMethod.GET)
