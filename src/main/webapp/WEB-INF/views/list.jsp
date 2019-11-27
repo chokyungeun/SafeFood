@@ -51,5 +51,6 @@
 </table>
 <br></br>
 <button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#ffeded"><a href=listinsert.food>새글쓰기</a></button>
-
+<br>
+<%@ include file="footer.jsp"%>
 </body></html>
