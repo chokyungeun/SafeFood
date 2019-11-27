@@ -16,10 +16,10 @@
 		<br><br>
 
 		<TABLE BORDER=1 CELLSPACING=1 CELLPADDING = 1 style="font-family: 'Sunflower', sans-serif; text-align:center" ><TR>
-		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>ID</th>
-		<th width=200 bgcolor=#ffeded><font color=#000000 size=2>제목</th>
-		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>보낸 사람</th>
-		<th width=100 bgcolor=#ffeded><font color=#000000 size=2>확인</th>
+		<th width=100 bgcolor=#fbf7c6><font color=#000000 size=2>ID</th>
+		<th width=200 bgcolor=#fbf7c6><font color=#000000 size=2>제목</th>
+		<th width=100 bgcolor=#fbf7c6><font color=#000000 size=2>보낸 사람</th>
+		<th width=100 bgcolor=#fbf7c6><font color=#000000 size=2>확인</th>
 
 	  <c:forEach var="row" items="${list}">
 	    <tr>
@@ -46,7 +46,7 @@
 	    </c:forEach>
 </table>
 <br></br>
-<button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#ffeded"><a href=sendform.food>쪽지 보내기</a></button>
-<button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#ffeded"><a href=allsendmessage.food>보낸 쪽지함</a></button>
+<button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#fbf7c6"><a href=sendform.food>쪽지 보내기</a></button>
+<button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#fbf7c6"><a href=allsendmessage.food>보낸 쪽지함</a></button>
 <%@ include file="footer.jsp"%>
 </body></html>
