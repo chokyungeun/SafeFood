@@ -51,13 +51,10 @@ public class QnAController {
 	@PutMapping("/qna/insertcomment")
 	public void insertcomment(@RequestBody QnA q, HttpSession session) {
 		String id = (String) session.getAttribute("id");
-		if(id==null || !id.equals("admin")) {
-			
-		}
+		if(id==null || !id.equals("admin")) {}
 		else {
 			qservice.insertA(q);
 		}
-		
 	}
 
 	@PutMapping("/qna/update")
