@@ -195,7 +195,7 @@ function showPopup() {
     <span style="font-family: 'Sunflower', sans-serif; margin: auto; font-size:30px;" >오늘 식단의 칼로리는 총 
     <span style="font-family: 'Sunflower', sans-serif; margin: auto; font-size:30px; color:red"> ${sum } </span> 
     kcal입니다.</span><br><br>
-    <input type="button" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;" value="하루 권장량 보러가기" onclick="showPopup();"></input>
+    <input type="button" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif; margin: auto; background-color" value="하루 권장량 보러가기" onclick="showPopup();"></input>
 	<button class="btn btn-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;"><a href="updateForm.food" style="color: white">회원 정보 수정</a></button>
      
     
