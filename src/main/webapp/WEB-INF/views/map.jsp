@@ -199,7 +199,7 @@
 	}
 	function getIWContent(place) {
 		var content = '<table style="border:0"><tr><td style="border:0;">';
-		content += '<img class="placeIcon" src="' + place.icon + '"></td>';
+		content += '<img style="width:15px; height:15px;" class="placeIcon" src="' + place.icon + '"></td>';
 		content += '<td style="border:0;"><b><a href="' + place.url + '">'
 				+ place.name + '</a></b>';
 		content += '</td></tr></table>';
