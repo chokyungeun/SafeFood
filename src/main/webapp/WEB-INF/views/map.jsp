@@ -40,7 +40,7 @@
 					<span style="font-size:30px; color:black">[검색 결과]</span>
 			</div>
 			<div class="container" id="listing" style="font-family: 'Sunflower', sans-serif;">
-				<div class="row">
+				<div class="row" style="overflow:auto; height:550px;">
 					<table id="results"></table>
 				</div>
 			</div>
