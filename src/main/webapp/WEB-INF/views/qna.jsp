@@ -26,5 +26,7 @@
 	<div id=app></div>
 	<script src=/js/chunk-vendors.ab416914.js></script>
 	<script src=/js/app.3a447462.js></script>
+	
+	<%@ include file="footer.jsp"%>
 </body>
 </html>

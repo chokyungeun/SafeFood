@@ -338,7 +338,8 @@ public class MemberController {
         String sourceFileNameExtension = FilenameUtils.getExtension(sourceFileName).toLowerCase(); 
         File destinationFile; 
         String destinationFileName="";
-        String fileUrl = "C:\\ssafy\\springProject\\safefoodproject_inkyung_kyungeun\\src\\main\\webapp\\resources\\img\\";
+       
+        //String fileUrl = "C:\\ssafy\\springProject\\safefoodproject_inkyung_kyungeun\\src\\main\\webapp\\resources\\img\\";
         //여기 동영상 찍을 때 수정하기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         Menu m = new Menu();
