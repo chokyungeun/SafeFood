@@ -46,8 +46,10 @@ public class QnAController {
 	}
 
 	@DeleteMapping("/qna/delete/{num}")
-	public void qnadelete(@PathVariable String num) {
-		qservice.delete(num);
+	public void qnadelete(@PathVariable String num, HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		if(id.equals("admin"))
+			qservice.delete(num);
 	}
 
 	@PutMapping("/qna/insertcomment")
