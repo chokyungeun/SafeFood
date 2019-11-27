@@ -1,6 +1,8 @@
 package com.safe.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,8 +14,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.safe.service.MemberService;
 import com.safe.service.QnAService;
 import com.safe.vo.QnA;
 
@@ -23,6 +27,8 @@ public class QnAController {
 	@Autowired
 	QnAService qservice;
 	
+	@Autowired
+	MemberService mservice;
 
 	@GetMapping("/qna/all")
 	public List<QnA> qnaList() {
@@ -57,4 +63,11 @@ public class QnAController {
 		QnA qq = new QnA(q.getId(), q.getNum(), null, null, q.getTitle(), q.getContent(),null, q.getComment());
 		qservice.update(qq);
 	}
+	
+	@RequestMapping("/qna/getid")
+	public String getid(HttpSession session){
+		String id = (String)session.getAttribute("id");
+		return id;
+	}
+	
 }
