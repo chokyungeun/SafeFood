@@ -69,7 +69,7 @@
 										<a href="#" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getName()%></a>
 									</h3>
 								</div>
-								<div class="drpt" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getMaterial()%></div>
+								<div class="drpt" style="font-family: 'Sunflower', sans-serif; height:150px; overflow:auto;"><%=list.get(i).getMaterial()%></div>
 								<a href="read.food?code=<%=list.get(i).getCode()%>" class="btn btn-outline-primary" style="font-family: 'Sunflower', sans-serif;">추가</a>
 							</div>
 						</div>
