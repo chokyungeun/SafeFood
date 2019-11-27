@@ -55,9 +55,7 @@ public class QnAController {
 			q.setComment(q.getComment());
 			qservice.insertA(q);
 		}
-		else {
-			session.setAttribute("msg", "댓글 권한이 없습니다.");
-		}
+		
 		return "qna";
 	}
 
