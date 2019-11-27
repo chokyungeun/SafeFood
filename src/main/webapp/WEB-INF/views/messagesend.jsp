@@ -31,5 +31,5 @@
 <br></br>
 <button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#ffeded"><a href=sendform.food>쪽지 보내기</a></button>
 <button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#ffeded"><a href=allreceivemessage.food>받은 쪽지함</a></button>
-
+<%@ include file="footer.jsp"%>
 </body></html>

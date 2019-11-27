@@ -51,5 +51,5 @@
 </table>
 <br></br>
 <button style="background-color: white; border-radius: 15px; font-family: 'Sunflower', sans-serif; border-color:#ffeded"><a href=boardlist.food>돌아가기</a></button>
-
+<%@ include file="footer.jsp"%>
 </body></html>

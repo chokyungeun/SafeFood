@@ -15,8 +15,8 @@
 	<c:if test="${not empty id }">
 		<img width="50px" height="50px" src="resources/img/animat-image-color.gif"><h5 style="color: black; font-family: 'Sunflower', sans-serif;"><a href="updateForm.food">${id }</a>님, 환영합니다!</h5>&nbsp;&nbsp;&nbsp;&nbsp;
 		<button class="btn btn-secondary my-2 my-sm-0" type="submit" onclick="location.href = 'mymenu.food'" style="font-family: 'Sunflower', sans-serif;">마이페이지</button>
-&nbsp;&nbsp;
-<button class="btn btn-secondary my-2 my-sm-0" type="submit" onclick="location.href = 'logout.food'" style="font-family: 'Sunflower', sans-serif;">로그아웃</button>
+		&nbsp;&nbsp;
+		<button class="btn btn-secondary my-2 my-sm-0" type="submit" onclick="location.href = 'logout.food'" style="font-family: 'Sunflower', sans-serif;">로그아웃</button>
 
 	</c:if>
 
