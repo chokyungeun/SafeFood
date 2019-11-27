@@ -188,7 +188,7 @@
                       <h2 class="h5 cart-product-title text-black" style="font-family: 'Sunflower', sans-serif;">${row.name }</h2>
                     </td>
                     <td>${row.count } </td>
-                    <td><!--  <img src="resource/img/경고.PNG" alt="Image" class="img-fluid"> --></td>
+                    <td>${row.allergy } </td>
                     <td><a href="deletemyfood.food?id=${row.id }&code=${row.code}" class="btn btn-primary height-auto btn-sm" style="font-family: 'Sunflower', sans-serif;">삭제</a></td>
                   </tr>
     			</c:forEach>
