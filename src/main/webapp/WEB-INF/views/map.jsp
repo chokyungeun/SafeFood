@@ -122,10 +122,12 @@
 			if (status == google.maps.places.PlacesServiceStatus.OK) {
 				clearResults();
 				clearMarkers();
+				var image = 'https://github.com/chokyungeun/TRAVEL_KE/blob/master/flag%20(3).png?raw=true';
 				for (var i = 0; i < results.length; i++) {
 					markers[i] = new google.maps.Marker({
 						position : results[i].geometry.location,
-						animation : google.maps.Animation.DROP
+						animation : google.maps.Animation.DROP,
+						icon:image
 					});
 					google.maps.event.addListener(markers[i], 'click',
 							getDetails(results[i], i));
@@ -152,7 +154,7 @@
 		var num=4;
 		var results = document.getElementById('results');
 		var tr = document.createElement('tr');
-		tr.style.backgroundColor = (i % 2 == 0 ? '#F0F0F0' : '#FFFFFF');
+		tr.style.backgroundColor = (i % 2 == 0 ? '#fff7de' : '#FFFFFF');
 		tr.onclick = function() {
 			google.maps.event.trigger(markers[i], 'click');
 		};
