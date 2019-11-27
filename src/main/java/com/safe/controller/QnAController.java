@@ -53,8 +53,6 @@ public class QnAController {
 		String id = (String) session.getAttribute("id");
 		if(id!=null && id.equals("admin"))
 			qservice.insertA(q);
-		
-		//return "qna";
 	}
 
 	@PutMapping("/qna/update")
