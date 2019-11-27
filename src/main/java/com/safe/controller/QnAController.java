@@ -1,8 +1,6 @@
 package com.safe.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,7 +24,7 @@ import com.safe.vo.QnA;
 public class QnAController {
 	@Autowired
 	QnAService qservice;
-	
+
 	@Autowired
 	MemberService mservice;
 
@@ -49,27 +47,30 @@ public class QnAController {
 	public void qnadelete(@PathVariable String num) {
 		qservice.delete(num);
 	}
-	
+
 	@PutMapping("/qna/insertcomment")
 	public String insertcomment(@RequestBody QnA q, HttpSession session) {
-		String id = (String)session.getAttribute("id");
-		if(id!=null && id.equals("admin")) {
+		String id = (String) session.getAttribute("id");
+		if (id != null && id.equals("admin")) {
 			q.setComment(q.getComment());
 			qservice.insertA(q);
 		}
+		else {
+			session.setAttribute("msg", "댓글 권한이 없습니다.");
+		}
 		return "qna";
 	}
-	
+
 	@PutMapping("/qna/update")
 	public void updateProcess(@RequestBody QnA q) {
-		QnA qq = new QnA(q.getId(), q.getNum(), null, null, q.getTitle(), q.getContent(),null, q.getComment());
+		QnA qq = new QnA(q.getId(), q.getNum(), null, null, q.getTitle(), q.getContent(), null, q.getComment());
 		qservice.update(qq);
 	}
-	
+
 	@RequestMapping("/qna/getid")
-	public String getid(HttpSession session){
-		String id = (String)session.getAttribute("id");
+	public String getid(HttpSession session) {
+		String id = (String) session.getAttribute("id");
 		return id;
 	}
-	
+
 }
