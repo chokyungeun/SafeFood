@@ -167,7 +167,7 @@ function showPopup() {
                   <input type="hidden" id="code" value="${row.num }"/>
                   <tr>
                     <td class="product-thumbnail">
-                    <a href="#"><img src="resources/${row.img }" alt="Image" class="img-fluid" style="font-family: 'Sunflower', sans-serif;"></a>
+                    <a href="selectmenu.food?code=${row.code }"><img src="resources/${row.img }" alt="Image" class="img-fluid" style="font-family: 'Sunflower', sans-serif;"></a>
                     </td>
                     
                     <td class="product-name">

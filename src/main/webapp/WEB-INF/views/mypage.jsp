@@ -182,7 +182,7 @@
                   <c:forEach var="row" items="${list}">
                   <tr>
                     <td class="product-thumbnail">
-                    <a href="#"><img src="resources/${row.img }" alt="Image" class="img-fluid" style="font-family: 'Sunflower', sans-serif;"></a>
+                    <a href="read.food?code=${row.code }"><img src="resources/${row.img }" alt="Image" class="img-fluid" style="font-family: 'Sunflower', sans-serif;"></a>
                     </td>
                     <td class="product-name">
                       <h2 class="h5 cart-product-title text-black" style="font-family: 'Sunflower', sans-serif;">${row.name }</h2>

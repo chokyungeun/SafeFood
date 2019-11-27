@@ -192,12 +192,12 @@ public class MemberController {
 			list.get(i).setImg(f.getImg());
 			list.get(i).setName(f.getName());
 			list.get(i).setAllergy(f.getAllergy());
-			carbo += f.getCarbo();
-			protein += f.getProtein();
-			fat += f.getFat();
-			sugar += f.getSugar();
-			fattyacid += f.getFattyacid();
-			sum += f.getCalory();
+			carbo += (f.getCarbo()*list.get(i).getCount());
+			protein += (f.getProtein()*list.get(i).getCount());
+			fat += (f.getFat()*list.get(i).getCount());
+			sugar += (f.getSugar()*list.get(i).getCount());
+			fattyacid += (f.getFattyacid()*list.get(i).getCount());
+			sum += (f.getCalory()*list.get(i).getCount());
 		}
 		flist.add(carbo);
 		flist.add(protein);
