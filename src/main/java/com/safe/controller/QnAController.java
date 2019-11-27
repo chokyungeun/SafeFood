@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.safe.service.MemberService;
@@ -63,9 +64,10 @@ public class QnAController {
 		qservice.update(qq);
 	}
 
-	@RequestMapping("/qna/getid")
+	@RequestMapping(value="/qna/getid", method=RequestMethod.GET)
 	public String getid(HttpSession session) {
 		String id = (String) session.getAttribute("id");
+		System.out.println("여기~~~~"+id);
 		return id;
 	}
 
