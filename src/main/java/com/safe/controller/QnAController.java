@@ -42,19 +42,23 @@ public class QnAController {
 	}
 
 	@PostMapping("/qna/insert")
-	public void qnainsert(@RequestBody QnA q) {
+	public void qnainsert(@RequestBody QnA q, HttpServletResponse response) throws Exception {
 		qservice.insertQ(q);
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		out.println("등록되었습니다.");
+		out.flush();
 	}
 
 	@DeleteMapping("/qna/delete/{num}")
 	public void qnadelete(@PathVariable String num, HttpSession session, HttpServletResponse response) throws Exception{
 		String id = (String) session.getAttribute("id");
 		if(id.equals("admin")) {
+			qservice.delete(num);
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("삭제되었습니다.");
 			out.flush();
-			qservice.delete(num);
 		}else {
 			response.setCharacterEncoding("UTF-8");
 			response.setContentType("text/html; charset=UTF-8");
@@ -75,12 +79,12 @@ public class QnAController {
 			out.flush();
 		}
 		else {
+			qservice.insertA(q);
 			response.setCharacterEncoding("UTF-8");
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("댓글이 입력되었습니다.");
 			out.flush();
-			qservice.insertA(q);
 		}
 	}
 
@@ -89,12 +93,12 @@ public class QnAController {
 		QnA qq = new QnA(q.getId(), q.getNum(), null, null, q.getTitle(), q.getContent(), null, q.getComment());
 		String id = (String) session.getAttribute("id");
 		if(id==q.getId()) {
+			qservice.update(qq);
 			response.setCharacterEncoding("UTF-8");
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("수정되었습니다.");
 			out.flush();
-			qservice.update(qq);
 		}else {
 			response.setCharacterEncoding("UTF-8");
 			response.setContentType("text/html; charset=UTF-8");
