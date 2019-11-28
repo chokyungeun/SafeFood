@@ -1,11 +1,12 @@
 package com.safe.controller;
 
+import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,27 +47,61 @@ public class QnAController {
 	}
 
 	@DeleteMapping("/qna/delete/{num}")
-	public void qnadelete(@PathVariable String num, HttpSession session) {
+	public void qnadelete(@PathVariable String num, HttpSession session, HttpServletResponse response) throws Exception{
 		String id = (String) session.getAttribute("id");
-		if(id.equals("admin"))
+		if(id.equals("admin")) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("삭제되었습니다.");
+			out.flush();
 			qservice.delete(num);
+		}else {
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("권한이 없습니다.");
+			out.flush();
+		}
 	}
 
 	@PutMapping("/qna/insertcomment")
-	public void insertcomment(@RequestBody QnA q, HttpSession session) {
+	public void insertcomment(@RequestBody QnA q, HttpSession session, HttpServletResponse response) throws Exception {
 		String id = (String) session.getAttribute("id");
-		if(id==null || !id.equals("admin")) {}
+		if(id==null || !id.equals("admin")) {
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("권한이 없습니다.");
+			out.flush();
+		}
 		else {
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("댓글이 입력되었습니다.");
+			out.flush();
 			qservice.insertA(q);
 		}
 	}
 
 	@PutMapping("/qna/update")
-	public void updateProcess(@RequestBody QnA q, HttpSession session) {
+	public void updateProcess(@RequestBody QnA q, HttpSession session, HttpServletResponse response) throws Exception {
 		QnA qq = new QnA(q.getId(), q.getNum(), null, null, q.getTitle(), q.getContent(), null, q.getComment());
 		String id = (String) session.getAttribute("id");
-		if(id==q.getId())
+		if(id==q.getId()) {
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("수정되었습니다.");
+			out.flush();
 			qservice.update(qq);
+		}else {
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("권한이 없습니다.");
+			out.flush();
+		}
 	}
 
 	@RequestMapping(value="/qna/getid", method=RequestMethod.GET)
