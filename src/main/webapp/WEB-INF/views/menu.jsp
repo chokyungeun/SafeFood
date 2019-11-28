@@ -8,13 +8,11 @@
 	rel="stylesheet">
 
 <head>
-
-
-		<c:if test="${not empty msg}">
-			<script type="text/javascript">
-				alert("${msg}");
-			</script>
-		</c:if>
+<c:if test="${not empty msg}">
+	<script type="text/javascript">
+		alert("${msg}");
+	</script>
+</c:if>
 
 <title>내 알러지를 부탁해 —</title>
 <meta charset="utf-8">
@@ -43,44 +41,18 @@
 <link rel="stylesheet" href="css/aos.css">
 <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet"
 	type="text/css">
-
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
 <link rel="stylesheet" href="css/style.css">
-
-
-<!--
-<link rel="stylesheet"
-href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<style>
-.collapse {
-	padding-right: 100px;
-}
-
-#menu ul li {
-	vertical-align: middle;
-	text-align: center;
-}
-
-.contents img {
-	width: 350px;
-	height: 350px;
-}
-
-.drpt {
-	overflow: scroll;
-	height: 150px;
-}
-</style>
-
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="main.food" style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
+	<a class="navbar-brand" href="main.food"
+		style="font-family: 'Sunflower', sans-serif;">내 알러지를 부탁해</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarColor02" aria-controls="navbarColor02"
 		aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -117,38 +89,56 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --
 							width="500px" height="100px" alt="Image" class="img-fluid">
 						</a>
 					</div>
-					<a href="main.food" class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black">
+					<a href="main.food"
+						class="mx-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black">
 						<span class="icon-menu h3"></span>
 					</a>
 				</div>
 			</div>
 
 
-			<div class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block" role="banner">
+			<div
+				class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block"
+				role="banner">
 
 				<div class="container">
 					<div class="d-flex align-items-center">
 
 						<div class="mx-auto">
-							<nav class="site-navigation position-relative text-left" role="navigation">
-								<ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
-									<li><a href="main.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">&nbsp; 홈 화면</a></li>
-									<li><a href="boardlist.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
-									<li><a href="list.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
-									<li><a href="allmenu.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">식단정보</a></li>
-									<li><a href="chart.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
-									<li><a href="mypage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
-									<li><a href="qna.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">Q&A</a></li>
-									<li><a href="allreceivemessage.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">쪽지함<c:set var="loop_flag" value="false"/>
-									<c:forEach var="row" items="${mlist}">
-										<c:if test="${not loop_flag }">
-									      	<c:if test="${row.count == 0}" >
-									      		<img src="resources/img/new.jpg" alt="Image" class="img-fluid">
-									      		<c:set var="loop_flag" value="true"/>
-									      	</c:if>
-									      </c:if>
-									    </c:forEach></a></li>
-									<li><a href="map.food" class="btn btn-outline-success" style="font-family: 'Sunflower', sans-serif;">지도</a></li>
+							<nav class="site-navigation position-relative text-left"
+								role="navigation">
+								<ul
+									class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
+									<li><a href="main.food" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">&nbsp; 홈 화면</a></li>
+									<li><a href="boardlist.food"
+										class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">공지사항</a></li>
+									<li><a href="list.food" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">상품정보</a></li>
+									<li><a href="allmenu.food" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">식단정보</a></li>
+									<li><a href="chart.food" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">베스트식품</a></li>
+									<li><a href="mypage.food" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">섭취정보</a></li>
+									<li><a href="qna.food" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">Q&A</a></li>
+									<li><a href="allreceivemessage.food"
+										class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">쪽지함<c:set
+												var="loop_flag" value="false" /> <c:forEach var="row"
+												items="${mlist}">
+												<c:if test="${not loop_flag }">
+													<c:if test="${row.count == 0}">
+														<img src="resources/img/new.jpg" alt="Image"
+															class="img-fluid">
+														<c:set var="loop_flag" value="true" />
+													</c:if>
+												</c:if>
+											</c:forEach></a></li>
+									<li><a href="map.food" class="btn btn-outline-success"
+										style="font-family: 'Sunflower', sans-serif;">지도</a></li>
 								</ul>
 							</nav>
 
@@ -223,7 +213,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --
 									class="thumbnail d-block mb-4"
 									style="font-family: 'Sunflower', sans-serif;"> <img
 									src="/resources/<%=list.get(i).getImg()%>" alt="Image"
-									class="img-fluid"></a>
+									class="img-fluid" style="width:500px; height:300px;"></a>
 								<div>
 									<h3 class="heading mb-1">
 										<a href="#" style="font-family: 'Sunflower', sans-serif;"><%=list.get(i).getFood()%></a>
@@ -249,8 +239,12 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --
 					%>
 				</div>
 				<p align="center">
-					<button class="btn btn-primary" style="font-family: 'Sunflower', sans-serif; margin: auto;"><a href="insertmenuform.food" style="color: white">식단 추가</a></button>
-				</p><br>
+					<button class="btn btn-primary"
+						style="font-family: 'Sunflower', sans-serif; margin: auto;">
+						<a href="insertmenuform.food" style="color: white">식단 추가</a>
+					</button>
+				</p>
+				<br>
 
 				<%@ include file="footer.jsp"%>
 </body>
